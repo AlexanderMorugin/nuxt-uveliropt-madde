@@ -1,11 +1,20 @@
 <template>
   <header class="header">
     <LayoutMainContainer>
-      <NuxtLink to="/" class="link1">Эксклюзивные</NuxtLink>
-      <NuxtLink to="/contact" class="link2">КОНТАКТЫ</NuxtLink>
+      <ul class="header__nav">
+        <li v-for="item in headerNav" :key="item.id">
+          <NuxtLink :to="item.route" class="header__link">{{
+            item.title
+          }}</NuxtLink>
+        </li>
+      </ul>
     </LayoutMainContainer>
   </header>
 </template>
+
+<script setup>
+import { headerNav } from '@/mock/header-nav';
+</script>
 
 <style scoped>
 .header {
@@ -15,17 +24,15 @@
   width: 100%;
   border: 1px solid red;
 }
-.link1 {
-  font-family: 'CormorantGaramond-Medium';
-  font-size: 48px;
-  color: black;
-  text-decoration: none;
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.link2 {
+.header__link {
   font-family: 'Montserrat-Regular';
-  letter-spacing: 1px;
-  font-size: 30px;
-  color: black;
-  text-decoration: none;
+  font-size: 16px;
+  color: var(--black-primary);
+  text-transform: uppercase;
 }
 </style>

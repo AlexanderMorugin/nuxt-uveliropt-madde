@@ -10,7 +10,11 @@
 
   --white-primary: #ffffff;
 
-  --grey-primary: #f4f4f4;
+  --black-primary: #000000;
+
+  --grey-dark-primary: #343a3f;
+
+  /* --grey-primary: #f4f4f4;
   --grey-secondary: #d4d9dd;
   --grey-thirdary: #f3f3f3;
 
@@ -23,14 +27,23 @@
 
   --blue-primary: #4888ff;
 
-  --brown-primary: #cdbecd;
+  --brown-primary: #cdbecd; */
 }
 
-* {
+*,
+*::before,
+*::after,
+button,
+ul,
+li {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-weight: normal;
+  background: none;
+  border: none;
+  list-style: none;
+  text-decoration: none;
 }
 
 body {
@@ -44,9 +57,4 @@ body {
   /* overflow-x: hidden; */
 }
 
-/* .container {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  border: 1px solid red;
-} */
+
