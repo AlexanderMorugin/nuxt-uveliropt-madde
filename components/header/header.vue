@@ -1,38 +1,64 @@
 <template>
   <header class="header">
-    <LayoutMainContainer>
-      <ul class="header__nav">
-        <li v-for="item in headerNav" :key="item.id">
-          <NuxtLink :to="item.route" class="header__link">{{
-            item.title
-          }}</NuxtLink>
-        </li>
-      </ul>
+    <LayoutMainContainer class="header__container">
+      <HeaderAppLogo />
+      <HeaderAppNav v-if="!isScreenMedium" :linksData="props.linksData" />
+      <div class="header__right">
+        <HeaderAppPhone :phone="props.phone" :phoneNumber="props.phoneNumber" />
+        <HeaderAppMenuButton
+          v-if="isScreenMedium"
+          @openMenuModal="openMenuModal"
+        />
+      </div>
     </LayoutMainContainer>
   </header>
+
+  <!-- Модалка мобильного меню -->
+  <HeaderAppMenuModal :isMenuModalOpen="isMenuModalOpen" />
 </template>
 
 <script setup>
-import { headerNav } from '@/mock/header-nav';
+import { useResizeMedium } from '@/use/useResizeMedium';
+
+const props = defineProps(['linksData', 'phone', 'phoneNumber']);
+
+const { isScreenMedium } = useResizeMedium();
+
+const isMenuModalOpen = ref(false);
+
+const openMenuModal = () => {
+  isMenuModalOpen.value = !isMenuModalOpen.value;
+};
 </script>
 
 <style scoped>
 .header {
-  display: flex;
-  align-items: center;
-  gap: 50px;
+  background: var(--brown-primary);
   width: 100%;
+  padding: 20px;
   border: 1px solid red;
 }
-.header__nav {
+.header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 50px;
 }
-.header__link {
-  font-family: 'Montserrat-Regular';
-  font-size: 16px;
-  color: var(--black-primary);
-  text-transform: uppercase;
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+@media (max-width: 1023px) {
+  .header__container {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 10px;
+  }
 }
 </style>

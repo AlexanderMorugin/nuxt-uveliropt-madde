@@ -1,5 +1,5 @@
 <template>
   <LayoutMainContainer>
-    <PageTitle title="Сотрудничество" />
+    <PageAppTitle title="Сотрудничество" />
   </LayoutMainContainer>
 </template>

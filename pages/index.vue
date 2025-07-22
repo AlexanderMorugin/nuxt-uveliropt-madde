@@ -1,14 +1,24 @@
 <template>
-  <LayoutMainContainer>
-    <PageTitle title="Эксклюзивные украшения из Франции" />
-  </LayoutMainContainer>
+  <!-- <div>
+    <Head>
+      <Title>Madde</Title>
+    </Head> -->
+  <Header
+    :linksData="headerMainNav"
+    :phone="phone"
+    :phoneNumber="phoneNumber"
+  />
+  <main>
+    <LayoutMainContainer>
+      <PageAppTitle title="Эксклюзивные украшения из Франции" />
+    </LayoutMainContainer>
+  </main>
+  <!-- </div> -->
 </template>
 
-<style scoped>
-.title {
-  font-family: 'CormorantGaramond-Medium';
-  font-size: 48px;
-  color: black;
-  text-decoration: none;
-}
-</style>
+<script setup>
+import { headerMainNav } from '@/mock/header-main-nav';
+import { phone, phoneNumber } from '@/mock/constants';
+</script>
+
+<style scoped></style>

@@ -1,9 +1,6 @@
 <template>
   <div class="default-layout">
-    <Header />
-    <main>
-      <slot />
-    </main>
+    <slot />
     <Footer />
   </div>
 </template>

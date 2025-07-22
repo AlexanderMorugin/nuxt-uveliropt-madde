@@ -14,6 +14,10 @@
 
   --grey-dark-primary: #343a3f;
 
+  --blue-primary: #d2e5fd;
+
+  --brown-primary: #9f8a84;
+
   /* --grey-primary: #f4f4f4;
   --grey-secondary: #d4d9dd;
   --grey-thirdary: #f3f3f3;
@@ -48,6 +52,7 @@ li {
 
 body {
   background: var(--background-primary);
+  /* position: relative; */
   /* text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
@@ -57,4 +62,6 @@ body {
   /* overflow-x: hidden; */
 }
 
-
+button {
+  cursor: pointer;
+}
