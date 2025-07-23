@@ -1,48 +1,72 @@
 <template>
-  <button class="menuButton" @click="$emit('openMenuModal')">
-    <svg
-      class="menuButton__imageBox"
-      xmlns="http://www.w3.org/2000/svg"
-      version="1.0"
-      viewBox="0 0 512 512"
-      preserveAspectRatio="xMidYMid meet"
-    >
-      <g
-        class="menuButton__image"
-        transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-        stroke="none"
-      >
-        <path
-          d="M735 3826 c-67 -29 -105 -106 -91 -181 9 -47 59 -102 104 -115 26 -8 593 -10 1834 -8 l1797 3 27 21 c53 39 69 71 69 134 0 63 -16 95 -69 134 l-27 21 -1807 2 c-1487 2 -1812 0 -1837 -11z"
-        ></path>
-        <path
-          d="M735 2706 c-67 -29 -105 -106 -91 -181 9 -47 59 -102 104 -115 26 -8 593 -10 1834 -8 l1797 3 27 21 c53 39 69 71 69 134 0 63 -16 95 -69 134 l-27 21 -1807 2 c-1487 2 -1812 0 -1837 -11z"
-        ></path>
-        <path
-          d="M735 1586 c-67 -29 -105 -106 -91 -181 9 -47 59 -102 104 -115 26 -8 593 -10 1834 -8 l1797 3 27 21 c53 39 69 71 69 134 0 63 -16 95 -69 134 l-27 21 -1807 2 c-1487 2 -1812 0 -1837 -11z"
-        ></path>
-      </g>
-    </svg>
+  <button
+    :class="[
+      'headerMenuButton',
+      { headerMenuButton_active: isMenuMobileActive },
+    ]"
+    @click="$emit('toggleMobileMenu')"
+    title="Кнопка меню"
+  >
+    <span
+      :class="[
+        'headerMenuButton__span',
+        { headerMenuButton__span_active: isMenuMobileActive },
+      ]"
+    ></span>
   </button>
 </template>
 
 <script setup>
-const emit = defineEmits(['openMenuModal']);
+const emit = defineEmits(['toggleMobileMenu']);
+const { isMenuMobileActive } = defineProps(['isMenuMobileActive']);
 </script>
 
 <style scoped>
-.menuButton {
-  width: 40px;
-  height: 40px;
+.headerMenuButton {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 16px;
+  cursor: pointer;
 }
-.menuButton__imageBox {
-  width: 100%;
+.headerMenuButton__span {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: var(--white-primary);
+  transition: all 0.3s ease 0s;
 }
-.menuButton__image {
-  fill: var(--white-primary);
-  transition: 0.3s ease all;
+.headerMenuButton__span_active {
+  display: none;
 }
-.menuButton:hover .menuButton__image {
-  fill: var(--blue-primary);
+.headerMenuButton:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: var(--white-primary);
+  transition: all 0.3s ease 0s;
+}
+.headerMenuButton:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: var(--white-primary);
+  transition: all 0.3s ease 0s;
+}
+.headerMenuButton_active:before {
+  transform: rotate(45deg);
+  top: 7px;
+}
+.headerMenuButton_active:after {
+  transform: rotate(-45deg);
+  bottom: 7px;
 }
 </style>

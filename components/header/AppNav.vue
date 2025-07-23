@@ -62,4 +62,15 @@ const { linksData } = defineProps(['linksData']);
     font-size: 13px;
   }
 }
+
+@media (max-width: 767px) {
+  .headerNav {
+    flex-direction: column;
+    /* gap: 16px; */
+  }
+  .headerNav__link {
+    font-family: 'CormorantGaramond-Medium';
+    font-size: 24px;
+  }
+}
 </style>

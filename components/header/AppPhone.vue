@@ -25,4 +25,10 @@ const props = defineProps(['phone', 'phoneNumber']);
     font-size: 13px;
   }
 }
+
+@media (max-width: 767px) {
+  .headerPhone {
+    font-size: 16px;
+  }
+}
 </style>

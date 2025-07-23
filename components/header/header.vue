@@ -5,16 +5,24 @@
       <HeaderAppNav v-if="!isScreenMedium" :linksData="props.linksData" />
       <div class="header__right">
         <HeaderAppPhone :phone="props.phone" :phoneNumber="props.phoneNumber" />
+
+        <!-- Кнопка мобильного меню -->
         <HeaderAppMenuButton
           v-if="isScreenMedium"
-          @openMenuModal="openMenuModal"
+          :isMenuMobileActive="isMenuMobileActive"
+          @toggleMobileMenu="toggleMobileMenu"
         />
       </div>
     </LayoutMainContainer>
   </header>
 
-  <!-- Модалка мобильного меню -->
-  <HeaderAppMenuModal :isMenuModalOpen="isMenuModalOpen" />
+  <!-- Мобильное меню -->
+  <HeaderAppMenuMobile
+    v-if="isScreenMedium"
+    :isMenuMobileActive="isMenuMobileActive"
+  >
+    <HeaderAppNav :linksData="props.linksData" />
+  </HeaderAppMenuMobile>
 </template>
 
 <script setup>
@@ -24,10 +32,10 @@ const props = defineProps(['linksData', 'phone', 'phoneNumber']);
 
 const { isScreenMedium } = useResizeMedium();
 
-const isMenuModalOpen = ref(false);
+const isMenuMobileActive = ref(false);
 
-const openMenuModal = () => {
-  isMenuModalOpen.value = !isMenuModalOpen.value;
+const toggleMobileMenu = () => {
+  isMenuMobileActive.value = !isMenuMobileActive.value;
 };
 </script>
 
@@ -59,6 +67,9 @@ const openMenuModal = () => {
 @media (max-width: 767px) {
   .header {
     padding: 10px;
+  }
+  .header__right {
+    gap: 20px;
   }
 }
 </style>
