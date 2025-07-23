@@ -1,8 +1,5 @@
 <template>
-  <!-- <div>
-    <Head>
-      <Title>Madde</Title>
-    </Head> -->
+  <PageAppMainImage />
   <Header
     :linksData="headerMainNav"
     :phone="phone"
@@ -13,7 +10,6 @@
       <PageAppTitle title="Эксклюзивные украшения из Франции" />
     </LayoutMainContainer>
   </main>
-  <!-- </div> -->
 </template>
 
 <script setup>

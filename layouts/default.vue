@@ -1,9 +1,19 @@
 <template>
   <div class="default-layout">
+    <!-- <Header
+      :linksData="headerMainNav"
+      :phone="phone"
+      :phoneNumber="phoneNumber"
+    /> -->
     <slot />
     <Footer />
   </div>
 </template>
+
+<!-- <script setup>
+import { headerMainNav } from '@/mock/header-main-nav';
+import { phone, phoneNumber } from '@/mock/constants';
+</script> -->
 
 <style scoped>
 .default-layout {

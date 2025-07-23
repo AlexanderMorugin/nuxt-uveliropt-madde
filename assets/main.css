@@ -1,8 +1,3 @@
-/* body {
-  font-family: 'Montserrat-Regular', 'CormorantGaramond-Medium',
-    'CormorantGaramond-SemiBold', Arial, Helvetica, sans-serif;
-} */
-
 @import './fonts/fonts.css';
 
 :root {
@@ -17,21 +12,6 @@
   --blue-primary: #d2e5fd;
 
   --brown-primary: #9f8a84;
-
-  /* --grey-primary: #f4f4f4;
-  --grey-secondary: #d4d9dd;
-  --grey-thirdary: #f3f3f3;
-
-  --grey-medium-primary: #d4d9dd;
-  --grey-medium-secondary: #d3d3d3;
-  --grey-medium-thirdary: #e8e8e8;
-
-  --grey-dark-primary: #343a3f;
-  --grey-dark-secondary: #9d9d9d;
-
-  --blue-primary: #4888ff;
-
-  --brown-primary: #cdbecd; */
 }
 
 *,
@@ -51,6 +31,7 @@ li {
 }
 
 body {
+  /* position: relative; */
   background: var(--background-primary);
   /* position: relative; */
   /* text-rendering: optimizeLegibility;

@@ -23,11 +23,10 @@ const { isMenuMobileActive } = defineProps(['isMenuMobileActive']);
 
 <style scoped>
 .headerMenuButton {
-  display: block;
   position: relative;
+  display: flex;
   width: 24px;
   height: 16px;
-  cursor: pointer;
 }
 .headerMenuButton__span {
   position: absolute;

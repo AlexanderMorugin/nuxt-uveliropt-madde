@@ -20,6 +20,7 @@
   <HeaderAppMenuMobile
     v-if="isScreenMedium"
     :isMenuMobileActive="isMenuMobileActive"
+    @toggleMobileMenu="toggleMobileMenu"
   >
     <HeaderAppNav :linksData="props.linksData" />
   </HeaderAppMenuMobile>
@@ -41,9 +42,9 @@ const toggleMobileMenu = () => {
 
 <style scoped>
 .header {
-  background: var(--brown-primary);
   width: 100%;
   padding: 20px;
+  z-index: 10;
   border: 1px solid red;
 }
 .header__container {
