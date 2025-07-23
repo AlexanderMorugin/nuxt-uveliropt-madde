@@ -37,7 +37,7 @@ const emit = defineEmits(['toggleMobileMenu']);
   transform: translateX(100%);
   transition: 0.3s ease all;
   padding: 40px 20px 60px 20px;
-  z-index: 20;
+  z-index: 50;
 }
 .menuMobile_active {
   transform: translateX(0);

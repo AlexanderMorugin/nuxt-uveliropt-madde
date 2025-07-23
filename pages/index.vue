@@ -5,15 +5,19 @@
     :phone="phone"
     :phoneNumber="phoneNumber"
   />
-  <main>
-    <LayoutMainContainer>
-      <PageAppTitle title="Эксклюзивные украшения из Франции" />
-    </LayoutMainContainer>
-  </main>
+  <!-- <main> -->
+    <!-- <LayoutMainContainer> -->
+      <PageAppHeading
+        title="Эксклюзивные украшения из Италии"
+        :headingMainList="headingMainList"
+      />
+    <!-- </LayoutMainContainer> -->
+  <!-- </main> -->
 </template>
 
 <script setup>
 import { headerMainNav } from '@/mock/header-main-nav';
+import { headingMainList } from '@/mock/heading-main-list';
 import { phone, phoneNumber } from '@/mock/constants';
 </script>
 

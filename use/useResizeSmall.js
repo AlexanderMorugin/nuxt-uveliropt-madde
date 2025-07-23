@@ -16,7 +16,7 @@ export function useResizeSmall() {
   const resizeHandler = () => {
     windowWidth.value = window.innerWidth
 
-    if (windowWidth.value <= 359) {
+    if (windowWidth.value <= 479) {
       isScreenSmall.value = true
       return
     }

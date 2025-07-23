@@ -1,6 +1,7 @@
 <template>
   <header class="header">
-    <LayoutMainContainer class="header__container">
+    <!-- <LayoutMainContainer class="header__container"> -->
+    <div class="header__container">
       <HeaderAppLogo />
       <HeaderAppNav v-if="!isScreenMedium" :linksData="props.linksData" />
       <div class="header__right">
@@ -13,7 +14,8 @@
           @toggleMobileMenu="toggleMobileMenu"
         />
       </div>
-    </LayoutMainContainer>
+    </div>
+    <!-- </LayoutMainContainer> -->
   </header>
 
   <!-- Мобильное меню -->
@@ -43,7 +45,13 @@ const toggleMobileMenu = () => {
 <style scoped>
 .header {
   width: 100%;
-  padding: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   z-index: 10;
   border: 1px solid red;
 }
@@ -67,7 +75,10 @@ const toggleMobileMenu = () => {
 
 @media (max-width: 767px) {
   .header {
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .header__right {
     gap: 20px;
