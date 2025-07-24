@@ -3,13 +3,19 @@
 :root {
   --background-primary: #fcf9f3;
 
+
   --white-primary: #ffffff;
+  --white-secondary: #dde4f0;
 
   --black-primary: #000000;
 
   --grey-dark-primary: #343a3f;
 
   --blue-primary: #d2e5fd;
+  --blue-secondary: #819ac1;
+
+  --blue-dark-primary: #5b6e8c;
+  
 
   --brown-primary: #9f8a84;
 }
