@@ -66,8 +66,11 @@
       >
     </div>
 
-    <button :class="['form-button', { 'form-button-active': isValid }]">
-      Отправить
+    <button
+      :class="['form-button', { 'form-button-active': isValid && !v$.$errors }]"
+    >
+      <AppButtonLoader v-if="isLoading" />
+      <span v-else>Отправить</span>
     </button>
   </form>
 </template>
@@ -78,6 +81,7 @@ import { helpers, required, minLength, numeric } from '@vuelidate/validators';
 
 const emit = defineEmits(['closeCooperationModal']);
 
+const isLoading = ref(false);
 const companyField = ref(null);
 const nameField = ref(null);
 const phoneField = ref(null);
@@ -111,18 +115,25 @@ const isValid = computed(
 );
 
 const submitRequestForm = () => {
-  // companyField.value = '';
-  // nameField.value = '';
-  // phoneField.value = '';
+  isLoading.value = true;
 
-  console.log(
-    'submitRequestForm',
-    companyField.value,
-    nameField.value,
-    phoneField.value
-  );
+  if (!isValid) {
+    console.log(
+      'submitRequestForm',
+      companyField.value,
+      nameField.value,
+      phoneField.value
+    );
 
-  emit('closeCooperationModal')
+    setTimeout(() => {
+      isLoading.value = false;
+      emit('closeCooperationModal');
+    }, 2000);
+  } else {
+    companyField.value = null;
+    nameField.value = null;
+    phoneField.value = null;
+  }
 };
 </script>
 
@@ -136,6 +147,7 @@ const submitRequestForm = () => {
 
 @media (max-width: 767px) {
   .request-form {
+    gap: 20px;
     padding-top: 26px;
   }
 }
