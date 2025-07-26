@@ -1,6 +1,6 @@
 @font-face {
   src: local('Montserrat-Regular'),
-    url(./Montserrat-Regular.ttf) format('truetype');
+    url('/fonts/Montserrat-Regular.ttf') format('truetype');
   font-family: 'Montserrat-Regular';
   font-weight: normal;
   font-style: normal;
@@ -12,7 +12,7 @@
   font-style: normal;
   font-weight: normal;
   src: local('CormorantGaramond-Medium'),
-    url(./CormorantGaramond-Medium.woff) format('woff');
+    url('/fonts/CormorantGaramond-Medium.woff') format('woff');
 }
 
 @font-face {
@@ -20,5 +20,5 @@
   font-style: normal;
   font-weight: normal;
   src: local('CormorantGaramond-SemiBold'),
-    url(./CormorantGaramond-SemiBold.woff) format('woff');
+    url('/fonts/CormorantGaramond-SemiBold.woff') format('woff');
 }

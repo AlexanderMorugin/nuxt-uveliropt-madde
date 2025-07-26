@@ -64,7 +64,7 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
   color: var(--white-primary);
   padding-left: 20px;
   padding-right: 20px;
-  animation: slide-in 2s ease-out;
+  animation: slide-in 2s 2s ease-out;
 }
 .heading__list {
   margin-top: 26px;
