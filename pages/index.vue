@@ -19,6 +19,10 @@
 import { headerMainNav } from '@/mock/header-main-nav';
 import { headingMainList } from '@/mock/heading-main-list';
 import { phone, phoneNumber } from '@/mock/constants';
+
+// onMounted(() => {
+//   window.history.scrollRestoration = 'manual'
+// })
 </script>
 
 <style scoped></style>

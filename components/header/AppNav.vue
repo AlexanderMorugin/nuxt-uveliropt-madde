@@ -28,6 +28,7 @@ const { linksData } = defineProps(['linksData']);
   font-size: 16px;
   color: var(--white-primary);
   text-transform: uppercase;
+  cursor: pointer;
 }
 .headerNav__link:after {
   content: '';
@@ -66,7 +67,6 @@ const { linksData } = defineProps(['linksData']);
 @media (max-width: 767px) {
   .headerNav {
     flex-direction: column;
-    /* gap: 16px; */
   }
   .headerNav__link {
     font-family: 'CormorantGaramond-Medium';

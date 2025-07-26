@@ -3,7 +3,8 @@
     <!-- <LayoutMainContainer class="header__container"> -->
     <div class="header__container">
       <HeaderAppLogo />
-      <HeaderAppNav v-if="!isScreenMedium" :linksData="props.linksData" />
+      <!-- <HeaderAppNav v-if="!isScreenMedium" :linksData="props.linksData" /> -->
+      <!-- <HeaderAppNav :linksData="props.linksData" /> -->
       <div class="header__right">
         <HeaderAppPhone :phone="props.phone" :phoneNumber="props.phoneNumber" />
 
@@ -19,13 +20,13 @@
   </header>
 
   <!-- Мобильное меню -->
-  <HeaderAppMenuMobile
+  <!-- <HeaderAppMenuMobile
     v-if="isScreenMedium"
     :isMenuMobileActive="isMenuMobileActive"
     @toggleMobileMenu="toggleMobileMenu"
   >
     <HeaderAppNav :linksData="props.linksData" />
-  </HeaderAppMenuMobile>
+  </HeaderAppMenuMobile> -->
 </template>
 
 <script setup>

@@ -24,7 +24,7 @@
   </div>
 
   <!-- Модалка с формой заявки на сотрудничество -->
-  <Teleport to="body">
+  <Teleport to="#teleports">
     <PageAppCooperationModal
       :isCooperationModalOpen="isCooperationModalOpen"
       @closeCooperationModal="closeCooperationModal"
@@ -53,7 +53,7 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
   padding-top: 90px;
   padding-bottom: 20px;
   z-index: 20;
-  animation: slide-in 2s ease-in-out;
+
   border: 1px solid red;
 }
 .heading__title {
@@ -64,6 +64,7 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
   color: var(--white-primary);
   padding-left: 20px;
   padding-right: 20px;
+  animation: slide-in 2s ease-out;
 }
 .heading__list {
   margin-top: 26px;
