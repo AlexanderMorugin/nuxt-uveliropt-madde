@@ -79,6 +79,7 @@ const { isCooperationModalOpen } = defineProps([
 .modal-leave-to {
   opacity: 0;
   transform: scale(1.1);
+
 }
 
 @media (max-width: 767px) {

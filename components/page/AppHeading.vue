@@ -30,7 +30,7 @@
       @closeCooperationModal="closeCooperationModal"
       title="Оставить заявку"
     >
-      <FormAppRequest @closeCooperationModal="closeCooperationModal"/>
+      <FormAppRequest @closeCooperationModal="closeCooperationModal" />
     </PageAppCooperationModal>
   </Teleport>
 </template>
@@ -53,6 +53,7 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
   padding-top: 90px;
   padding-bottom: 20px;
   z-index: 20;
+  animation: slide-in 2s ease-in-out;
   border: 1px solid red;
 }
 .heading__title {
@@ -133,6 +134,17 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
   }
   .heading__listItem {
     height: 24px;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 </style>

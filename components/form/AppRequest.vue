@@ -66,11 +66,14 @@
       >
     </div>
 
+    <!-- Заглушка показывается вместо кнопки Сабмита, если валидация не прошла -->
     <div v-if="isFromEmpty || isValid.length" class="form-button">
       Заполните все поля
     </div>
 
+    <!-- Кнопка Сабмит -->
     <button v-else class="form-button form-button-active">
+      <!-- Лоадер, крутится пока данные отправляются на сервер -->
       <AppButtonLoader v-if="isLoading" />
       <span v-else>Отправить</span>
     </button>
