@@ -66,9 +66,11 @@
       >
     </div>
 
-    <button
-      :class="['form-button', { 'form-button-active': isValid && !v$.$errors }]"
-    >
+    <div v-if="isFromEmpty || isValid.length" class="form-button">
+      Заполните все поля
+    </div>
+
+    <button v-else class="form-button form-button-active">
       <AppButtonLoader v-if="isLoading" />
       <span v-else>Отправить</span>
     </button>
@@ -99,8 +101,9 @@ const rules = computed(() => ({
     minLength: helpers.withMessage('Имя не менее 2 символов', minLength(2)),
   },
   phoneField: {
-    required: helpers.withMessage('Укажите телефон', required),
+    required: helpers.withMessage('', required),
     numeric: helpers.withMessage('Укажите цифрами без пробелов', numeric),
+    minLength: helpers.withMessage('', minLength(11)),
   },
 }));
 
@@ -110,30 +113,26 @@ const v$ = useVuelidate(rules, {
   phoneField,
 });
 
-const isValid = computed(
-  () => companyField.value && nameField.value && phoneField.value && !v$.$errors
+const isFromEmpty = computed(
+  () => !companyField.value || !nameField.value || !phoneField.value
 );
+
+const isValid = computed(() => v$.value.$errors);
 
 const submitRequestForm = () => {
   isLoading.value = true;
 
-  if (!isValid) {
-    console.log(
-      'submitRequestForm',
-      companyField.value,
-      nameField.value,
-      phoneField.value
-    );
+  console.log(
+    'submitRequestForm',
+    companyField.value,
+    nameField.value,
+    phoneField.value
+  );
 
-    setTimeout(() => {
-      isLoading.value = false;
-      emit('closeCooperationModal');
-    }, 2000);
-  } else {
-    companyField.value = null;
-    nameField.value = null;
-    phoneField.value = null;
-  }
+  setTimeout(() => {
+    isLoading.value = false;
+    emit('closeCooperationModal');
+  }, 2000);
 };
 </script>
 
