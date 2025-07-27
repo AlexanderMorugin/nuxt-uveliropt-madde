@@ -4,11 +4,7 @@
   </div>
 </template>
 
-<script setup>
-import { useResizeMedium } from '@/use/useResizeMedium';
-
-const { isScreenMedium } = useResizeMedium();
-</script>
+<script setup></script>
 
 <style scoped>
 .leftTitleBadge {
@@ -27,6 +23,7 @@ const { isScreenMedium } = useResizeMedium();
   color: rgba(0, 0, 0, 0.2);
   text-shadow: rgba(0, 0, 0, 0.2) 1px 0 10px;
   transform: rotate(270deg);
+  opacity: 0.5;
   animation: slide-in 5s ease-out;
 }
 
@@ -50,7 +47,7 @@ const { isScreenMedium } = useResizeMedium();
     transform: rotate(270deg) translateX(100%);
   }
   100% {
-    opacity: 1;
+    opacity: 0.5;
     transform: rotate(270deg) translateX(0);
   }
 }

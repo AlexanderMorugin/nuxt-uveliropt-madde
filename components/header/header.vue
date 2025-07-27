@@ -61,7 +61,7 @@ const toggleMobileMenu = () => {
   padding-left: 20px;
   padding-right: 20px;
   z-index: 10;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 .header__container {
   

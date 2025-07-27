@@ -32,7 +32,6 @@ const { isScreenMedium } = useResizeMedium();
   left: 0;
   width: 100%;
   height: 800px;
-  border: 2px solid blue;
 }
 .mainImage__imageDesktop {
   width: 100%;

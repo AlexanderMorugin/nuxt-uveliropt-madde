@@ -1,21 +1,24 @@
 <template>
-  
+  <!-- Верхняя картинка и левый боковой бейдж, под шапкой и блоком хединга -->
   <PageAppMainImage />
   <PageAppLeftTitleBadge />
 
+  <!-- Шапка -->
   <Header
     :linksData="headerMainNav"
     :phone="phone"
     :phoneNumber="phoneNumber"
   />
-  <!-- <main> -->
-  <!-- <LayoutMainContainer> -->
-  <PageAppHeading
-    title="Эксклюзивные украшения из Италии"
-    :headingMainList="headingMainList"
-  />
-  <!-- </LayoutMainContainer> -->
-  <!-- </main> -->
+
+  <!-- Контент -->
+  <main class="content">
+    <PageAppHeading
+      title="Эксклюзивные украшения из Италии"
+      :headingMainList="headingMainList"
+    />
+
+    <PageAppAbout />
+  </main>
 </template>
 
 <script setup>
@@ -24,4 +27,10 @@ import { headingMainList } from '@/mock/heading-main-list';
 import { phone, phoneNumber } from '@/mock/constants';
 </script>
 
-<style scoped></style>
+<style scoped>
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+</style>

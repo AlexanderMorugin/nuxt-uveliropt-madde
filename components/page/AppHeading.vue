@@ -1,6 +1,5 @@
 <template>
   <div class="heading">
-
     <h1 class="heading__title">{{ title }}</h1>
 
     <ul class="heading__list">
@@ -50,14 +49,12 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
   position: relative;
   width: 100%;
   max-width: 1440px;
+  height: 666px;
   margin: 0 auto;
   padding-top: 90px;
   padding-bottom: 20px;
   z-index: 20;
-
-
 }
-
 .heading__title {
   width: 100%;
   max-width: 580px;
@@ -111,6 +108,7 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
 
 @media (max-width: 1023px) {
   .heading {
+    height: 681px;
     padding-top: 180px;
   }
   .heading__list {
@@ -122,6 +120,10 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
 }
 
 @media (max-width: 767px) {
+    .heading {
+    height: 601px;
+
+  }
   .heading__title {
     font-size: 40px;
     max-width: 380px;
