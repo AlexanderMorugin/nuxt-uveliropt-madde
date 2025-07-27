@@ -1,7 +1,13 @@
 <template>
   <header class="header">
+
+
+
     <!-- <LayoutMainContainer class="header__container"> -->
     <div class="header__container">
+
+
+
       <HeaderAppLogo />
       <HeaderAppNav v-if="!isScreenMedium" :linksData="props.linksData" />
       <!-- <HeaderAppNav :linksData="props.linksData" /> -->
@@ -45,6 +51,7 @@ const toggleMobileMenu = () => {
 
 <style scoped>
 .header {
+  position: relative;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -57,11 +64,14 @@ const toggleMobileMenu = () => {
   border: 1px solid red;
 }
 .header__container {
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 50px;
 }
+
+
 .header__right {
   display: flex;
   align-items: center;

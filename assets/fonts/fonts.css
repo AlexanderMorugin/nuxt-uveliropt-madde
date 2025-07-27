@@ -8,6 +8,24 @@
 }
 
 @font-face {
+  src: local('Montserrat-SemiBold'),
+    url('/fonts/Montserrat-SemiBold.ttf') format('truetype');
+  font-family: 'Montserrat-SemiBold';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: local('Montserrat-Bold'),
+    url('/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-family: 'Montserrat-Bold';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'CormorantGaramond-Medium';
   font-style: normal;
   font-weight: normal;

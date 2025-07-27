@@ -1,5 +1,6 @@
 <template>
   <div class="heading">
+
     <h1 class="heading__title">{{ title }}</h1>
 
     <ul class="heading__list">
@@ -54,8 +55,9 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
   padding-bottom: 20px;
   z-index: 20;
 
-  border: 1px solid red;
+
 }
+
 .heading__title {
   width: 100%;
   max-width: 580px;
@@ -64,7 +66,7 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
   color: var(--white-primary);
   padding-left: 20px;
   padding-right: 20px;
-  animation: slide-in 2s 2s ease-out;
+  animation: slide-in 2s ease-out;
 }
 .heading__list {
   margin-top: 26px;
@@ -79,6 +81,19 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
   height: 36px;
   padding-left: 20px;
   padding-right: 20px;
+  animation: slide-in 3s ease-out;
+}
+.heading__listItem:nth-child(2) {
+  animation: slide-in 3.5s ease-out;
+}
+.heading__listItem:nth-child(3) {
+  animation: slide-in 4s ease-out;
+}
+.heading__listItem:nth-child(4) {
+  animation: slide-in 4.5s ease-out;
+}
+.heading__listItem:nth-child(5) {
+  animation: slide-in 5s ease-out;
 }
 .heading__listItemArrow {
   width: 6px;
@@ -110,11 +125,11 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
   .heading__title {
     font-size: 40px;
     max-width: 380px;
-    padding-left: 10px;
+    padding-left: 40px;
     padding-right: 10px;
   }
   .heading__list {
-    padding-left: 10px;
+    padding-left: 40px;
   }
   .heading__listItem {
     height: 27px;
@@ -125,7 +140,7 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
     font-size: 16px;
   }
   .heading__button {
-    padding-left: 10px;
+    padding-left: 40px;
   }
 }
 
