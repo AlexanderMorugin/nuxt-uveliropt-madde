@@ -1,9 +1,11 @@
 <template>
-  <h2 class="secondTitle">{{ title }}</h2>
+  <h2 :class="['secondTitle', { secondTitle_left: position === 'left' }]">
+    {{ title }}
+  </h2>
 </template>
 
 <script setup>
-const { title } = defineProps(['title']);
+const { title, position } = defineProps(['title', 'position']);
 </script>
 
 <style scoped>
@@ -11,6 +13,10 @@ const { title } = defineProps(['title']);
   font-family: 'CormorantGaramond-Medium';
   font-size: 51px;
   color: var(--brown-fourdary);
+  text-align: center;
+}
+.secondTitle_left {
+  text-align: left;
 }
 
 @media (max-width: 767px) {

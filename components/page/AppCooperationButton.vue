@@ -1,11 +1,12 @@
 <template>
   <button class="cooperationButton" @click="$emit('openCooperationModal')">
-    Заявка на сотрудничество
+    {{ title }}
   </button>
 </template>
 
 <script setup>
 const emit = defineEmits(['openCooperationModal']);
+const { title } = defineProps(['title']);
 </script>
 
 <style scoped>
@@ -23,25 +24,24 @@ const emit = defineEmits(['openCooperationModal']);
   font-size: 21px;
   color: var(--white-primary);
   text-transform: uppercase;
-  margin-top: 80px;
   transition: 0.3s ease all;
 }
 .cooperationButton:hover {
   background: var(--blue-dark-primary);
 }
 
-@media (max-width: 1023px) {
+/* @media (max-width: 1023px) {
   .cooperationButton {
     margin-top: 50px;
   }
-}
+} */
 
 @media (max-width: 767px) {
   .cooperationButton {
     max-width: 360px;
     min-height: 58px;
     font-size: 18px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
   }
 }
 

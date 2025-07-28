@@ -17,31 +17,15 @@
       </li>
     </ul>
 
-    <!-- Кнопка модалки заявки на сотрудничество -->
+    <!-- Модалка заявки на сотрудничество, с кнопкой -->
     <div class="heading__button">
-      <PageAppCooperationButton @openCooperationModal="openCooperationModal" />
+      <ModalAppCooperation buttonTitle="Заявка на сотрудничество" />
     </div>
   </div>
-
-  <!-- Модалка с формой заявки на сотрудничество -->
-  <Teleport to="#teleports">
-    <PageAppCooperationModal
-      :isCooperationModalOpen="isCooperationModalOpen"
-      @closeCooperationModal="closeCooperationModal"
-      title="Оставить заявку"
-    >
-      <FormAppRequest @closeCooperationModal="closeCooperationModal" />
-    </PageAppCooperationModal>
-  </Teleport>
 </template>
 
 <script setup>
 const { title, headingMainList } = defineProps(['title', 'headingMainList']);
-
-const isCooperationModalOpen = ref(false);
-
-const openCooperationModal = () => (isCooperationModalOpen.value = true);
-const closeCooperationModal = () => (isCooperationModalOpen.value = false);
 </script>
 
 <style scoped>
@@ -103,6 +87,7 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
   color: var(--white-primary);
 }
 .heading__button {
+  margin-top: 80px;
   padding-left: 20px;
 }
 
@@ -117,12 +102,14 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
   .heading__title {
     font-size: 51px;
   }
+  .heading__button {
+    margin-top: 50px;
+  }
 }
 
 @media (max-width: 767px) {
-    .heading {
+  .heading {
     height: 601px;
-
   }
   .heading__title {
     font-size: 40px;
@@ -142,6 +129,7 @@ const closeCooperationModal = () => (isCooperationModalOpen.value = false);
     font-size: 16px;
   }
   .heading__button {
+    margin-top: 30px;
     padding-left: 40px;
   }
 }

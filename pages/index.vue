@@ -18,6 +18,8 @@
     />
 
     <PageAppAbout />
+
+    <PageAppStages />
   </main>
 </template>
 

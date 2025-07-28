@@ -1,7 +1,8 @@
 <template>
   <footer class="footer">
-    <LayoutMainContainer>
-      <span class="footer__text">Обычная информация которая указывается в подвале</span></LayoutMainContainer>
+    <span class="footer__text"
+      >Обычная информация которая указывается в подвале</span
+    >
   </footer>
 </template>
 
@@ -15,6 +16,5 @@
   font-family: 'Montserrat-Regular';
   font-size: 16px;
   color: var(--white-primary);
-
 }
 </style>

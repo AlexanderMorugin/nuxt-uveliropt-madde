@@ -1,6 +1,10 @@
 <template>
   <section class="about">
-    <PageAppSecondTitle title="Ювелирный бренд MADDE" class="about__title" />
+    <PageAppSecondTitle
+      title="Ювелирный бренд MADDE"
+      class="about__title"
+      position="left"
+    />
     <div class="about__text">
       <PageAppParagraph
         >Компания работает на российском рынке с 2008 года. Мы предлагаем оптом
@@ -31,15 +35,12 @@
   row-gap: 40px;
   width: 100%;
   max-width: 1440px;
-  /* height: 666px; */
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
-  /* border: 1px solid red; */
 }
 .about__title {
   display: flex;
-  /* justify-content: center;  */
 }
 .about__text {
   display: flex;
@@ -54,10 +55,6 @@
   .about__title {
     justify-self: center;
   }
-  /* .about__text {
-    padding-left: 20px;
-    padding-right: 20px;
-  } */
 }
 
 @media (max-width: 767px) {
