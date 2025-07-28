@@ -1,5 +1,5 @@
 <template>
-  <div class="heading">
+  <section class="heading">
     <h1 class="heading__title">{{ title }}</h1>
 
     <ul class="heading__list">
@@ -21,7 +21,7 @@
     <div class="heading__button">
       <ModalAppCooperation buttonTitle="Заявка на сотрудничество" />
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

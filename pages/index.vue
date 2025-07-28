@@ -18,6 +18,7 @@
     />
 
     <PageAppAbout />
+    
 
     <PageAppStages />
   </main>

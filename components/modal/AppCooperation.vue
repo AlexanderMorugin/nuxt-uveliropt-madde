@@ -1,4 +1,5 @@
 <template>
+  <!-- Кнопка модалки -->
   <PageAppCooperationButton
     :title="buttonTitle"
     @openCooperationModal="openCooperationModal"
@@ -23,5 +24,4 @@ const isCooperationModalOpen = ref(false);
 
 const openCooperationModal = () => (isCooperationModalOpen.value = true);
 const closeCooperationModal = () => (isCooperationModalOpen.value = false);
-
 </script>

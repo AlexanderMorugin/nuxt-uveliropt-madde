@@ -1,16 +1,9 @@
 <template>
   <header class="header">
-
-
-
-    <!-- <LayoutMainContainer class="header__container"> -->
     <div class="header__container">
-
-
-
       <HeaderAppLogo />
       <HeaderAppNav v-if="!isScreenMedium" :linksData="props.linksData" />
-      <!-- <HeaderAppNav :linksData="props.linksData" /> -->
+
       <div class="header__right">
         <HeaderAppPhone :phone="props.phone" :phoneNumber="props.phoneNumber" />
 
@@ -22,7 +15,6 @@
         />
       </div>
     </div>
-    <!-- </LayoutMainContainer> -->
   </header>
 
   <!-- Мобильное меню -->
@@ -55,23 +47,18 @@ const toggleMobileMenu = () => {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
   z-index: 10;
-  /* border: 1px solid red; */
 }
 .header__container {
-  
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 50px;
 }
-
-
 .header__right {
   display: flex;
   align-items: center;
