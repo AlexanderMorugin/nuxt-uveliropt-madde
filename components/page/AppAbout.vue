@@ -34,18 +34,21 @@
 <style scoped>
 .about {
   position: relative;
+  /* display: flex;
+  align-items: center; */
   height: 800px;
 }
 .about__container {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 60px;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  padding-top: 260px;
+  background: rgba(0, 0, 0, 0.6);
+  /* padding-top: 260px; */
   padding-left: 20px;
   padding-right: 20px;
   z-index: 20;
@@ -80,12 +83,12 @@
 }
 
 @media (max-width: 767px) {
-  .about {
+  /* .about {
     height: 640px;
-  }
+  } */
   .about__container {
     gap: 20px;
-    padding-top: 160px;
+    /* padding-top: 160px; */
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -93,13 +96,13 @@
     gap: 20px;
   }
   .about__text {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 479px) {
   .about__container {
-    padding-top: 20px;
+    /* padding-top: 20px; */
   }
 }
 </style>

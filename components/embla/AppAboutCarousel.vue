@@ -49,9 +49,9 @@ const [emblaRef, emblaApi] = emblaCarouselVue({ loop: true }, [
   filter: grayscale(60%);
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .embla__slide__img {
     height: 640px;
   }
-}
+} */
 </style>

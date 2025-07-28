@@ -113,7 +113,7 @@ import { stagesList } from '@/mock/stages';
   width: 6px;
   height: 6px;
   transform: rotate(90deg);
-  margin-top: 6px;
+  margin-top: 8px;
   animation: slide 2s linear infinite;
 }
 .stages__button {
@@ -149,9 +149,9 @@ import { stagesList } from '@/mock/stages';
     flex-direction: column;
     gap: 10px;
   }
-  .stages__itemTitleBox {
+  /* .stages__itemTitleBox {
     font-size: 18px;
-  }
+  } */
   .stages__itemList {
     padding-left: 0;
   }
