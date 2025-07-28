@@ -1,5 +1,8 @@
 <template>
-  <h2 :class="['secondTitle', { secondTitle_left: position === 'left' }]">
+  <!-- <h2 :class="['secondTitle', { secondTitle_left: position === 'left' }]">
+    {{ title }}
+  </h2> -->
+  <h2 class="secondTitle">
     {{ title }}
   </h2>
 </template>
@@ -15,9 +18,9 @@ const { title, position } = defineProps(['title', 'position']);
   color: var(--brown-fourdary);
   text-align: center;
 }
-.secondTitle_left {
+/* .secondTitle_left {
   text-align: left;
-}
+} */
 
 @media (max-width: 767px) {
   .secondTitle {

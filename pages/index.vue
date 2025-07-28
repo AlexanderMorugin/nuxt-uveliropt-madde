@@ -18,9 +18,10 @@
     />
 
     <PageAppAbout />
-    
 
     <PageAppStages />
+
+    <PageAppBenefit />
   </main>
 </template>
 

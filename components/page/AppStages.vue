@@ -97,6 +97,7 @@ import { stagesList } from '@/mock/stages';
   font-family: 'Montserrat-Regular';
   font-size: 20px;
   color: var(--blue-dark-secondary);
+  text-transform: uppercase;
 }
 .stages__itemList {
   display: flex;
@@ -113,6 +114,7 @@ import { stagesList } from '@/mock/stages';
   height: 6px;
   transform: rotate(90deg);
   margin-top: 6px;
+  animation: slide 2s linear infinite;
 }
 .stages__button {
   display: flex;
@@ -146,6 +148,24 @@ import { stagesList } from '@/mock/stages';
   .stages__itemImageBox {
     flex-direction: column;
     gap: 10px;
+  }
+  .stages__itemTitleBox {
+    font-size: 18px;
+  }
+  .stages__itemList {
+    padding-left: 0;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0) rotate(90deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(90deg);
+  }
+  100% {
+    transform: translateX(0) rotate(90deg);
   }
 }
 </style>
