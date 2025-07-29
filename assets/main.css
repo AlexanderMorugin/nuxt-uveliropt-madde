@@ -8,6 +8,8 @@
 
   --black-primary: #000000;
 
+  --grey-primary: #eeeeee;
+
   --grey-dark-primary: #343a3f;
 
   --blue-primary: #d2e5fd;
@@ -46,7 +48,7 @@ li {
 body {
   /* position: relative; */
   background: var(--background-primary);
-  line-height: 1.2;
+  line-height: 1.55;
 
   /* text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

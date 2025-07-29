@@ -47,8 +47,8 @@ import { benefit } from '@/mock/benefit';
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -110,6 +110,10 @@ import { benefit } from '@/mock/benefit';
     background-blend-mode: multiply;
     background-position: top 0 right -350px;
     background-color: rgba(0, 0, 0, 0.3);
+  }
+  .benefit__container {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
   .benefit__listItem {
     flex-direction: column;
