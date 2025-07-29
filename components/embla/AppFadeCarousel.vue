@@ -19,7 +19,7 @@ const { data } = defineProps(['data']);
 
 const [emblaRef, emblaApi] = emblaCarouselVue({ loop: true }, [
   Fade(),
-  Autoplay({ delay: 5000 }),
+  Autoplay({ delay: 5000, stopOnInteraction: false }),
 ]);
 </script>
 

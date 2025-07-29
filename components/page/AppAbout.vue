@@ -26,13 +26,13 @@
 
     <!-- Карусель с меняющимися картинками. В десктопе как бекграунд под текстом. В мобильной версии, отдельным блоком -->
     <div class="about__embla">
-      <EmblaAppFadeCarousel :data="about" />
+      <EmblaAppFadeCarousel :data="aboutPhoto" />
     </div>
   </section>
 </template>
 
 <script setup>
-import { about } from '@/mock/about';
+import { aboutPhoto } from '@/mock/about-photo';
 </script>
 
 <style scoped>
