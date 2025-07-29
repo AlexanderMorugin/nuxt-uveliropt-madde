@@ -1,8 +1,5 @@
 <template>
   <section class="about">
-    <!-- Меняющиеся картинки в виде бекграунда -->
-    <EmblaAppAboutCarousel />
-
     <!-- Блок с титлом и текстами -->
     <div class="about__container">
       <PageAppSecondTitle title="Ювелирный бренд MADDE" class="about__title" />
@@ -26,17 +23,29 @@
         >
       </div>
     </div>
+
+    <!-- Карусель с меняющимися картинками. В десктопе как бекграунд под текстом. В мобильной версии, отдельным блоком -->
+    <div class="about__embla">
+      <EmblaAppFadeCarousel :data="about" />
+    </div>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { about } from '@/mock/about';
+</script>
 
 <style scoped>
 .about {
   position: relative;
-  /* display: flex;
-  align-items: center; */
   height: 800px;
+
+  /* border: 2px solid red; */
+}
+.about__embla {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .about__container {
   position: relative;
@@ -48,7 +57,6 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  /* padding-top: 260px; */
   padding-left: 20px;
   padding-right: 20px;
   z-index: 20;
@@ -83,26 +91,30 @@
 }
 
 @media (max-width: 767px) {
-  /* .about {
-    height: 640px;
-  } */
+  .about {
+    height: min-content;
+  }
+  .about__embla {
+    position: relative;
+  }
   .about__container {
+    justify-content: flex-start;
     gap: 20px;
-    /* padding-top: 160px; */
+    background: none;
+    height: min-content;
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 20px;
+  }
+  .about__title {
+    color: var(--brown-fourdary);
   }
   .about__textBox {
     gap: 20px;
   }
   .about__text {
     font-size: 18px;
-  }
-}
-
-@media (max-width: 479px) {
-  .about__container {
-    /* padding-top: 20px; */
+    color: var(--brown-fourdary);
   }
 }
 </style>

@@ -2,7 +2,7 @@
   <section class="embla">
     <div class="embla__viewport" ref="emblaRef">
       <ul class="embla__container">
-        <li v-for="item in about" :key="item.id" class="embla__slide">
+        <li v-for="item in data" :key="item.id" class="embla__slide">
           <img :src="item.image" :alt="item.title" class="embla__slide__img" />
         </li>
       </ul>
@@ -14,7 +14,8 @@
 import emblaCarouselVue from 'embla-carousel-vue';
 import Fade from 'embla-carousel-fade';
 import Autoplay from 'embla-carousel-autoplay';
-import { about } from '@/mock/about';
+
+const { data } = defineProps(['data']);
 
 const [emblaRef, emblaApi] = emblaCarouselVue({ loop: true }, [
   Fade(),
@@ -24,9 +25,9 @@ const [emblaRef, emblaApi] = emblaCarouselVue({ loop: true }, [
 
 <style scoped>
 .embla {
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  left: 0;
+  left: 0; */
   width: 100%;
   margin: auto;
 }
@@ -49,9 +50,10 @@ const [emblaRef, emblaApi] = emblaCarouselVue({ loop: true }, [
   filter: grayscale(60%);
 }
 
-/* @media (max-width: 767px) {
+@media (max-width: 767px) {
   .embla__slide__img {
-    height: 640px;
+    height: 550px;
+    filter: grayscale(0);
   }
-} */
+}
 </style>

@@ -119,6 +119,8 @@ import { stagesList } from '@/mock/stages';
 .stages__button {
   display: flex;
   justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 @media (max-width: 1023px) {
@@ -149,9 +151,6 @@ import { stagesList } from '@/mock/stages';
     flex-direction: column;
     gap: 10px;
   }
-  /* .stages__itemTitleBox {
-    font-size: 18px;
-  } */
   .stages__itemList {
     padding-left: 0;
   }

@@ -2,6 +2,7 @@
   <!-- Кнопка модалки -->
   <PageAppCooperationButton
     :title="buttonTitle"
+    :location="location"
     @openCooperationModal="openCooperationModal"
   />
 
@@ -18,7 +19,7 @@
 </template>
 
 <script setup>
-const { buttonTitle } = defineProps(['buttonTitle']);
+const { buttonTitle, location } = defineProps(['buttonTitle', 'location']);
 
 const isCooperationModalOpen = ref(false);
 

@@ -19,7 +19,10 @@
 
     <!-- Модалка заявки на сотрудничество, с кнопкой -->
     <div class="heading__button">
-      <ModalAppCooperation buttonTitle="Заявка на сотрудничество" />
+      <ModalAppCooperation
+        buttonTitle="Заявка на сотрудничество"
+        location="heading"
+      />
     </div>
   </section>
 </template>

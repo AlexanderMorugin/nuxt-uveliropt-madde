@@ -1,12 +1,18 @@
 <template>
-  <button class="cooperationButton" @click="$emit('openCooperationModal')">
+  <button
+    :class="[
+      'cooperationButton',
+      { cooperationButton_small: location === 'heading' },
+    ]"
+    @click="$emit('openCooperationModal')"
+  >
     {{ title }}
   </button>
 </template>
 
 <script setup>
 const emit = defineEmits(['openCooperationModal']);
-const { title } = defineProps(['title']);
+const { title, location } = defineProps(['title', 'location']);
 </script>
 
 <style scoped>
@@ -15,7 +21,7 @@ const { title } = defineProps(['title']);
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 419px;
+  max-width: 420px;
   min-height: 64px;
   padding: 10px;
   background: var(--blue-secondary);
@@ -30,23 +36,18 @@ const { title } = defineProps(['title']);
   background: var(--blue-dark-primary);
 }
 
-/* @media (max-width: 1023px) {
-  .cooperationButton {
-    margin-top: 50px;
-  }
-} */
-
 @media (max-width: 767px) {
   .cooperationButton {
-    max-width: 360px;
     min-height: 58px;
     font-size: 18px;
-    /* margin-top: 30px; */
+  }
+  .cooperationButton_small {
+    max-width: 360px;
   }
 }
 
 @media (max-width: 479px) {
-  .cooperationButton {
+  .cooperationButton_small {
     max-width: 260px;
     min-height: 45px;
     font-size: 14px;
