@@ -26,6 +26,8 @@
     <PageAppQuestions />
 
     <PageAppQuestionsForm />
+
+    <PageAppExhibitions />
   </main>
 </template>
 

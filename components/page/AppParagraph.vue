@@ -13,10 +13,4 @@
   font-size: 18px;
   color: var(--brown-fourdary);
 }
-
-/* @media (max-width: 767px) {
-  .paragraph {
-    font-size: 16px;
-  }
-} */
 </style>

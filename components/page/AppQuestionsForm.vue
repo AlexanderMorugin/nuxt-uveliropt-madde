@@ -189,7 +189,7 @@ const submitRequestForm = () => {
 .questionsForm__form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   width: 100%;
   max-width: 490px;
   padding-top: 40px;
