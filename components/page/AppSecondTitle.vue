@@ -20,6 +20,7 @@ const { title } = defineProps(['title']);
 
 @media (max-width: 767px) {
   .secondTitle {
+    line-height: 1.2;
     font-size: 45px;
     padding-left: 10px;
     padding-right: 10px;

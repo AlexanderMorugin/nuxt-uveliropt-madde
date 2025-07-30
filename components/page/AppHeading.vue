@@ -46,6 +46,7 @@ const { title, headingMainList } = defineProps(['title', 'headingMainList']);
   width: 100%;
   max-width: 580px;
   font-family: 'CormorantGaramond-Medium';
+  line-height: 1.2;
   font-size: 60px;
   color: var(--white-primary);
   padding-left: 20px;

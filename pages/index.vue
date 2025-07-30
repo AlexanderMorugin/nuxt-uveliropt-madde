@@ -24,6 +24,8 @@
     <PageAppBenefit />
 
     <PageAppQuestions />
+
+    <PageAppQuestionsForm />
   </main>
 </template>
 
