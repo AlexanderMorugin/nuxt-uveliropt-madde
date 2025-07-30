@@ -79,9 +79,9 @@ const isOpenAnswer = (index) => {
   border-top: 2px solid var(--white-secondary);
 }
 .questions__button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  column-gap: 20px;
   width: 100%;
 }
 .questions__title {
@@ -100,6 +100,7 @@ const isOpenAnswer = (index) => {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  margin-top: 10px;
   transition: 0.2s ease all;
 }
 .questions__image {
@@ -127,6 +128,10 @@ const isOpenAnswer = (index) => {
 }
 
 @media (max-width: 767px) {
+  .questions__container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   .questions__text_active {
     padding-bottom: 20px;
   }

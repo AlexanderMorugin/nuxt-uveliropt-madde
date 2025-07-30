@@ -78,8 +78,8 @@ import { benefit } from '@/mock/benefit';
   text-transform: uppercase;
   background: linear-gradient(
     to right,
-    var(--white-primary) 20%,
-    var(--blue-primary) 30%,
+    var(--blue-primary) 20%,
+    var(--white-primary) 30%,
     var(--purple-primary) 50%,
     var(--white-primary) 70%,
     var(--blue-primary) 80%
@@ -114,12 +114,15 @@ import { benefit } from '@/mock/benefit';
   .benefit__container {
     padding-top: 40px;
     padding-bottom: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .benefit__listItem {
     flex-direction: column;
   }
   .benefit__button {
-    padding-left: 0;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 

@@ -14,11 +14,15 @@ const { title } = defineProps(['title']);
   font-size: 51px;
   color: var(--brown-fourdary);
   text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media (max-width: 767px) {
   .secondTitle {
     font-size: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
