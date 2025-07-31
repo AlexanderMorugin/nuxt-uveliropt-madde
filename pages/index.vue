@@ -12,26 +12,32 @@
 
   <!-- Контент -->
   <main class="content">
+    <!-- Блок Хединга с главным титлом -->
     <PageAppHeading
       title="Эксклюзивные украшения из Италии"
       :headingMainList="headingMainList"
     />
 
+    <!-- Блок Ювелирный бренд MADDE -->
     <PageAppAbout />
 
-    <PageAppStages />
-
+    <!-- Блок Выгоды сотрудничества -->
     <PageAppBenefit />
 
-    <PageAppQuestions />
+    <!-- Блок Этапы работы -->
+    <PageAppStages />
 
-    <PageAppQuestionsForm />
-
+    <!-- Блок Выставки -->
     <PageAppExhibitions />
-
+    <!-- Слайдер Выставки -->
     <div class="content__carousel">
       <EmblaAppCenterCarousel :data="exebitionPhoto" />
     </div>
+
+    <!-- Блок Часто задаваемые вопросы -->
+    <PageAppQuestions />
+    <!-- Блок Остались вопросы? -->
+    <PageAppQuestionsForm />
   </main>
 </template>
 
@@ -50,9 +56,6 @@ import { exebitionPhoto } from '@/mock/exebition-photo';
 }
 .content__carousel {
   width: 100%;
-  /* max-width: 1440px; */
   margin: 0 auto;
-  /* padding-left: 20px; */
-  /* padding-right: 20px; */
 }
 </style>

@@ -17,13 +17,9 @@ import emblaCarouselVue from 'embla-carousel-vue';
 import Autoplay from 'embla-carousel-autoplay';
 const { data } = defineProps(['data']);
 
-const [emblaRef, emblaApi] = emblaCarouselVue({ loop: true }, [Autoplay()]);
-
-// onMounted(() => {
-//   if (emblaApi.value) {
-//     console.log(emblaApi.value.slideNodes()); // Access API
-//   }
-// });
+const [emblaRef, emblaApi] = emblaCarouselVue({ loop: true }, [
+  Autoplay({ stopOnInteraction: false }),
+]);
 </script>
 
 <style scoped>
@@ -57,7 +53,6 @@ const [emblaRef, emblaApi] = emblaCarouselVue({ loop: true }, [Autoplay()]);
   width: 100%;
   height: 100%;
   object-fit: cover;
-
 }
 
 @media (max-width: 767px) {
@@ -65,8 +60,7 @@ const [emblaRef, emblaApi] = emblaCarouselVue({ loop: true }, [Autoplay()]);
     flex: 0 0 var(--slide-size-m);
   }
   .embla__imageBox {
-  height: 360px;
-
-}
+    height: 360px;
+  }
 }
 </style>

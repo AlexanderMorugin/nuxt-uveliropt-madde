@@ -39,13 +39,12 @@ import { aboutPhoto } from '@/mock/about-photo';
 .about {
   position: relative;
   height: 800px;
-
-  /* border: 2px solid red; */
 }
 .about__embla {
   position: absolute;
   top: 0;
   left: 0;
+  width:100%;
 }
 .about__container {
   position: relative;
