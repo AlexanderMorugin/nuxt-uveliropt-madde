@@ -50,9 +50,9 @@ import { exebitionPhoto } from '@/mock/exebition-photo';
 }
 .content__carousel {
   width: 100%;
-  max-width: 1440px;
+  /* max-width: 1440px; */
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  /* padding-left: 20px; */
+  /* padding-right: 20px; */
 }
 </style>
