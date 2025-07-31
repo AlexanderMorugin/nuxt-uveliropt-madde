@@ -1,5 +1,25 @@
 <template>
+  <!-- Кнопка скрольной шапки -->
   <button
+    v-if="isScroll"
+    :class="[
+      'headerMenuButton headerMenuButton_scroll',
+      { headerMenuButton_active: isMenuMobileActive },
+    ]"
+    @click="$emit('toggleMobileMenu')"
+    title="Кнопка меню"
+  >
+    <span
+      :class="[
+        'headerMenuButton__span headerMenuButton__span_scroll',
+        { headerMenuButton__span_active: isMenuMobileActive },
+      ]"
+    ></span>
+  </button>
+
+  <!-- Кнопка обычной шапки -->
+  <button
+    v-else
     :class="[
       'headerMenuButton',
       { headerMenuButton_active: isMenuMobileActive },
@@ -18,7 +38,10 @@
 
 <script setup>
 const emit = defineEmits(['toggleMobileMenu']);
-const { isMenuMobileActive } = defineProps(['isMenuMobileActive']);
+const { isMenuMobileActive, isScroll } = defineProps([
+  'isMenuMobileActive',
+  'isScroll',
+]);
 </script>
 
 <style scoped>
@@ -67,5 +90,14 @@ const { isMenuMobileActive } = defineProps(['isMenuMobileActive']);
 .headerMenuButton_active:after {
   transform: rotate(-45deg);
   bottom: 7px;
+}
+.headerMenuButton_scroll:before {
+  background: var(--black-primary);
+}
+.headerMenuButton_scroll:after {
+  background: var(--black-primary);
+}
+.headerMenuButton__span_scroll {
+  background: var(--black-primary);
 }
 </style>

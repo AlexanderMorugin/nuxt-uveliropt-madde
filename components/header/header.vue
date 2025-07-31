@@ -1,16 +1,28 @@
 <template>
-  <header class="header">
-    <div class="header__container">
-      <HeaderAppLogo />
-      <HeaderAppNav v-if="!isScreenMedium" :linksData="props.linksData" />
+  <header class="header" :class="isScroll ? 'header_scroll' : ''">
+    <div
+      class="header__container"
+      :class="isScroll ? 'header__container_scroll' : ''"
+    >
+      <HeaderAppLogo :isScroll="isScroll" />
+      <HeaderAppNav
+        v-if="!isScreenMedium"
+        :linksData="props.linksData"
+        :isScroll="isScroll"
+      />
 
       <div class="header__right">
-        <HeaderAppPhone :phone="props.phone" :phoneNumber="props.phoneNumber" />
+        <HeaderAppPhone
+          :phone="props.phone"
+          :phoneNumber="props.phoneNumber"
+          :isScroll="isScroll"
+        />
 
         <!-- Кнопка мобильного меню -->
         <HeaderAppMenuButton
           v-if="isScreenMedium"
           :isMenuMobileActive="isMenuMobileActive"
+          :isScroll="isScroll"
           @toggleMobileMenu="toggleMobileMenu"
         />
       </div>
@@ -29,10 +41,12 @@
 
 <script setup>
 import { useResizeMedium } from '@/use/useResizeMedium';
+import { useScroll } from '@/use/useScroll';
 
 const props = defineProps(['linksData', 'phone', 'phoneNumber']);
 
 const { isScreenMedium } = useResizeMedium();
+const { isScroll } = useScroll();
 
 const isMenuMobileActive = ref(false);
 
@@ -43,7 +57,24 @@ const toggleMobileMenu = () => {
 
 <style scoped>
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header_scroll {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background: var(--white-primary);
+  box-shadow: rgba(255, 255, 255, 0.6) 0px 8px 24px;
+  z-index: 30;
+  animation: slide-from-top 2s ease;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -51,13 +82,10 @@ const toggleMobileMenu = () => {
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  z-index: 10;
 }
-.header__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 50px;
+.header__container_scroll {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .header__right {
   display: flex;
@@ -72,7 +100,7 @@ const toggleMobileMenu = () => {
 }
 
 @media (max-width: 767px) {
-  .header {
+  .header__container {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
@@ -80,6 +108,20 @@ const toggleMobileMenu = () => {
   }
   .header__right {
     gap: 20px;
+  }
+  .header_scroll {
+    height: 60px;
+  }
+}
+
+@keyframes slide-from-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>

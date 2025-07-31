@@ -1,15 +1,20 @@
 <template>
   <ul class="headerNav">
     <li v-for="item in linksData" :key="item.id">
-      <NuxtLink :to="item.route" class="headerNav__link headerNav__link_line">{{
-        item.title
-      }}</NuxtLink>
+      <NuxtLink
+        :to="item.route"
+        class="headerNav__link headerNav__link_line"
+        :class="
+          isScroll ? 'headerNav__link_scroll headerNav__link_line_scroll' : ''
+        "
+        >{{ item.title }}</NuxtLink
+      >
     </li>
   </ul>
 </template>
 
 <script setup>
-const { linksData } = defineProps(['linksData']);
+const { linksData, isScroll } = defineProps(['linksData', 'isScroll']);
 </script>
 
 <style scoped>
@@ -53,6 +58,12 @@ const { linksData } = defineProps(['linksData']);
   transform: scaleX(1);
   transform-origin: left;
   transition: transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.headerNav__link_scroll {
+  color: var(--black-primary);
+}
+.headerNav__link_line_scroll:after {
+  background-color: var(--grey-dark-primary);
 }
 
 @media (max-width: 1023px) {

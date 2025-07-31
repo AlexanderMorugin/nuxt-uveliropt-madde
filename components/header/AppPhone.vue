@@ -1,5 +1,16 @@
 <template>
+  <!-- Телефон для скрольной шапки -->
   <a
+    v-if="props.isScroll"
+    :href="`tel:${props.phone}`"
+    title="Позвонить"
+    class="headerPhone headerPhone_scroll"
+    >{{ props.phoneNumber }}</a
+  >
+
+  <!-- Телефон для обычной шапки шапки и подвала -->
+  <a
+    v-else
     :href="`tel:${props.phone}`"
     title="Позвонить"
     :class="['headerPhone', { headerPhone_footer: location === 'footer' }]"
@@ -8,7 +19,7 @@
 </template>
 
 <script setup>
-const props = defineProps(['phone', 'phoneNumber', 'location']);
+const props = defineProps(['phone', 'phoneNumber', 'location', 'isScroll']);
 </script>
 
 <style scoped>
@@ -29,6 +40,12 @@ const props = defineProps(['phone', 'phoneNumber', 'location']);
 }
 .headerPhone_footer:hover {
   color: var(--brown-thirdary);
+}
+.headerPhone_scroll {
+  color: var(--black-primary);
+}
+.headerPhone_scroll:hover {
+  color: var(--grey-dark-primary);
 }
 
 @media (max-width: 1023px) {
