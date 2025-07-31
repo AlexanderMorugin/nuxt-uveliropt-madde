@@ -38,8 +38,6 @@
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
-
-  border: 1px solid red;
 }
 .exhibitions__text {
   width: 100%;

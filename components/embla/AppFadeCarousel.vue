@@ -25,9 +25,6 @@ const [emblaRef, emblaApi] = emblaCarouselVue({ loop: true }, [
 
 <style scoped>
 .embla {
-  /* position: absolute;
-  top: 0;
-  left: 0; */
   width: 100%;
   margin: auto;
 }
