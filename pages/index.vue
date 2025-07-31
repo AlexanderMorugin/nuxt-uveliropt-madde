@@ -38,13 +38,22 @@
     <PageAppQuestions />
     <!-- Блок Остались вопросы? -->
     <PageAppQuestionsForm />
+
+    <!-- Блок с контактами -->
+    <PageAppContacts
+      :phone="phone"
+      :phoneNumber="phoneNumber"
+      :address="address"
+    />
+    <!-- Блок с картой -->
+    <PageAppMap />
   </main>
 </template>
 
 <script setup>
 import { headerMainNav } from '@/mock/header-main-nav';
 import { headingMainList } from '@/mock/heading-main-list';
-import { phone, phoneNumber } from '@/mock/constants';
+import { phone, phoneNumber, address } from '@/mock/constants';
 import { exebitionPhoto } from '@/mock/exebition-photo';
 </script>
 
