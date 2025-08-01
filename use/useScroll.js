@@ -4,7 +4,7 @@ const isScroll = ref(false)
 
 export function useScroll() {
   const handleScroll = () => {
-    if (window.pageYOffset > 160) {
+    if (window.pageYOffset > 130) {
       isScroll.value = true
       return
     }
