@@ -36,6 +36,7 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  padding-top: 70px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -47,5 +48,13 @@
 .exhibitions__image {
   width: 100%;
   max-width: 640px;
+}
+
+@media (max-width: 767px) {
+  .exhibitions {
+    padding-top: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 </style>

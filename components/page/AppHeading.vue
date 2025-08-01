@@ -113,7 +113,7 @@ const { title, headingMainList } = defineProps(['title', 'headingMainList']);
 
 @media (max-width: 767px) {
   .heading {
-    height: 601px;
+    height: 624px;
   }
   .heading__title {
     font-size: 40px;

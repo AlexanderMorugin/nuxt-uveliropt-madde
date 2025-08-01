@@ -51,6 +51,7 @@ import { stagesList } from '@/mock/stages';
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  padding-top: 70px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -135,6 +136,7 @@ import { stagesList } from '@/mock/stages';
 
 @media (max-width: 767px) {
   .stages {
+    padding-top: 60px;
     padding-left: 10px;
     padding-right: 10px;
   }

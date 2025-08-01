@@ -34,7 +34,8 @@ import { benefit } from '@/mock/benefit';
 .benefit {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
+  padding-top: 70px;
 }
 .benefit__background {
   width: 100%;
@@ -106,6 +107,9 @@ import { benefit } from '@/mock/benefit';
 }
 
 @media (max-width: 767px) {
+  .benefit {
+    padding-top: 60px;
+  }
   .benefit__background {
     background-blend-mode: multiply;
     background-position: top 0 right -350px;

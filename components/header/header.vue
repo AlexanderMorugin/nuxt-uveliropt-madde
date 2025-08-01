@@ -43,7 +43,10 @@
     :isMenuMobileActive="isMenuMobileActive"
     @toggleMobileMenu="toggleMobileMenu"
   >
-    <HeaderAppNav :linksData="props.linksData" @toggleMobileMenu="toggleMobileMenu"/>
+    <HeaderAppNav
+      :linksData="props.linksData"
+      @toggleMobileMenu="toggleMobileMenu"
+    />
   </HeaderAppMenuMobile>
 </template>
 
@@ -138,6 +141,9 @@ const toggleMobileMenu = () => {
     gap: 15px;
   }
   .header__subcontainer {
+    gap: 15px;
+  }
+  .header__subcontainerScroll {
     gap: 15px;
   }
 }

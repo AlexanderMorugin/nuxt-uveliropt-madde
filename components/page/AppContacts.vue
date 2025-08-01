@@ -38,6 +38,8 @@ const props = defineProps(['phone', 'phoneNumber', 'address']);
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  padding-top: 70px;
+  padding-bottom: 70px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -72,6 +74,8 @@ const props = defineProps(['phone', 'phoneNumber', 'address']);
 
 @media (max-width: 767px) {
   .contacts {
+    padding-top: 60px;
+    padding-bottom: 60px;
     padding-left: 10px;
     padding-right: 10px;
   }

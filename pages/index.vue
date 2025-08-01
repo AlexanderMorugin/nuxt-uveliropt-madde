@@ -35,13 +35,12 @@
     </div>
 
     <!-- Блок Часто задаваемые вопросы -->
-    <PageAppQuestions  />
+    <PageAppQuestions />
     <!-- Блок Остались вопросы? -->
     <PageAppQuestionsForm />
 
     <!-- Блок с контактами -->
     <PageAppContacts
-      
       :phone="phone"
       :phoneNumber="phoneNumber"
       :address="address"
@@ -62,10 +61,17 @@ import { exebitionPhoto } from '@/mock/exebition-photo';
 .content {
   display: flex;
   flex-direction: column;
-  gap: 72px;
+  /* gap: 72px; */
 }
 .content__carousel {
   width: 100%;
   margin: 0 auto;
+  padding-top: 70px;
+}
+
+@media (max-width: 767px) {
+  .content__carousel {
+    padding-top: 60px;
+  }
 }
 </style>

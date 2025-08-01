@@ -1,8 +1,8 @@
 <template>
   <footer class="footer">
-    <span class="footer__text">Ювелирный бренд MADDE &copy; 2025</span>
-    <span class="footer__text">ИНН 7743820574</span>
-    <span class="footer__text">ОГРН 1117746459104</span>
+    <p class="footer__text">Ювелирный бренд MADDE &copy; 2025</p>
+    <p class="footer__text">ИНН 7743820574</p>
+    <p class="footer__text">ОГРН 1117746459104</p>
   </footer>
 </template>
 

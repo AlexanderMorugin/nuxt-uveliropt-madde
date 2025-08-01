@@ -38,13 +38,14 @@ import { aboutPhoto } from '@/mock/about-photo';
 <style scoped>
 .about {
   position: relative;
-  height: 800px;
+  height: 870px;
+  padding-top: 70px;
 }
 .about__embla {
   position: absolute;
-  top: 0;
+  top: 70px;
   left: 0;
-  width:100%;
+  width: 100%;
 }
 .about__container {
   position: relative;
@@ -92,9 +93,11 @@ import { aboutPhoto } from '@/mock/about-photo';
 @media (max-width: 767px) {
   .about {
     height: min-content;
+    padding-top: 60px;
   }
   .about__embla {
-    position: relative;
+    position: static;
+    padding-top: 60px;
   }
   .about__container {
     justify-content: flex-start;
@@ -103,7 +106,7 @@ import { aboutPhoto } from '@/mock/about-photo';
     height: min-content;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 20px;
+    padding-bottom: 0;
   }
   .about__title {
     color: var(--brown-fourdary);

@@ -57,7 +57,8 @@ const isOpenAnswer = (index) => {
 .questions {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
+  padding-top: 70px;
 }
 .questions__container {
   width: 100%;
@@ -128,6 +129,9 @@ const isOpenAnswer = (index) => {
 }
 
 @media (max-width: 767px) {
+  .questions {
+    padding-top: 60px;
+  }
   .questions__container {
     padding-left: 10px;
     padding-right: 10px;
