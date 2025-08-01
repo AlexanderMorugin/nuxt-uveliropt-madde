@@ -43,7 +43,7 @@
     :isMenuMobileActive="isMenuMobileActive"
     @toggleMobileMenu="toggleMobileMenu"
   >
-    <HeaderAppNav :linksData="props.linksData" />
+    <HeaderAppNav :linksData="props.linksData" @toggleMobileMenu="toggleMobileMenu"/>
   </HeaderAppMenuMobile>
 </template>
 
@@ -91,8 +91,8 @@ const toggleMobileMenu = () => {
 .header__container_scroll {
   max-width: 100%;
   height: 70px;
-  background: var(--white-primary);
-  box-shadow: rgba(255, 255, 255, 0.6) 0px 8px 24px;
+  background: var(--background-primary);
+  box-shadow: rgba(252, 249, 243, 0.6) 0px 8px 24px;
   padding-top: 0;
   padding-bottom: 0;
   padding-top: 10px;

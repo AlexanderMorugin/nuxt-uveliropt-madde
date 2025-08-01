@@ -35,12 +35,13 @@
     </div>
 
     <!-- Блок Часто задаваемые вопросы -->
-    <PageAppQuestions />
+    <PageAppQuestions  />
     <!-- Блок Остались вопросы? -->
     <PageAppQuestionsForm />
 
     <!-- Блок с контактами -->
     <PageAppContacts
+      
       :phone="phone"
       :phoneNumber="phoneNumber"
       :address="address"

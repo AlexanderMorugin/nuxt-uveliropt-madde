@@ -1,5 +1,5 @@
 <template>
-  <section class="about">
+  <section class="about" id="about">
     <!-- Блок с титлом и текстами -->
     <div class="about__container">
       <PageAppSecondTitle title="Ювелирный бренд MADDE" class="about__title" />

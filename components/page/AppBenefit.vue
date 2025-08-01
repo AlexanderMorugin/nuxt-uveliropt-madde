@@ -1,5 +1,5 @@
 <template>
-  <section class="benefit">
+  <section class="benefit" id="cooperation">
     <!-- Блок с титлом -->
     <PageAppSecondTitle title="Выгоды сотрудничества" />
 

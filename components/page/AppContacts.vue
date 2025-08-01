@@ -1,5 +1,5 @@
 <template>
-  <section class="contacts">
+  <section class="contacts" id="contacts">
     <div class="contacts__titleBox">
       <!-- Блок с титлом -->
       <PageAppSecondTitle

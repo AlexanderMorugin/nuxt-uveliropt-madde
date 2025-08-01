@@ -1,5 +1,5 @@
 <template>
-  <section class="questions">
+  <section class="questions" id="questions">
     <!-- Блок с титлом -->
     <PageAppSecondTitle title="Часто задаваемые вопросы" />
 

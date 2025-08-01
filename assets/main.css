@@ -29,6 +29,10 @@
   --red-primary: #ff0000;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after,

@@ -2,7 +2,8 @@
   <ul class="headerNav">
     <li v-for="item in linksData" :key="item.id">
       <NuxtLink
-        :to="item.route"
+        @click="$emit('toggleMobileMenu')"
+        :to="{ path: '/', hash: `#${item.target}` }"
         class="headerNav__link headerNav__link_line"
         :class="
           isScroll ? 'headerNav__link_scroll headerNav__link_line_scroll' : ''
@@ -15,6 +16,7 @@
 
 <script setup>
 const { linksData, isScroll } = defineProps(['linksData', 'isScroll']);
+const emit = defineEmits(['toggleMobileMenu']);
 </script>
 
 <style scoped>
