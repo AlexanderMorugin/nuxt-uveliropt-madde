@@ -203,7 +203,6 @@ const submitRequestForm = () => {
 @media (max-width: 1023px) {
   .questionsForm {
     background-position: top 0 right -300px;
-
   }
 }
 
