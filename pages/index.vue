@@ -59,6 +59,32 @@ import { headingMainList } from '@/mock/heading-main-list';
 import { phone, phoneNumber, address } from '@/mock/constants';
 import { exebitionPhoto } from '@/mock/exebition-photo';
 import { collections } from '@/mock/collections';
+
+useHead({
+  title: 'MADDE - Эксклюзивные украшения из серебра',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Компания импортёр серебряных ювелирных украшений из Италии и Гонконга',
+    },
+  ],
+});
+
+useSeoMeta({
+  title: 'MADDE - Эксклюзивные украшения из серебра',
+  ogTitle: 'MADDE - Эксклюзивные украшения из серебра',
+  description:
+    'Компания импортёр серебряных ювелирных украшений из Италии и Гонконга',
+  ogDescription:
+    'Компания импортёр серебряных ювелирных украшений из Италии и Гонконга',
+  ogImage: 'https://nuxt-uveliropt-madde.vercel.app/images/img-01-desktop.webp',
+  twitterCard: 'summary_large_image',
+  ogUrl: 'https://nuxt-uveliropt-madde.vercel.app/',
+  ogSiteName: 'MADDE - Эксклюзивные украшения из серебра',
+  ogType: 'website',
+  ogLocale: 'ru_RU',
+});
 </script>
 
 <style scoped>

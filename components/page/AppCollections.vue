@@ -9,8 +9,10 @@
         :key="item.id"
         class="collections__listItem"
       >
-        <img :src="item.thumb" :alt="item.name" class="collections__thumb" />
-        <span class="collections__name">{{ item.name }}</span>
+        <NuxtLink :to="`collections/${item.route}`">
+          <img :src="item.thumb" :alt="item.name" class="collections__thumb" />
+          <span class="collections__name">{{ item.name }}</span>
+        </NuxtLink>
       </li>
     </ul>
   </section>
