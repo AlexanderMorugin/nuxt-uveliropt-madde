@@ -37,10 +37,13 @@ const { collections } = defineProps(['collections']);
 .collections__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  column-gap: 20px;
+  row-gap: 10px;
 }
 .collections__listItem {
   position: relative;
+  /* width: 100%;
+  height: 260px; */
 }
 .collections__thumb {
   width: 100%;
@@ -52,14 +55,15 @@ const { collections } = defineProps(['collections']);
   top: 20px;
   left: 20px;
   font-family: 'Montserrat-Regular';
-  font-size: 18px;
+  font-size: 22px;
   color: var(--white-primary);
 }
 
 @media (max-width: 1023px) {
   .collections__list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    column-gap: 10px;
+    row-gap: 2px;
   }
 }
 
