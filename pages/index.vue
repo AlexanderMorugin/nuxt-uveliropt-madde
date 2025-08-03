@@ -1,6 +1,6 @@
 <template>
   <!-- Верхняя картинка и левый боковой бейдж, под шапкой и блоком хединга -->
-  <PageAppMainImage />
+  <PageAppMainImage :desktopImage="DesktopImage" :mobileImage="MobileImage" />
   <PageAppLeftTitleBadge />
 
   <!-- Шапка -->
@@ -58,7 +58,9 @@ import { headerMainNav } from '@/mock/header-main-nav';
 import { headingMainList } from '@/mock/heading-main-list';
 import { phone, phoneNumber, address } from '@/mock/constants';
 import { exebitionPhoto } from '@/mock/exebition-photo';
-import { collections } from '@/mock/collections';
+import { collections } from '@/mock/collections/collections';
+import DesktopImage from '../public/images/img-01-desktop.webp';
+import MobileImage from '../public/images/img-01-mobile.webp';
 
 useHead({
   title: 'MADDE - Эксклюзивные украшения из серебра',

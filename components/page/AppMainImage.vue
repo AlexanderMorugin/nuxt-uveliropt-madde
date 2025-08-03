@@ -4,7 +4,7 @@
 
     <img
       v-if="isScreenMedium"
-      src="/images/img-01-mobile.webp"
+      :src="mobileImage"
       alt="Подложка"
       class="mainImage__imageMobile"
     />
@@ -12,7 +12,7 @@
     <!-- Изображение для десктопа -->
     <img
       v-if="!isScreenMedium"
-      src="/images/img-01-desktop.webp"
+      :src="desktopImage"
       alt="Подложка"
       class="mainImage__imageDesktop"
     />
@@ -21,6 +21,11 @@
 
 <script setup>
 import { useResizeMedium } from '@/use/useResizeMedium';
+
+const { desktopImage, mobileImage } = defineProps([
+  'desktopImage',
+  'mobileImage',
+]);
 
 const { isScreenMedium } = useResizeMedium();
 </script>

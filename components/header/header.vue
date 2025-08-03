@@ -70,12 +70,14 @@ const toggleMobileMenu = () => {
 .header {
   z-index: 10;
   height: 130px;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), transparent);
 }
 .header_scroll {
   position: sticky;
   top: 0;
   display: flex;
   height: 130px;
+  background: none;
   z-index: 30;
 }
 .header__container {
