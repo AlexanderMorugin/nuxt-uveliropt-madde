@@ -136,6 +136,9 @@ const { title, headingList, location } = defineProps([
   font-family: 'Montserrat-Regular';
   font-size: 18px;
   color: var(--white-primary);
+  text-shadow: 1px 0 10px var(--brown-secondary),
+    0 1px 10px var(--brown-secondary), -1px 0 10px var(--brown-secondary),
+    0 -1px 10px var(--brown-secondary);
 }
 .heading__button {
   margin-top: 80px;
@@ -199,7 +202,7 @@ const { title, headingList, location } = defineProps([
 
 @media (max-width: 479px) {
   .heading__titleTop {
-    font-size: 24px;
+    font-size: 20px;
   }
   .heading__titleCollection {
     font-size: 50px;

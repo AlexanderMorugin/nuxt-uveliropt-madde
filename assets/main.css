@@ -21,10 +21,10 @@
 
   --purple-primary: #f589f5;
 
-  --brown-primary: #9f8a84;
-  --brown-secondary: #655246;
+  --brown-primary: rgb(159, 138, 132);
+  --brown-secondary: rgb(101, 82, 70);
   --brown-thirdary: #a08676;
-  --brown-fourdary: #655246;
+  --brown-fourdary: rgb(101, 82, 70);
 
   --red-primary: #ff0000;
 }

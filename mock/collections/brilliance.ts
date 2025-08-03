@@ -1,5 +1,5 @@
 import DesktopImage from '/images/collections/brilliance/img-brilliance-01.webp';
-import MobileImage from '/images/collections/brilliance/img-brilliance-01.webp';
+import MobileImage from '/images/collections/brilliance/img-brilliance-mobile-01.webp';
 
 export const brilliance = {
   id: 1,

@@ -1,5 +1,5 @@
 import DesktopImage from '/images/collections/tulipano/img-tulipano-01.webp';
-import MobileImage from '/images/collections/tulipano/img-tulipano-01.webp';
+import MobileImage from '/images/collections/tulipano/img-tulipano-mobile-01.webp';
 
 export const tulipano = {
   id: 1,

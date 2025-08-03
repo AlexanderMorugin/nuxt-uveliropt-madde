@@ -1,13 +1,12 @@
 <template>
-  <!-- <div>
-    <Head>
+  <!-- <Head>
       <Title>{{ route }}</Title>
     </Head> -->
 
   <!-- Верхняя картинка и левый боковой бейдж, под шапкой и блоком хединга -->
   <PageAppMainImage
     :desktopImage="currentCollection.details.desktopImage"
-    :mobileImage="currentCollection.details.desktopImage"
+    :mobileImage="currentCollection.details.mobileImage"
   />
   <PageAppLeftTitleBadge />
 
@@ -26,12 +25,19 @@
       :headingList="currentCollection.details.subtitle"
       location="collections"
     />
+
+    <!-- Блок О коллекции -->
+    <PageAppBrillianceAbout />
   </main>
 
-  <h1>Name of Collection - {{ route }}</h1>
-
-  {{ currentCollection }}
-  <!-- </div> -->
+  <!-- Блок с контактами -->
+  <PageAppContacts
+    :phone="phone"
+    :phoneNumber="phoneNumber"
+    :address="address"
+  />
+  <!-- Блок с картой -->
+  <PageAppMap />
 </template>
 
 <script setup>
@@ -42,5 +48,5 @@ import { phone, phoneNumber, address } from '@/mock/constants';
 
 const currentCollection = collections.find((item) => item.route === route);
 
-console.log(currentCollection.details)
+console.log(currentCollection.details);
 </script>

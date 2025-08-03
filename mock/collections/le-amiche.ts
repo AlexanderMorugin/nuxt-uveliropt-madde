@@ -1,5 +1,5 @@
 import DesktopImage from '/images/collections/le-amiche/img-le-amiche-01.webp';
-import MobileImage from '/images/collections/le-amiche/img-le-amiche-01.webp';
+import MobileImage from '/images/collections/le-amiche/img-le-amiche-mobile-01.webp';
 
 export const leAmiche = {
   id: 1,

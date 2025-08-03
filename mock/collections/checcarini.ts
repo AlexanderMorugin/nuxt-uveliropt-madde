@@ -1,5 +1,5 @@
 import DesktopImage from '/images/collections/checcarini/img-checcarini-01.webp';
-import MobileImage from '/images/collections/checcarini/img-checcarini-01.webp';
+import MobileImage from '/images/collections/checcarini/img-checcarini-mobile-01.webp';
 
 export const checcarini = {
   id: 1,

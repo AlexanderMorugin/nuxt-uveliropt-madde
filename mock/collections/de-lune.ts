@@ -1,5 +1,5 @@
 import DesktopImage from '/images/collections/de-lune/img-de-lune-01.webp';
-import MobileImage from '/images/collections/de-lune/img-de-lune-01.webp';
+import MobileImage from '/images/collections/de-lune/img-de-lune-mobile-01.webp';
 
 export const deLune = {
   id: 1,

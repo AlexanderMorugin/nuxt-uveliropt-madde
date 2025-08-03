@@ -1,5 +1,5 @@
 import DesktopImage from '/images/collections/anima/img-anima-01.webp';
-import MobileImage from '/images/collections/anima/img-anima-01.webp';
+import MobileImage from '/images/collections/anima/img-anima-mobile-01.webp';
 
 export const anima = {
   id: 1,
