@@ -18,6 +18,16 @@
     :phoneNumber="phoneNumber"
   />
 
+  <!-- Контент -->
+  <main class="content">
+    <!-- Блок Хединга с главным титлом -->
+    <PageAppHeading
+      :title="currentCollection.details.title"
+      :headingList="currentCollection.details.subtitle"
+      location="collections"
+    />
+  </main>
+
   <h1>Name of Collection - {{ route }}</h1>
 
   {{ currentCollection }}
@@ -31,4 +41,6 @@ import { headerCollectionNav } from '@/mock/header-collection-nav';
 import { phone, phoneNumber, address } from '@/mock/constants';
 
 const currentCollection = collections.find((item) => item.route === route);
+
+console.log(currentCollection.details)
 </script>

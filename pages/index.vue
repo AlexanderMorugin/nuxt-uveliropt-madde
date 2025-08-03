@@ -15,7 +15,7 @@
     <!-- Блок Хединга с главным титлом -->
     <PageAppHeading
       title="Эксклюзивные украшения из Италии"
-      :headingMainList="headingMainList"
+      :headingList="headingMainList"
     />
 
     <!-- Блок Коллекции -->
@@ -90,11 +90,6 @@ useSeoMeta({
 </script>
 
 <style scoped>
-.content {
-  display: flex;
-  flex-direction: column;
-  /* gap: 72px; */
-}
 .content__carousel {
   width: 100%;
   margin: 0 auto;

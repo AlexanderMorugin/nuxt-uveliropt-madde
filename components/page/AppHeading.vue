@@ -1,13 +1,19 @@
 <template>
   <section class="heading">
-    <h1 class="heading__title">{{ title }}</h1>
+    <!-- Главный титл для страниц коллекции -->
+    <div v-if="location === 'collections'" class="heading__titleBox">
+      <span class="heading__titleTop">Коллекция</span>
+      <h1 class="heading__titleCollection">
+        {{ title }}
+      </h1>
+      <span class="heading__titleBottom">MADDE</span>
+    </div>
+
+    <!-- Главный титл для главной страницы -->
+    <h1 v-else class="heading__title">{{ title }}</h1>
 
     <ul class="heading__list">
-      <li
-        v-for="item in headingMainList"
-        :key="item.id"
-        class="heading__listItem"
-      >
+      <li v-for="item in headingList" :key="item.id" class="heading__listItem">
         <img
           src="/icons/icon-triangle.svg"
           alt="Стрелка"
@@ -28,7 +34,11 @@
 </template>
 
 <script setup>
-const { title, headingMainList } = defineProps(['title', 'headingMainList']);
+const { title, headingList, location } = defineProps([
+  'title',
+  'headingList',
+  'location',
+]);
 </script>
 
 <style scoped>
@@ -41,6 +51,43 @@ const { title, headingMainList } = defineProps(['title', 'headingMainList']);
   padding-top: 90px;
   padding-bottom: 20px;
   z-index: 20;
+}
+.heading__titleBox {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+.heading__titleTop {
+  font-family: 'Montserrat-Regular';
+  font-size: 28px;
+  color: var(--white-primary);
+  text-shadow: 1px 0 10px var(--brown-secondary),
+    0 1px 10px var(--brown-secondary), -1px 0 10px var(--brown-secondary),
+    0 -1px 10px var(--brown-secondary);
+  padding-left: 20px;
+  padding-right: 20px;
+  animation: slide-in 2s ease-out;
+}
+.heading__titleCollection {
+  font-family: 'Montserrat-SemiBold';
+  line-height: 1;
+  font-size: 80px;
+  color: var(--white-primary);
+  text-shadow: #000000 0 0 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  animation: slide-in 2.2s ease-out;
+}
+.heading__titleBottom {
+  font-family: 'Montserrat-SemiBold';
+  line-height: 1;
+  font-size: 26px;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: right;
+  text-shadow: white 0 0 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  animation: slide-in 2.4s ease-out;
 }
 .heading__title {
   width: 100%;
@@ -115,6 +162,18 @@ const { title, headingMainList } = defineProps(['title', 'headingMainList']);
   .heading {
     height: 624px;
   }
+  .heading__titleTop {
+    font-size: 28px;
+    padding-left: 40px;
+  }
+  .heading__titleCollection {
+    font-size: 60px;
+    padding-left: 40px;
+  }
+  .heading__titleBottom {
+    font-size: 22px;
+    padding-left: 40px;
+  }
   .heading__title {
     font-size: 40px;
     max-width: 380px;
@@ -139,6 +198,15 @@ const { title, headingMainList } = defineProps(['title', 'headingMainList']);
 }
 
 @media (max-width: 479px) {
+  .heading__titleTop {
+    font-size: 24px;
+  }
+  .heading__titleCollection {
+    font-size: 50px;
+  }
+  .heading__titleBottom {
+    font-size: 18px;
+  }
   .heading__list {
     margin-top: 10px;
   }
