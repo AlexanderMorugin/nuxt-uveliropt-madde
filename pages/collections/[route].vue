@@ -15,6 +15,8 @@
     :linksData="headerCollectionNav"
     :phone="phone"
     :phoneNumber="phoneNumber"
+    location="collections"
+    :route="currentCollection.route"
   />
 
   <!-- Контент -->

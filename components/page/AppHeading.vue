@@ -19,7 +19,10 @@
           alt="Стрелка"
           class="heading__listItemArrow"
         />
-        <span class="heading__listItemText">{{ item.text }}</span>
+        <PageAppParagraphShadow class="heading__listItemText">{{
+          item.text
+        }}</PageAppParagraphShadow>
+        <!-- <span class="heading__listItemText">{{ item.text }}</span> -->
       </li>
     </ul>
 
@@ -101,6 +104,9 @@ const { title, headingList, location } = defineProps([
   animation: slide-in 2s ease-out;
 }
 .heading__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   margin-top: 26px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -110,7 +116,7 @@ const { title, headingList, location } = defineProps([
   display: flex;
   align-items: center;
   gap: 10px;
-  height: 36px;
+  /* height: 36px; */
   padding-left: 20px;
   padding-right: 20px;
   animation: slide-in 3s ease-out;
@@ -133,13 +139,16 @@ const { title, headingList, location } = defineProps([
   transform: rotate(90deg);
 }
 .heading__listItemText {
+  line-height: 1.2;
+}
+/* .heading__listItemText {
   font-family: 'Montserrat-Regular';
   font-size: 18px;
   color: var(--white-primary);
   text-shadow: 1px 0 10px var(--brown-secondary),
     0 1px 10px var(--brown-secondary), -1px 0 10px var(--brown-secondary),
     0 -1px 10px var(--brown-secondary);
-}
+} */
 .heading__button {
   margin-top: 80px;
   padding-left: 20px;
@@ -155,6 +164,9 @@ const { title, headingList, location } = defineProps([
   }
   .heading__title {
     font-size: 51px;
+  }
+  .heading__listItemText {
+    text-shadow: none;
   }
   .heading__button {
     margin-top: 50px;
@@ -187,13 +199,13 @@ const { title, headingList, location } = defineProps([
     padding-left: 40px;
   }
   .heading__listItem {
-    height: 27px;
+    /* height: 27px; */
     padding-left: 10px;
     padding-right: 10px;
   }
-  .heading__listItemText {
+  /* .heading__listItemText {
     font-size: 16px;
-  }
+  } */
   .heading__button {
     margin-top: 30px;
     padding-left: 40px;
@@ -214,7 +226,7 @@ const { title, headingList, location } = defineProps([
     margin-top: 10px;
   }
   .heading__listItem {
-    height: 24px;
+    /* height: 24px; */
   }
 }
 

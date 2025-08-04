@@ -16,6 +16,8 @@
           v-if="!isScreenMedium"
           :linksData="props.linksData"
           :isScroll="isScroll"
+          :location="props.location"
+          :route="props.route"
         />
 
         <div class="header__right">
@@ -54,7 +56,13 @@
 import { useResizeMedium } from '@/use/useResizeMedium';
 import { useScroll } from '@/use/useScroll';
 
-const props = defineProps(['linksData', 'phone', 'phoneNumber']);
+const props = defineProps([
+  'linksData',
+  'phone',
+  'phoneNumber',
+  'location',
+  'route',
+]);
 
 const { isScreenMedium } = useResizeMedium();
 const { isScroll } = useScroll();

@@ -3,7 +3,13 @@
     <li v-for="item in linksData" :key="item.id">
       <NuxtLink
         @click="$emit('toggleMobileMenu')"
-        :to="{ path: '/', hash: `#${item.target}` }"
+        :to="{
+          path:
+            location === 'collections'
+              ? `${item.route}/${route}/`
+              : `${item.route}`,
+          hash: `#${item.target}`,
+        }"
         class="headerNav__link headerNav__link_line"
         :class="
           isScroll ? 'headerNav__link_scroll headerNav__link_line_scroll' : ''
@@ -15,7 +21,12 @@
 </template>
 
 <script setup>
-const { linksData, isScroll } = defineProps(['linksData', 'isScroll']);
+const { linksData, isScroll, location, route } = defineProps([
+  'linksData',
+  'isScroll',
+  'location',
+  'route',
+]);
 const emit = defineEmits(['toggleMobileMenu']);
 </script>
 
