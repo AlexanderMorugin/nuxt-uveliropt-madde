@@ -1,6 +1,6 @@
 <template>
   <section class="stages">
-    <PageAppSecondTitle title="Этапы работы" />
+    <PageAppSecondTitle title="Этапы работы" class="stages__title" />
     <ul class="stages__content">
       <li
         v-for="item in stagesList"
@@ -126,6 +126,9 @@ import { stagesList } from '@/mock/stages';
   padding-right: 16px;
 }
 .stages__text {
+  color: var(--brown-fourdary);
+}
+.stages__title {
   color: var(--brown-fourdary);
 }
 

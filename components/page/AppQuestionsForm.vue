@@ -176,6 +176,7 @@ const submitRequestForm = () => {
 }
 .questionsForm__title {
   text-align: left;
+  color: var(--brown-fourdary);
   padding-left: 0;
   padding-right: 0;
 }

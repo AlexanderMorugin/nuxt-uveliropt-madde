@@ -1,7 +1,7 @@
 <template>
   <section class="exhibitions">
     <!-- Блок с титлом -->
-    <PageAppSecondTitle title="Выставки" />
+    <PageAppSecondTitle title="Выставки" class="exhibitions__title" />
 
     <PageAppParagraph class="exhibitions__text"
       >Приглашаем посетить стенд компании MADDE на выставке для знакомства со
@@ -49,6 +49,9 @@
 .exhibitions__image {
   width: 100%;
   max-width: 640px;
+}
+.exhibitions__title {
+  color: var(--brown-fourdary);
 }
 
 @media (max-width: 767px) {

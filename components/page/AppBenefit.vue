@@ -1,7 +1,10 @@
 <template>
   <section class="benefit" id="cooperation">
     <!-- Блок с титлом -->
-    <PageAppSecondTitle title="Выгоды сотрудничества" />
+    <PageAppSecondTitle
+      title="Выгоды сотрудничества"
+      class="benefit__secondTitle"
+    />
 
     <div class="benefit__background">
       <div class="benefit__container">
@@ -104,6 +107,9 @@ import { benefit } from '@/mock/benefit';
 .benefit__button {
   padding-left: 85px;
   margin-top: 40px;
+}
+.benefit__secondTitle {
+  color: var(--brown-fourdary);
 }
 
 @media (max-width: 767px) {

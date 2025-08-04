@@ -29,6 +29,9 @@
     />
 
     <!-- Блок О коллекции -->
+    <PageAppBrillianceAboutSecond />
+
+    <!-- Блок О коллекции -->
     <PageAppBrillianceAbout />
   </main>
 

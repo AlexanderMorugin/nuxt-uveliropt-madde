@@ -7,6 +7,12 @@
           title="О коллекции"
           class="brillianceAbout__title"
         />
+
+        <PageAppCollectionName
+          name="Brilliance"
+          class="brillianceAbout__name"
+        />
+
         <PageAppParagraph class="brillianceAbout__text"
           >Коллекция Brilliance от MADDE – это бриллиантовая классика,
           воплощенная в серебре со вставками кубического циркония (CZ).
@@ -18,14 +24,12 @@
   </section>
 </template>
 
-<script setup>
-import { aboutPhoto } from '@/mock/about-photo';
-</script>
+<script setup></script>
 
 <style scoped>
 .brillianceAbout {
   width: 100%;
-  background-image: url('/images/collections/brilliance/img-brilliance-about.webp');
+  background-image: url('/images/collections/brilliance/img-brilliance-about-01.webp');
   background-repeat: no-repeat;
   background-position: left;
   background-size: cover;
@@ -39,25 +43,28 @@ import { aboutPhoto } from '@/mock/about-photo';
   padding: 100px 20px;
 }
 .brillianceAbout__textBox {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 80px;
   max-width: 620px;
-  /* background: rgba(101, 82, 70, 0.4); */
   background: rgba(255, 255, 255, 0.6);
   border-radius: 15px;
   padding: 20px;
 }
 .brillianceAbout__title {
   color: var(--black-primary);
-  /* color: var(--white-primary); */
   padding: 0;
+}
+.brillianceAbout__name {
+  position: absolute;
+  top: 70px;
+  right: 80px;
 }
 .brillianceAbout__text {
   font-size: 24px;
   color: var(--black-primary);
-  /* color: var(--white-primary); */
 }
 
 @media (max-width: 767px) {
@@ -71,7 +78,6 @@ import { aboutPhoto } from '@/mock/about-photo';
     background: none;
     border-radius: 0;
     padding: 40px 10px;
-    /* padding-right: 10px; */
   }
   .brillianceAbout__title {
     color: var(--white-primary);
@@ -85,6 +91,11 @@ import { aboutPhoto } from '@/mock/about-photo';
     text-shadow: 1px 0 20px var(--black-primary),
       0 1px 20px var(--black-primary), -1px 0 20px var(--black-primary),
       0 -1px 20px var(--black-primary);
+  }
+  .brillianceAbout__name {
+    position: absolute;
+    right: auto;
+    left: 10px;
   }
 }
 </style>

@@ -51,6 +51,7 @@ const props = defineProps(['phone', 'phoneNumber', 'address']);
   max-width: 320px;
   text-align: left;
   line-height: 1.2;
+  color: var(--brown-fourdary);
 }
 .contacts__addressBox {
   display: flex;

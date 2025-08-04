@@ -1,7 +1,7 @@
 <template>
   <section class="collections" id="collections">
     <!-- Блок с титлом -->
-    <PageAppSecondTitle title="Коллекции" />
+    <PageAppSecondTitle title="Коллекции" class="collections__title" />
 
     <ul class="collections__list">
       <li
@@ -57,6 +57,9 @@ const { collections } = defineProps(['collections']);
   font-family: 'Montserrat-Regular';
   font-size: 22px;
   color: var(--white-primary);
+}
+.collections__title {
+  color: var(--brown-fourdary);
 }
 
 @media (max-width: 1023px) {

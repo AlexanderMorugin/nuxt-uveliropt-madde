@@ -11,6 +11,7 @@
   --grey-primary: #eeeeee;
 
   --grey-dark-primary: #343a3f;
+  --grey-dark-secondary: #5f5f5f;
 
   --blue-primary: #d2e5fd;
   --blue-secondary: #819ac1;
@@ -20,6 +21,8 @@
   --blue-dark-secondary: #004c90;
 
   --purple-primary: #f589f5;
+
+  --yellow-primary: #e6b052;
 
   --brown-primary: rgb(159, 138, 132);
   --brown-secondary: rgb(101, 82, 70);

@@ -1,7 +1,10 @@
 <template>
   <section class="questions" id="questions">
     <!-- Блок с титлом -->
-    <PageAppSecondTitle title="Часто задаваемые вопросы" />
+    <PageAppSecondTitle
+      title="Часто задаваемые вопросы"
+      class="questions__secondTitle"
+    />
 
     <div class="questions__container">
       <ul class="questions__list">
@@ -127,6 +130,9 @@ const isOpenAnswer = (index) => {
   height: 100%;
   padding-bottom: 40px;
   opacity: 1;
+}
+.questions__secondTitle {
+  color: var(--brown-fourdary);
 }
 
 @media (max-width: 767px) {

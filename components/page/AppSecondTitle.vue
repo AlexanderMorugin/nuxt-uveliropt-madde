@@ -10,9 +10,9 @@ const { title } = defineProps(['title']);
 
 <style scoped>
 .secondTitle {
-  font-family: 'CormorantGaramond-Medium';
+  font-family: 'CormorantGaramond-SemiBold';
   font-size: 51px;
-  color: var(--brown-fourdary);
+  /* color: var(--brown-fourdary); */
   text-align: center;
   padding-left: 20px;
   padding-right: 20px;
