@@ -44,6 +44,7 @@
   width: 100%;
   max-width: 730px;
   text-align: center;
+  color: var(--brown-fourdary);
 }
 .exhibitions__image {
   width: 100%;

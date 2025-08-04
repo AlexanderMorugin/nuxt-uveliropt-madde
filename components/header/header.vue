@@ -47,6 +47,8 @@
   >
     <HeaderAppNav
       :linksData="props.linksData"
+      :location="props.location"
+      :route="props.route"
       @toggleMobileMenu="toggleMobileMenu"
     />
   </HeaderAppMenuMobile>

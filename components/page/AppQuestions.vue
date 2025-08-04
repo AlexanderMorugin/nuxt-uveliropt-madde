@@ -117,6 +117,7 @@ const isOpenAnswer = (index) => {
   transform: rotate(135deg);
 }
 .questions__text {
+  color: var(--brown-fourdary);
   height: 0;
   opacity: 0;
   transition: height 0.5s ease-in-out;

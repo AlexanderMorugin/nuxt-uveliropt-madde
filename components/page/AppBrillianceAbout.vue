@@ -75,16 +75,16 @@ import { aboutPhoto } from '@/mock/about-photo';
   }
   .brillianceAbout__title {
     color: var(--white-primary);
-      text-shadow: 1px 0 20px var(--black-primary),
-    0 1px 20px var(--black-primary), -1px 0 20px var(--black-primary),
-    0 -1px 20px var(--black-primary);
+    text-shadow: 1px 0 20px var(--black-primary),
+      0 1px 20px var(--black-primary), -1px 0 20px var(--black-primary),
+      0 -1px 20px var(--black-primary);
   }
   .brillianceAbout__text {
     font-size: 18px;
     color: var(--white-primary);
-      text-shadow: 1px 0 20px var(--black-primary),
-    0 1px 20px var(--black-primary), -1px 0 20px var(--black-primary),
-    0 -1px 20px var(--black-primary);
+    text-shadow: 1px 0 20px var(--black-primary),
+      0 1px 20px var(--black-primary), -1px 0 20px var(--black-primary),
+      0 -1px 20px var(--black-primary);
   }
 }
 </style>

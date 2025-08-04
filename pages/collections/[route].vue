@@ -50,5 +50,5 @@ import { phone, phoneNumber, address } from '@/mock/constants';
 
 const currentCollection = collections.find((item) => item.route === route);
 
-console.log(currentCollection.details);
+// console.log(currentCollection.details);
 </script>

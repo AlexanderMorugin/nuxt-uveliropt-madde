@@ -26,7 +26,9 @@
               alt="Стрелка"
               class="stages__itemArrow"
             />
-            <PageAppParagraph>{{ element.text }}</PageAppParagraph>
+            <PageAppParagraph class="stages__text">{{
+              element.text
+            }}</PageAppParagraph>
           </li>
         </ul>
       </li>
@@ -122,6 +124,9 @@ import { stagesList } from '@/mock/stages';
   justify-content: center;
   padding-left: 16px;
   padding-right: 16px;
+}
+.stages__text {
+  color: var(--brown-fourdary);
 }
 
 @media (max-width: 1023px) {
