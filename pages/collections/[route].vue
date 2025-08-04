@@ -31,6 +31,11 @@
     <!-- Блок О коллекции -->
     <PageAppBrillianceAboutSecond />
 
+    <!-- Слайдер с изделиями -->
+     <div class="content__carousel">
+    <EmblaAppProductCarousel :data="currentCollection.details.items" />
+    </div>
+
     <!-- Блок О коллекции -->
     <PageAppBrillianceAbout />
   </main>
@@ -53,5 +58,5 @@ import { phone, phoneNumber, address } from '@/mock/constants';
 
 const currentCollection = collections.find((item) => item.route === route);
 
-// console.log(currentCollection.details);
+console.log(currentCollection);
 </script>

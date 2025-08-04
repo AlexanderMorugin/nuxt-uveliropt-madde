@@ -1,24 +1,26 @@
 <template>
   <section class="brillianceAbout" id="about">
-    <!-- Блок с титлом и текстами -->
-    <div class="brillianceAbout__container">
-      <div class="brillianceAbout__textBox">
-        <PageAppSecondTitle
-          title="О коллекции"
-          class="brillianceAbout__title"
-        />
+    <div class="brillianceAbout__background">
+      <!-- Блок с титлом и текстами -->
+      <div class="brillianceAbout__container">
+        <div class="brillianceAbout__textBox">
+          <PageAppSecondTitle
+            title="О коллекции"
+            class="brillianceAbout__title"
+          />
 
-        <PageAppCollectionName
-          name="Brilliance"
-          class="brillianceAbout__name"
-        />
+          <PageAppCollectionName
+            name="Brilliance"
+            class="brillianceAbout__name"
+          />
 
-        <PageAppParagraph class="brillianceAbout__text"
-          >Коллекция Brilliance от MADDE – это бриллиантовая классика,
-          воплощенная в серебре со вставками кубического циркония (CZ).
-          Концепция коллекций - достигнуть максимального сходства с
-          бриллиантовыми моделями из белого золота.</PageAppParagraph
-        >
+          <PageAppParagraph class="brillianceAbout__text"
+            >Коллекция Brilliance от MADDE – это бриллиантовая классика,
+            воплощенная в серебре со вставками кубического циркония (CZ).
+            Концепция коллекций - достигнуть максимального сходства с
+            бриллиантовыми моделями из белого золота.</PageAppParagraph
+          >
+        </div>
       </div>
     </div>
   </section>
@@ -28,12 +30,14 @@
 
 <style scoped>
 .brillianceAbout {
+  padding-top: 70px;
+}
+.brillianceAbout__background {
   width: 100%;
   background-image: url('/images/collections/brilliance/img-brilliance-about-01.webp');
   background-repeat: no-repeat;
   background-position: left;
   background-size: cover;
-  margin-top: 70px;
 }
 .brillianceAbout__container {
   display: flex;

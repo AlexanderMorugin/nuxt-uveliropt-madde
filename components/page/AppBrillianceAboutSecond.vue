@@ -99,10 +99,11 @@
     right: 10px;
   }
   .brillianceAboutSecond__nameMiddle {
-    top: 260px;
+    top: 270px;
     left: auto;
     right: 10px;
     color: var(--white-primary);
+    font-size: 40px;
     text-shadow: 1px 0 20px var(--brown-secondary),
       0 1px 20px var(--brown-secondary), -1px 0 20px var(--brown-secondary),
       0 -1px 20px var(--brown-secondary);
@@ -111,6 +112,7 @@
     top: 310px;
     left: auto;
     right: 10px;
+    font-size: 51px;
     color: var(--white-secondary);
   }
   .brillianceAboutSecond__text {

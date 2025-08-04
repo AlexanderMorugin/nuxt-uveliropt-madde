@@ -90,15 +90,5 @@ useSeoMeta({
 </script>
 
 <style scoped>
-.content__carousel {
-  width: 100%;
-  margin: 0 auto;
-  padding-top: 70px;
-}
 
-@media (max-width: 767px) {
-  .content__carousel {
-    padding-top: 60px;
-  }
-}
 </style>

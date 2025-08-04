@@ -71,6 +71,11 @@ button {
   display: flex;
   flex-direction: column;
 }
+.content__carousel {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 70px;
+}
 
 .form-field {
   position: relative;
@@ -144,6 +149,9 @@ button {
 }
 
 @media (max-width: 767px) {
+  .content__carousel {
+    padding-top: 60px;
+  }
   .form-label {
     font-size: 16px;
   }
