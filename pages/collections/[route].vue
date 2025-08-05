@@ -31,10 +31,12 @@
     <!-- Блок О коллекции -->
     <PageAppBrillianceAboutSecond />
 
-    <!-- Слайдер с изделиями -->
+    <!-- Слайдеры с изделиями -->
     <div class="content__carousel" id="catalog">
       <PageAppSecondTitle title="Каталог" class="content__secondTitle"/>
-      <EmblaAppProductCarousel :data="currentCollection.details.items" />
+      <EmblaAppProductCarousel :data="currentCollection.details.rings" />
+      <EmblaAppProductCarousel :data="currentCollection.details.earrings" />
+      <EmblaAppProductCarousel :data="currentCollection.details.stoneRings" />
     </div>
 
     <!-- Блок О коллекции -->

@@ -1,8 +1,9 @@
 <template>
   <section className="embla">
+    <span className="embla__categoryName">{{ data.title }}</span>
     <div className="embla__viewport" ref="emblaRef">
       <ul class="embla__container">
-        <li v-for="item in data" :key="item.id" class="embla__slide">
+        <li v-for="item in data.items" :key="item.id" class="embla__slide">
           <div class="embla__imageBox">
             <AppParagraph class="embla__name">{{ item.text }}</AppParagraph>
             <img
@@ -35,7 +36,7 @@
         </button>
 
         <!-- Кнопки-точки пагинации -->
-        <div class="embla__dots">
+        <!-- <div class="embla__dots">
           <button
             v-for="(dot, index) in dots"
             @click="scrollTo(index)"
@@ -49,7 +50,7 @@
               ]"
             />
           </button>
-        </div>
+        </div> -->
 
         <!-- Кнопка-стрелка навигации "ВПЕРЕД" -->
         <button
@@ -83,10 +84,10 @@ const scrollNextDisabled = ref(false);
 const scrollPrevDisabled = ref(false);
 const dots = ref([]);
 
-const [emblaRef, emblaApi] = emblaCarouselVue(
-  { dragFree: true, align: 'start', loop: true },
-  [Autoplay({ stopOnInteraction: false })]
-);
+const [emblaRef, emblaApi] = emblaCarouselVue({
+  dragFree: true,
+  align: 'start',
+});
 
 const onSelect = (emblaApi) => {
   selectedIndex.value = emblaApi.selectedScrollSnap();
@@ -135,7 +136,15 @@ onMounted(() => {
   --slide-size-m: 100%;
   overflow: hidden;
 }
+.embla__categoryName {
+  font-family: 'Montserrat-Regular';
+  font-size: 20px;
+  color: var(--brown-secondary);
+  padding-left: 20px;
+  border-bottom: 1px solid var(--brown-secondary);
+}
 .embla__viewport {
+  margin-top: 10px;
   overflow: hidden;
 }
 .embla__container {
@@ -169,6 +178,7 @@ onMounted(() => {
 }
 .embla__navigation {
   display: flex;
+  /* width: fit-content; */
   padding-left: 20px;
   margin-top: 40px;
 }
@@ -225,12 +235,18 @@ onMounted(() => {
 }
 
 @media (max-width: 767px) {
+  /* .embla__categoryName {
+    padding-left: 10px;
+  } */
+.embla__navigation {
+  margin-top: 20px;
+}
   .embla__dots {
     gap: 10px;
   }
-  .embla__buttons {
+  /* .embla__buttons {
     gap: 25px;
-  }
+  } */
 }
 
 @media (max-width: 479px) {
@@ -239,10 +255,6 @@ onMounted(() => {
   }
   .embla__imageBox {
     height: 360px;
-  }
-  .embla__navigation {
-    justify-content: center;
-    padding-left: 0;
   }
 }
 </style>
