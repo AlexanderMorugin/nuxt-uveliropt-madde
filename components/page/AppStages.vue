@@ -126,10 +126,10 @@ import { stagesList } from '@/mock/stages';
   padding-right: 16px;
 }
 .stages__text {
-  color: var(--brown-fourdary);
+  color: var(--brown-secondary);
 }
 .stages__title {
-  color: var(--brown-fourdary);
+  color: var(--brown-secondary);
 }
 
 @media (max-width: 1023px) {

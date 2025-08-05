@@ -109,7 +109,7 @@ import { benefit } from '@/mock/benefit';
   margin-top: 40px;
 }
 .benefit__secondTitle {
-  color: var(--brown-fourdary);
+  color: var(--brown-secondary);
 }
 
 @media (max-width: 767px) {

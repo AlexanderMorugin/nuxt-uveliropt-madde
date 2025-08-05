@@ -32,8 +32,9 @@
     <PageAppBrillianceAboutSecond />
 
     <!-- Слайдер с изделиями -->
-     <div class="content__carousel">
-    <EmblaAppProductCarousel :data="currentCollection.details.items" />
+    <div class="content__carousel" id="catalog">
+      <PageAppSecondTitle title="Каталог" class="content__secondTitle"/>
+      <EmblaAppProductCarousel :data="currentCollection.details.items" />
     </div>
 
     <!-- Блок О коллекции -->
@@ -58,5 +59,11 @@ import { phone, phoneNumber, address } from '@/mock/constants';
 
 const currentCollection = collections.find((item) => item.route === route);
 
-console.log(currentCollection);
+// console.log(currentCollection);
 </script>
+
+<style scoped>
+.content__secondTitle {
+  color: var(--brown-secondary);
+}
+</style>

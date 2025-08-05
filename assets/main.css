@@ -24,10 +24,10 @@
 
   --yellow-primary: #e6b052;
 
-  --brown-primary: rgb(159, 138, 132);
-  --brown-secondary: rgb(101, 82, 70);
+  --brown-primary: #9f8a84;
+  --brown-secondary: #655246;
   --brown-thirdary: #a08676;
-  --brown-fourdary: rgb(101, 82, 70);
+  /* --brown-fourdary: #655246; */
 
   --red-primary: #ff0000;
 }
@@ -72,6 +72,9 @@ button {
   flex-direction: column;
 }
 .content__carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   width: 100%;
   margin: 0 auto;
   padding-top: 70px;

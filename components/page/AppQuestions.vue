@@ -120,7 +120,7 @@ const isOpenAnswer = (index) => {
   transform: rotate(135deg);
 }
 .questions__text {
-  color: var(--brown-fourdary);
+  color: var(--brown-secondary);
   height: 0;
   opacity: 0;
   transition: height 0.5s ease-in-out;
@@ -132,7 +132,7 @@ const isOpenAnswer = (index) => {
   opacity: 1;
 }
 .questions__secondTitle {
-  color: var(--brown-fourdary);
+  color: var(--brown-secondary);
 }
 
 @media (max-width: 767px) {

@@ -59,7 +59,7 @@ const { collections } = defineProps(['collections']);
   color: var(--white-primary);
 }
 .collections__title {
-  color: var(--brown-fourdary);
+  color: var(--brown-secondary);
 }
 
 @media (max-width: 1023px) {

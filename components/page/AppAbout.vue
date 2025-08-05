@@ -109,14 +109,14 @@ import { aboutPhoto } from '@/mock/about-photo';
     padding-bottom: 0;
   }
   .about__title {
-    color: var(--brown-fourdary);
+    color: var(--brown-secondary);
   }
   .about__textBox {
     gap: 20px;
   }
   .about__text {
     font-size: 18px;
-    color: var(--brown-fourdary);
+    color: var(--brown-secondary);
   }
 }
 </style>

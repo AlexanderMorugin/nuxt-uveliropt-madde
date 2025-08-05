@@ -44,14 +44,14 @@
   width: 100%;
   max-width: 730px;
   text-align: center;
-  color: var(--brown-fourdary);
+  color: var(--brown-secondary);
 }
 .exhibitions__image {
   width: 100%;
   max-width: 640px;
 }
 .exhibitions__title {
-  color: var(--brown-fourdary);
+  color: var(--brown-secondary);
 }
 
 @media (max-width: 767px) {
