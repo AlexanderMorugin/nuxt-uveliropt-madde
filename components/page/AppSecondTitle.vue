@@ -12,6 +12,7 @@ const { title } = defineProps(['title']);
 .secondTitle {
   font-family: 'CormorantGaramond-SemiBold';
   font-size: 51px;
+  color: transparent;
   /* color: var(--brown-fourdary); */
   text-align: center;
   padding-left: 20px;
