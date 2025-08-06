@@ -1,5 +1,5 @@
 <template>
-  <span class="collectionName">{{ name }}</span>
+  <h3 class="collectionName">{{ name }}</h3>
 </template>
 
 <script setup>

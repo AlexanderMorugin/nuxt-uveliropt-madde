@@ -8,4 +8,11 @@ export default defineNuxtConfig({
       scrollBehaviorType: 'smooth',
     },
   },
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'ru',
+      },
+    },
+  },
 });
