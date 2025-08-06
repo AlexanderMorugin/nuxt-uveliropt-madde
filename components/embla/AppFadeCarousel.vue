@@ -1,5 +1,5 @@
 <template>
-  <section class="embla">
+  <div class="embla">
     <div class="embla__viewport" ref="emblaRef">
       <ul class="embla__container">
         <li v-for="item in data" :key="item.id" class="embla__slide">
@@ -7,7 +7,7 @@
         </li>
       </ul>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>

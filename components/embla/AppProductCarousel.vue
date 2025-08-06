@@ -1,7 +1,7 @@
 <template>
-  <section class="embla">
+  <div class="embla">
     <div class="categoryName">
-      <h3 class="categoryName__title">{{ data.title }}</h3>
+      <span class="categoryName__title">{{ data.title }}</span>
       <div class="embla__buttons">
         <!-- Кнопка-стрелка навигации "НАЗАД" -->
         <button
@@ -44,7 +44,7 @@
         </li>
       </ul>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
