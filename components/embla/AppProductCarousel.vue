@@ -40,21 +40,10 @@
     <div className="embla__viewport" ref="emblaRef">
       <ul class="embla__container">
         <li v-for="item in data.items" :key="item.id" class="embla__slide">
-          <!-- <button class="embla__imageBox" @click="openProductModal">
-            <span class="itemName">{{ item.text }}</span>
-            <img :src="item.imageSmall" :alt="item.text" class="embla__image" />
-          </button> -->
-          <EmblaAppProductCarouselButton :item="item"/>
+          <EmblaAppProductCarouselButton :item="item" />
         </li>
       </ul>
     </div>
-
-    <!-- <Teleport to="#teleports">
-      <ModalAppProduct
-        :isProductModalOpen="isProductModalOpen"
-        @closeProductModal="closeProductModal"
-      />
-    </Teleport> -->
   </section>
 </template>
 
@@ -62,17 +51,10 @@
 import emblaCarouselVue from 'embla-carousel-vue';
 const { data } = defineProps(['data']);
 
-// const isProductModalOpen = ref(false);
-
-// const openProductModal = () => (isProductModalOpen.value = true);
-// const closeProductModal = () => (isProductModalOpen.value = false);
-
 const canScrollPrev = ref(false);
 const canScrollNext = ref(false);
-// const selectedIndex = ref(0);
 const scrollNextDisabled = ref(false);
 const scrollPrevDisabled = ref(false);
-// const dots = ref([]);
 
 const [emblaRef, emblaApi] = emblaCarouselVue({
   dragFree: true,
@@ -80,22 +62,15 @@ const [emblaRef, emblaApi] = emblaCarouselVue({
 });
 
 const onSelect = (emblaApi) => {
-  // selectedIndex.value = emblaApi.selectedScrollSnap();
   scrollNextDisabled.value = !emblaApi.canScrollNext();
   scrollPrevDisabled.value = !emblaApi.canScrollPrev();
 };
 
-// const createDots = (emblaApi) => {
-//   dots.value = emblaApi.scrollSnapList();
-// };
 // Листать влево, по нажатию на стрелку Prev
 const scrollNext = () => emblaApi?.value.scrollNext();
 
 // Листать враво, по нажатию на стрелку Next
 const scrollPrev = () => emblaApi?.value.scrollPrev();
-
-// Функция перехода к слайду, по нажатию на Thumb
-// const scrollTo = (index) => emblaApi.value?.scrollTo(index);
 
 function updateButtonStates(emblaApi) {
   canScrollPrev.value = emblaApi.canScrollPrev();
@@ -109,10 +84,6 @@ onMounted(() => {
   emblaApi.value.on('select', updateButtonStates);
 
   onSelect(emblaApi.value);
-  // createDots(emblaApi.value);
-
-  // emblaApi.value.on('select', onSelect);
-  // emblaApi.value.on('reInit', createDots);
 });
 </script>
 
@@ -161,31 +132,6 @@ onMounted(() => {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
 }
-/* .embla__imageBox {
-  position: relative;
-  height: 272px;
-  border-radius: 15px;
-  overflow: hidden;
-}
-.itemName {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  font-family: 'Montserrat-Regular';
-  font-size: 20px;
-  color: var(--brown-secondary);
-}
-.embla__image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
-.embla__navigation {
-  display: flex;
-  padding-left: 20px;
-  margin-top: 40px;
-}
 .embla__buttons {
   display: flex;
   justify-content: center;
@@ -212,63 +158,17 @@ onMounted(() => {
 .embla__buttonArrow_disabled {
   opacity: 0.3;
 }
-.embla__dots {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-.embla__dotButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 10px;
-  height: 10px;
-}
-.embla__dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--brown-secondary);
-  opacity: 0.7;
-  cursor: pointer;
-}
-.embla__dot_active {
-  width: 10px;
-  height: 10px;
-  opacity: 1;
-  cursor: default;
-}
 
 @media (max-width: 1024px) {
   .embla__slide {
     flex: 0 0 var(--slide-size-l);
     padding-left: var(--slide-spacing-m);
   }
-  .embla__imageBox {
-    height: 240px;
-  }
-  .itemName {
-    bottom: 10px;
-    right: 10px;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 767px) {
-  .embla__navigation {
-    margin-top: 20px;
-  }
-  .embla__dots {
-    gap: 10px;
-  }
 }
 
 @media (max-width: 479px) {
   .embla__slide {
     flex: 0 0 var(--slide-size-m);
-  }
-  .embla__imageBox {
-    height: 199px;
   }
 }
 </style>

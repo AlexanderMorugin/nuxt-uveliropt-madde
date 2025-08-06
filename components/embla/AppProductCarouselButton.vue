@@ -43,4 +43,21 @@ const closeProductModal = () => (isProductModalOpen.value = false);
   height: 100%;
   object-fit: cover;
 }
+
+@media (max-width: 1024px) {
+  .embla__imageBox {
+    height: 240px;
+  }
+  .itemName {
+    bottom: 10px;
+    right: 10px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 479px) {
+  .embla__imageBox {
+    height: 199px;
+  }
+}
 </style>

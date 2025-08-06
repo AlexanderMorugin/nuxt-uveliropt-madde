@@ -55,9 +55,7 @@ const emit = defineEmits(['closeProductModal']);
   align-items: center;
   width: 100%;
   height: 100%;
-  /* max-width: 560px; */
   background: var(--white-primary);
-  /* padding: 40px 45px; */
   animation: slide-in 0.5s ease-in-out;
 }
 .modal__close {
@@ -80,10 +78,8 @@ const emit = defineEmits(['closeProductModal']);
   font-family: 'Montserrat-Regular';
   font-size: 44px;
   color: var(--brown-secondary);
-  /* text-align: center; */
 }
 .modal__productImage {
-  /* width: 90%; */
   height: 100%;
 }
 
@@ -118,9 +114,9 @@ const emit = defineEmits(['closeProductModal']);
     font-size: 28px;
   }
   .modal__productImage {
-  width: 100%;
-  height: auto;
-}
+    width: 100%;
+    height: auto;
+  }
 }
 
 @keyframes slide-in {
