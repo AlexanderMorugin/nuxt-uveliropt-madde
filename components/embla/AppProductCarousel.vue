@@ -1,7 +1,7 @@
 <template>
   <section class="embla">
     <div class="categoryName">
-      <span class="categoryName__title">{{ data.title }}</span>
+      <h3 class="categoryName__title">{{ data.title }}</h3>
       <div class="embla__buttons">
         <!-- Кнопка-стрелка навигации "НАЗАД" -->
         <button
