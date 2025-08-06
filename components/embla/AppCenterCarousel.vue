@@ -4,13 +4,7 @@
       <ul class="embla__container">
         <li v-for="item in data" :key="item.id" class="embla__slide">
           <div class="embla__imageBox">
-            <AppParagraph class="embla__name">{{ item.text }}</AppParagraph>
-            <!-- <div class="embla__name">{{ item.text }}</div> -->
-            <img
-              :src="item.imageMedium"
-              :alt="item.text"
-              class="embla__image"
-            />
+            <img :src="item.image" :alt="item.title" class="embla__image" />
           </div>
         </li>
       </ul>
@@ -35,7 +29,7 @@ const [emblaRef, emblaApi] = emblaCarouselVue({ loop: true }, [
   --slide-spacing: 1rem;
   --slide-size: 70%;
   --slide-size-m: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .embla__viewport {
   overflow: hidden;

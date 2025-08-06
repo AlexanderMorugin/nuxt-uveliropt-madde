@@ -1,11 +1,11 @@
 <template>
   <section className="embla">
-    <span className="embla__categoryName">{{ data.title }}</span>
+    <span className="categoryName">{{ data.title }}</span>
     <div className="embla__viewport" ref="emblaRef">
       <ul class="embla__container">
         <li v-for="item in data.items" :key="item.id" class="embla__slide">
           <div class="embla__imageBox">
-            <AppParagraph class="embla__name">{{ item.text }}</AppParagraph>
+            <span class="itemName">{{ item.text }}</span>
             <img
               :src="item.imageMedium"
               :alt="item.text"
@@ -15,12 +15,12 @@
         </li>
       </ul>
     </div>
-    <!-- </section> -->
+
     <!-- Блок навигации-пагинации -->
-    <div class="embla__navigation">
-      <div class="embla__buttons">
-        <!-- Кнопка-стрелка навигации "НАЗАД" -->
-        <button
+    <!-- <div class="embla__navigation"> -->
+    <!-- <div class="embla__buttons"> -->
+    <!-- Кнопка-стрелка навигации "НАЗАД" -->
+    <!-- <button
           @click="scrollPrev"
           :disabled="!canScrollPrev"
           :class="['embla__button', { embla__button_disabled: !canScrollPrev }]"
@@ -33,10 +33,10 @@
               { embla__buttonArrow_disabled: !canScrollPrev },
             ]"
           />
-        </button>
+        </button> -->
 
-        <!-- Кнопки-точки пагинации -->
-        <!-- <div class="embla__dots">
+    <!-- Кнопки-точки пагинации -->
+    <!-- <div class="embla__dots">
           <button
             v-for="(dot, index) in dots"
             @click="scrollTo(index)"
@@ -52,8 +52,8 @@
           </button>
         </div> -->
 
-        <!-- Кнопка-стрелка навигации "ВПЕРЕД" -->
-        <button
+    <!-- Кнопка-стрелка навигации "ВПЕРЕД" -->
+    <!-- <button
           @click="scrollNext"
           :disabled="!canScrollNext"
           :class="['embla__button', { embla__button_disabled: !canScrollNext }]"
@@ -68,7 +68,7 @@
           />
         </button>
       </div>
-    </div>
+    </div> -->
   </section>
 </template>
 
@@ -132,11 +132,17 @@ onMounted(() => {
   max-width: 1440px;
   margin: 0 auto;
   --slide-spacing: 1rem;
-  --slide-size: 300px;
-  --slide-size-m: 100%;
+  --slide-spacing-m: 10px;
+  --slide-size: 288px;
+  /* --slide-size: 20%; */
+  --slide-size-l: 256px;
+  /* --slide-size-m: 100%; */
+  --slide-size-m: 50%;
   overflow: hidden;
+
+  /* border: 1px solid red; */
 }
-.embla__categoryName {
+.categoryName {
   font-family: 'Montserrat-Regular';
   font-size: 20px;
   color: var(--brown-secondary);
@@ -151,18 +157,31 @@ onMounted(() => {
   display: flex;
   touch-action: pan-y pinch-zoom;
   margin-left: calc(var(--slide-spacing) * -1);
+  /* overflow: hidden; */
 }
 .embla__slide {
   flex: 0 0 var(--slide-size);
   min-width: 0;
+  /* width: var(--slide-size); */
+  /* max-width: var(--slide-size); */
+  /* flex: 0 0 290px; */
   padding-left: var(--slide-spacing);
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+
+  /* border: 1px solid red; */
 }
 .embla__imageBox {
   position: relative;
-  height: 300px;
+  height: 272px;
+  border-radius: 15px;
   overflow: hidden;
 }
-.embla__name {
+.itemName {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -234,13 +253,29 @@ onMounted(() => {
   cursor: default;
 }
 
+@media (max-width: 1024px) {
+  .embla__slide {
+    flex: 0 0 var(--slide-size-l);    
+  padding-left: var(--slide-spacing-m);
+  
+  }
+  .embla__imageBox {
+    height: 240px;
+  }
+    .itemName {
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+}
+}
+
 @media (max-width: 767px) {
   /* .embla__categoryName {
     padding-left: 10px;
   } */
-.embla__navigation {
-  margin-top: 20px;
-}
+  .embla__navigation {
+    margin-top: 20px;
+  }
   .embla__dots {
     gap: 10px;
   }
@@ -254,7 +289,9 @@ onMounted(() => {
     flex: 0 0 var(--slide-size-m);
   }
   .embla__imageBox {
-    height: 360px;
+    /* height: 360px; */
+    height: 199px;
   }
+
 }
 </style>

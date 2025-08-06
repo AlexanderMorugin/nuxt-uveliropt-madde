@@ -70,6 +70,7 @@ button {
 .content {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .content__carousel {
   display: flex;
