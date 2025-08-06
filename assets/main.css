@@ -56,7 +56,7 @@ body {
   /* position: relative; */
   background: var(--background-primary);
   line-height: 1.55;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 
   /* text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

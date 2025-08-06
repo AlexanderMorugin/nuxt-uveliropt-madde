@@ -183,7 +183,7 @@ onMounted(() => {
 }
 .itemName {
   position: absolute;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
   font-family: 'Montserrat-Regular';
   font-size: 20px;
@@ -263,7 +263,7 @@ onMounted(() => {
     height: 240px;
   }
     .itemName {
-  top: 10px;
+  bottom: 10px;
   right: 10px;
   font-size: 16px;
 }

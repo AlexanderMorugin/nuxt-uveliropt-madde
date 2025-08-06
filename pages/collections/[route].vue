@@ -33,8 +33,17 @@
 
     <!-- Слайдеры с изделиями -->
     <div class="content__carousel" id="catalog">
-      <PageAppSecondTitle title="Каталог" class="content__secondTitle"/>
-      <EmblaAppProductCarousel :data="currentCollection.details.rings" />
+      <PageAppSecondTitle title="Каталог" class="content__secondTitle" />
+      <ul class="content__carouselList">
+        <li
+          v-for="product in currentCollection.details.products"
+          :key="product.id"
+        >
+          <EmblaAppProductCarousel :data="product" />
+        </li>
+      </ul>
+      <!-- {{ currentCollection.details.products }} -->
+      <!-- <EmblaAppProductCarousel :data="currentCollection.details.rings" /> -->
       <!-- <EmblaAppProductCarousel :data="currentCollection.details.earrings" /> -->
       <!-- <EmblaAppProductCarousel :data="currentCollection.details.stoneRings" /> -->
     </div>
@@ -67,5 +76,13 @@ const currentCollection = collections.find((item) => item.route === route);
 <style scoped>
 .content__secondTitle {
   color: var(--brown-secondary);
+}
+.content__carouselList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  /* margin: 0 auto; */
+  /* padding-top: 70px; */
 }
 </style>
