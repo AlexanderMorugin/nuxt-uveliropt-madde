@@ -1,26 +1,10 @@
 <template>
   <section className="embla">
-    <span className="categoryName">{{ data.title }}</span>
-    <div className="embla__viewport" ref="emblaRef">
-      <ul class="embla__container">
-        <li v-for="item in data.items" :key="item.id" class="embla__slide">
-          <div class="embla__imageBox">
-            <span class="itemName">{{ item.text }}</span>
-            <img
-              :src="item.imageMedium"
-              :alt="item.text"
-              class="embla__image"
-            />
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Блок навигации-пагинации -->
-    <!-- <div class="embla__navigation"> -->
-    <!-- <div class="embla__buttons"> -->
-    <!-- Кнопка-стрелка навигации "НАЗАД" -->
-    <!-- <button
+    <div className="categoryName">
+      <span className="categoryName__title">{{ data.title }}</span>
+      <div class="embla__buttons">
+        <!-- Кнопка-стрелка навигации "НАЗАД" -->
+        <button
           @click="scrollPrev"
           :disabled="!canScrollPrev"
           :class="['embla__button', { embla__button_disabled: !canScrollPrev }]"
@@ -33,27 +17,10 @@
               { embla__buttonArrow_disabled: !canScrollPrev },
             ]"
           />
-        </button> -->
+        </button>
 
-    <!-- Кнопки-точки пагинации -->
-    <!-- <div class="embla__dots">
-          <button
-            v-for="(dot, index) in dots"
-            @click="scrollTo(index)"
-            :key="index"
-            class="embla__dotButton"
-          >
-            <div
-              :class="[
-                'embla__dot',
-                { embla__dot_active: selectedIndex === index },
-              ]"
-            />
-          </button>
-        </div> -->
-
-    <!-- Кнопка-стрелка навигации "ВПЕРЕД" -->
-    <!-- <button
+        <!-- Кнопка-стрелка навигации "ВПЕРЕД" -->
+        <button
           @click="scrollNext"
           :disabled="!canScrollNext"
           :class="['embla__button', { embla__button_disabled: !canScrollNext }]"
@@ -68,21 +35,44 @@
           />
         </button>
       </div>
-    </div> -->
+    </div>
+
+    <div className="embla__viewport" ref="emblaRef">
+      <ul class="embla__container">
+        <li v-for="item in data.items" :key="item.id" class="embla__slide">
+          <!-- <button class="embla__imageBox" @click="openProductModal">
+            <span class="itemName">{{ item.text }}</span>
+            <img :src="item.imageSmall" :alt="item.text" class="embla__image" />
+          </button> -->
+          <EmblaAppProductCarouselButton :item="item"/>
+        </li>
+      </ul>
+    </div>
+
+    <!-- <Teleport to="#teleports">
+      <ModalAppProduct
+        :isProductModalOpen="isProductModalOpen"
+        @closeProductModal="closeProductModal"
+      />
+    </Teleport> -->
   </section>
 </template>
 
 <script setup>
 import emblaCarouselVue from 'embla-carousel-vue';
-import Autoplay from 'embla-carousel-autoplay';
 const { data } = defineProps(['data']);
+
+// const isProductModalOpen = ref(false);
+
+// const openProductModal = () => (isProductModalOpen.value = true);
+// const closeProductModal = () => (isProductModalOpen.value = false);
 
 const canScrollPrev = ref(false);
 const canScrollNext = ref(false);
-const selectedIndex = ref(0);
+// const selectedIndex = ref(0);
 const scrollNextDisabled = ref(false);
 const scrollPrevDisabled = ref(false);
-const dots = ref([]);
+// const dots = ref([]);
 
 const [emblaRef, emblaApi] = emblaCarouselVue({
   dragFree: true,
@@ -90,14 +80,14 @@ const [emblaRef, emblaApi] = emblaCarouselVue({
 });
 
 const onSelect = (emblaApi) => {
-  selectedIndex.value = emblaApi.selectedScrollSnap();
+  // selectedIndex.value = emblaApi.selectedScrollSnap();
   scrollNextDisabled.value = !emblaApi.canScrollNext();
   scrollPrevDisabled.value = !emblaApi.canScrollPrev();
 };
 
-const createDots = (emblaApi) => {
-  dots.value = emblaApi.scrollSnapList();
-};
+// const createDots = (emblaApi) => {
+//   dots.value = emblaApi.scrollSnapList();
+// };
 // Листать влево, по нажатию на стрелку Prev
 const scrollNext = () => emblaApi?.value.scrollNext();
 
@@ -105,7 +95,7 @@ const scrollNext = () => emblaApi?.value.scrollNext();
 const scrollPrev = () => emblaApi?.value.scrollPrev();
 
 // Функция перехода к слайду, по нажатию на Thumb
-const scrollTo = (index) => emblaApi.value?.scrollTo(index);
+// const scrollTo = (index) => emblaApi.value?.scrollTo(index);
 
 function updateButtonStates(emblaApi) {
   canScrollPrev.value = emblaApi.canScrollPrev();
@@ -119,10 +109,10 @@ onMounted(() => {
   emblaApi.value.on('select', updateButtonStates);
 
   onSelect(emblaApi.value);
-  createDots(emblaApi.value);
+  // createDots(emblaApi.value);
 
-  emblaApi.value.on('select', onSelect);
-  emblaApi.value.on('reInit', createDots);
+  // emblaApi.value.on('select', onSelect);
+  // emblaApi.value.on('reInit', createDots);
 });
 </script>
 
@@ -134,15 +124,17 @@ onMounted(() => {
   --slide-spacing: 1rem;
   --slide-spacing-m: 10px;
   --slide-size: 288px;
-  /* --slide-size: 20%; */
   --slide-size-l: 256px;
-  /* --slide-size-m: 100%; */
   --slide-size-m: 50%;
   overflow: hidden;
-
-  /* border: 1px solid red; */
 }
 .categoryName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.categoryName__title {
   font-family: 'Montserrat-Regular';
   font-size: 20px;
   color: var(--brown-secondary);
@@ -157,14 +149,10 @@ onMounted(() => {
   display: flex;
   touch-action: pan-y pinch-zoom;
   margin-left: calc(var(--slide-spacing) * -1);
-  /* overflow: hidden; */
 }
 .embla__slide {
   flex: 0 0 var(--slide-size);
   min-width: 0;
-  /* width: var(--slide-size); */
-  /* max-width: var(--slide-size); */
-  /* flex: 0 0 290px; */
   padding-left: var(--slide-spacing);
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -172,10 +160,8 @@ onMounted(() => {
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
-
-  /* border: 1px solid red; */
 }
-.embla__imageBox {
+/* .embla__imageBox {
   position: relative;
   height: 272px;
   border-radius: 15px;
@@ -194,10 +180,9 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
+} */
 .embla__navigation {
   display: flex;
-  /* width: fit-content; */
   padding-left: 20px;
   margin-top: 40px;
 }
@@ -206,6 +191,7 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
   gap: 51px;
+  padding-right: 20px;
 }
 .embla__button {
   display: flex;
@@ -217,10 +203,10 @@ onMounted(() => {
   cursor: default;
 }
 .embla__buttonArrow {
-  height: 16px;
+  height: 14px;
 }
 .embla__buttonArrowRight {
-  height: 16px;
+  height: 14px;
   transform: rotate(180deg);
 }
 .embla__buttonArrow_disabled {
@@ -255,33 +241,26 @@ onMounted(() => {
 
 @media (max-width: 1024px) {
   .embla__slide {
-    flex: 0 0 var(--slide-size-l);    
-  padding-left: var(--slide-spacing-m);
-  
+    flex: 0 0 var(--slide-size-l);
+    padding-left: var(--slide-spacing-m);
   }
   .embla__imageBox {
     height: 240px;
   }
-    .itemName {
-  bottom: 10px;
-  right: 10px;
-  font-size: 16px;
-}
+  .itemName {
+    bottom: 10px;
+    right: 10px;
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 767px) {
-  /* .embla__categoryName {
-    padding-left: 10px;
-  } */
   .embla__navigation {
     margin-top: 20px;
   }
   .embla__dots {
     gap: 10px;
   }
-  /* .embla__buttons {
-    gap: 25px;
-  } */
 }
 
 @media (max-width: 479px) {
@@ -289,9 +268,7 @@ onMounted(() => {
     flex: 0 0 var(--slide-size-m);
   }
   .embla__imageBox {
-    /* height: 360px; */
     height: 199px;
   }
-
 }
 </style>
