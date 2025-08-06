@@ -13,7 +13,9 @@
           :key="item.id"
           class="questions__listItem"
         >
-          <button
+          <div
+            tabindex="0"
+            @keypress.enter="toggleAnswerAccordion(item.id)"
             @click="toggleAnswerAccordion(item.id)"
             class="questions__button"
           >
@@ -28,7 +30,7 @@
                 ]"
               />
             </div>
-          </button>
+          </div>
           <PageAppParagraph
             :class="[
               'questions__text',

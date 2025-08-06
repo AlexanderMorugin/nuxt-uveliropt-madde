@@ -1,7 +1,7 @@
 <template>
-  <section className="embla">
-    <div className="categoryName">
-      <span className="categoryName__title">{{ data.title }}</span>
+  <section class="embla">
+    <div class="categoryName">
+      <span class="categoryName__title">{{ data.title }}</span>
       <div class="embla__buttons">
         <!-- Кнопка-стрелка навигации "НАЗАД" -->
         <button
@@ -37,7 +37,7 @@
       </div>
     </div>
 
-    <div className="embla__viewport" ref="emblaRef">
+    <div class="embla__viewport" ref="emblaRef">
       <ul class="embla__container">
         <li v-for="item in data.items" :key="item.id" class="embla__slide">
           <EmblaAppProductCarouselButton :item="item" />

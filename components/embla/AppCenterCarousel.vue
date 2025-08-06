@@ -1,6 +1,6 @@
 <template>
-  <section className="embla">
-    <div className="embla__viewport" ref="emblaRef">
+  <section class="embla">
+    <div class="embla__viewport" ref="emblaRef">
       <ul class="embla__container">
         <li v-for="item in data" :key="item.id" class="embla__slide">
           <div class="embla__imageBox">
