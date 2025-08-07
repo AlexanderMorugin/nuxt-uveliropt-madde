@@ -11,7 +11,7 @@
   font-family: 'Montserrat-Regular';
   line-height: 1.5;
   font-size: 18px;
-  color: transparent;
+  /* color: transparent; */
   /* color: var(--brown-fourdary); */
 }
 </style>
