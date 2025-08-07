@@ -12,11 +12,11 @@
 
         <span class="brillianceAboutSecond__nameBottom">ГРАНИ</span>
 
-        <PageAppParagraph class="brillianceAboutSecond__text"
-          >Украшения коллекции Brilliance представляют собой классические
+        <p class="brillianceAboutSecond__text">
+          Украшения коллекции Brilliance представляют собой классические
           &laquo;бриллиантовые&raquo; модели, выполненные в серебре и со
-          вставками кубического циркония (CZ).</PageAppParagraph
-        >
+          вставками кубического циркония (CZ).
+        </p>
       </div>
     </div>
   </section>

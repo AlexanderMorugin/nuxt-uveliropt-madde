@@ -31,12 +31,12 @@
               />
             </div>
           </div>
-          <PageAppParagraph
+          <p
             :class="[
               'questions__text',
               { questions__text_active: isOpenAnswer(item.id) },
             ]"
-            >{{ item.answer }}</PageAppParagraph
+            >{{ item.answer }}</p
           >
         </li>
       </ul>
@@ -122,6 +122,9 @@ const isOpenAnswer = (index) => {
   transform: rotate(135deg);
 }
 .questions__text {
+  font-family: 'Montserrat-Regular';
+  line-height: 1.5;
+  font-size: 18px;
   color: var(--brown-secondary);
   height: 0;
   opacity: 0;

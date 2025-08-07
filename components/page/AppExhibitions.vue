@@ -3,10 +3,10 @@
     <!-- Блок с титлом -->
     <PageAppSecondTitle title="Выставки" class="exhibitions__title" />
 
-    <PageAppParagraph class="exhibitions__text"
-      >Приглашаем посетить стенд компании MADDE на выставке для знакомства со
-      всем ассортиментом и условиями сотрудничества</PageAppParagraph
-    >
+    <p class="exhibitions__text">
+      Приглашаем посетить стенд компании MADDE на выставке для знакомства со
+      всем ассортиментом и условиями сотрудничества
+    </p>
 
     <div>
       <img
@@ -14,10 +14,9 @@
         alt="Выставка JunWex"
         class="exhibitions__image"
       />
-      <PageAppParagraph class="exhibitions__text"
-        >27 сентября - 1 октября<br />Москва, ВДНХ, павильон
-        75</PageAppParagraph
-      >
+      <p class="exhibitions__text">
+        27 сентября - 1 октября<br />Москва, ВДНХ, павильон 75
+      </p>
     </div>
 
     <!-- Модалка заявки пригласительного, с кнопкой -->
@@ -43,8 +42,11 @@
 .exhibitions__text {
   width: 100%;
   max-width: 730px;
-  text-align: center;
+  font-family: 'Montserrat-Regular';
+  line-height: 1.5;
+  font-size: 18px;
   color: var(--brown-secondary);
+  text-align: center;
 }
 .exhibitions__image {
   width: 100%;

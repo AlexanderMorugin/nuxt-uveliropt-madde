@@ -26,9 +26,7 @@
               alt="Стрелка"
               class="stages__itemArrow"
             />
-            <PageAppParagraph class="stages__text">{{
-              element.text
-            }}</PageAppParagraph>
+            <p class="stages__text">{{ element.text }}</p>
           </li>
         </ul>
       </li>
@@ -126,6 +124,9 @@ import { stagesList } from '@/mock/stages';
   padding-right: 16px;
 }
 .stages__text {
+  font-family: 'Montserrat-Regular';
+  line-height: 1.5;
+  font-size: 18px;
   color: var(--brown-secondary);
 }
 .stages__title {

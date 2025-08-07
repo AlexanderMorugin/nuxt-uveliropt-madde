@@ -14,12 +14,12 @@
             class="brillianceAbout__name"
           />
 
-          <PageAppParagraph class="brillianceAbout__text"
-            >Коллекция Brilliance от MADDE – это бриллиантовая классика,
+          <p class="brillianceAbout__text">
+            Коллекция Brilliance от MADDE – это бриллиантовая классика,
             воплощенная в серебре со вставками кубического циркония (CZ).
             Концепция коллекций - достигнуть максимального сходства с
-            бриллиантовыми моделями из белого золота.</PageAppParagraph
-          >
+            бриллиантовыми моделями из белого золота.
+          </p>
         </div>
       </div>
     </div>
@@ -67,6 +67,8 @@
   right: 80px;
 }
 .brillianceAbout__text {
+  font-family: 'Montserrat-Regular';
+  line-height: 1.5;
   font-size: 24px;
   color: var(--black-primary);
 }

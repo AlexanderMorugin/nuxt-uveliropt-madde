@@ -13,9 +13,7 @@
             <img :src="item.image" :alt="item.title" class="benefit__image" />
             <div class="benefit__textBox">
               <span class="benefit__title">{{ item.title }}</span>
-              <PageAppParagraph class="benefit__text">{{
-                item.text
-              }}</PageAppParagraph>
+              <p class="benefit__text">{{ item.text }}</p>
             </div>
           </li>
         </ul>
@@ -102,6 +100,9 @@ import { benefit } from '@/mock/benefit';
   animation: textShine 6s ease-in-out infinite alternate;
 }
 .benefit__text {
+  font-family: 'Montserrat-Regular';
+  line-height: 1.5;
+  font-size: 18px;
   color: var(--white-primary);
 }
 .benefit__button {
