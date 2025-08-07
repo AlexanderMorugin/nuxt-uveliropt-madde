@@ -74,6 +74,9 @@
 }
 
 @media (max-width: 767px) {
+  .brillianceAbout {
+    padding-top: 60px;
+  }
   .brillianceAbout__container {
     padding: 0;
   }

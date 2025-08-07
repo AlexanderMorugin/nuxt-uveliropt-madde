@@ -77,6 +77,9 @@
 }
 
 @media (max-width: 767px) {
+  .brillianceAboutSecond {
+    margin-top: 60px;
+  }
   .brillianceAboutSecond__container {
     padding: 0;
   }

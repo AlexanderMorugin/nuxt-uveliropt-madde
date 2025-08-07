@@ -72,4 +72,21 @@ const { data } = defineProps(['data']);
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 767px) {
+  .catalog {
+    padding-top: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .catalog__listItem {
+    grid-template-columns: 1fr;
+  }
+  .catalog__products {
+    grid-template-columns: repeat(2, 1fr);
+    /* align-items: center; */
+    gap: 10px;
+    padding-left: 0;
+  }
+}
 </style>
