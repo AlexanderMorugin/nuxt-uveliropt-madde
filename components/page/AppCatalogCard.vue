@@ -1,7 +1,12 @@
 <template>
   <button class="catalogCard" @click="openProductModal">
     <span class="catalogCard__name">{{ product.text }}</span>
-    <NuxtImg :src="product.imageSmall" :alt="product.text" class="catalogCard__image" />
+    <NuxtImg
+      loading="lazy"
+      :src="product.imageSmall"
+      :alt="product.text"
+      class="catalogCard__image"
+    />
   </button>
 
   <Teleport to="#teleports">

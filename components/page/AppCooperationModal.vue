@@ -8,6 +8,7 @@
       <div class="modal" @click.stop>
         <button class="modal__close" @click="$emit('closeCooperationModal')">
           <NuxtImg
+            loading="lazy"
             src="/icons/icon-close-gray.svg"
             alt="Кнопка закрыть"
             class="modal__image"
@@ -79,7 +80,6 @@ const { isCooperationModalOpen } = defineProps([
 .modal-leave-to {
   opacity: 0;
   transform: scale(1.1);
-
 }
 
 @media (max-width: 767px) {

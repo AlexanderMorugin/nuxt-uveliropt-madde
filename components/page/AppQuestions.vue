@@ -22,6 +22,7 @@
             <span class="questions__title">{{ item.question }}</span>
             <div class="questions__imageBox">
               <NuxtImg
+                loading="lazy"
                 src="/icons/icon-crestik.svg"
                 alt="Крестик"
                 :class="[
@@ -36,8 +37,9 @@
               'questions__text',
               { questions__text_active: isOpenAnswer(item.id) },
             ]"
-            >{{ item.answer }}</p
           >
+            {{ item.answer }}
+          </p>
         </li>
       </ul>
     </div>

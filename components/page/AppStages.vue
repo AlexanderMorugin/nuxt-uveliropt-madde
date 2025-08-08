@@ -9,7 +9,12 @@
         :class="item.gridName"
       >
         <div class="stages__itemImageBox">
-          <NuxtImg :src="item.image" :alt="item.title" class="stages__itemImage" />
+          <NuxtImg
+            loading="lazy"
+            :src="item.image"
+            :alt="item.title"
+            class="stages__itemImage"
+          />
           <div class="stages__itemTitleBox">
             <span>{{ item.number }}</span>
             <span>{{ item.title }}</span>
@@ -22,6 +27,7 @@
             class="stages__itemText"
           >
             <NuxtImg
+              loading="lazy"
               src="/icons/icon-triangle-brown.svg"
               alt="Стрелка"
               class="stages__itemArrow"

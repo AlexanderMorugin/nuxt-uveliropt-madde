@@ -10,6 +10,7 @@
         :class="['embla__button', { embla__button_disabled: !canScrollPrev }]"
       >
         <NuxtImg
+          loading="lazy"
           src="/icons/icon-carousel-arrow.svg"
           alt="Стрелка"
           :class="[
@@ -26,6 +27,7 @@
         :class="['embla__button', { embla__button_disabled: !canScrollNext }]"
       >
         <NuxtImg
+          loading="lazy"
           src="/icons/icon-carousel-arrow.svg"
           alt="Стрелка"
           :class="[
@@ -40,7 +42,12 @@
     <div class="embla__viewport" ref="emblaRef">
       <ul class="embla__container">
         <li v-for="item in data" :key="item.id" class="embla__slide">
-          <NuxtImg :src="item.imageMedium" :alt="item.text" class="slideImage" />
+          <NuxtImg
+            loading="lazy"
+            :src="item.imageMedium"
+            :alt="item.text"
+            class="slideImage"
+          />
         </li>
       </ul>
     </div>

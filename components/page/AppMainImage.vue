@@ -3,6 +3,7 @@
     <!-- Изображение для мобилки -->
 
     <NuxtImg
+      loading="lazy"
       v-if="isScreenMedium"
       :src="mobileImage"
       alt="Подложка"
@@ -11,6 +12,7 @@
 
     <!-- Изображение для десктопа -->
     <NuxtImg
+      loading="lazy"
       v-if="!isScreenMedium"
       :src="desktopImage"
       alt="Подложка"

@@ -10,6 +10,7 @@
 
     <div>
       <NuxtImg
+        loading="lazy"
         src="/images/img-exhibitions-01.webp"
         alt="Выставка JunWex"
         class="exhibitions__image"
