@@ -22,34 +22,35 @@
     <PageAppCollections :collections="collections" />
 
     <!-- Блок Ювелирный бренд MADDE -->
-    <PageAppAbout />
+    <LazyPageAppAbout hydrate-on-visible />
 
     <!-- Блок Выгоды сотрудничества -->
-    <PageAppBenefit />
+    <LazyPageAppBenefit hydrate-on-visible />
 
     <!-- Блок Этапы работы -->
-    <PageAppStages />
+    <LazyPageAppStages hydrate-on-visible />
 
     <!-- Блок Выставки -->
-    <PageAppExhibitions />
+    <PageAppExhibitions hydrate-on-visible />
     <!-- Слайдер Выставки -->
-    <div class="content__carousel">
-      <EmblaAppCenterCarousel :data="exebitionPhoto" />
+    <div class="content__carousel" hydrate-on-visible>
+      <LazyEmblaAppCenterCarousel :data="exebitionPhoto" />
     </div>
 
     <!-- Блок Часто задаваемые вопросы -->
-    <PageAppQuestions />
+    <LazyPageAppQuestions hydrate-on-visible />
     <!-- Блок Остались вопросы? -->
-    <PageAppQuestionsForm />
+    <LazyPageAppQuestionsForm hydrate-on-visible />
 
     <!-- Блок с контактами -->
-    <PageAppContacts
+    <LazyPageAppContacts
+      hydrate-on-visible
       :phone="phone"
       :phoneNumber="phoneNumber"
       :address="address"
     />
     <!-- Блок с картой -->
-    <PageAppMap />
+    <LazyPageAppMap hydrate-on-visible />
   </main>
 </template>
 
@@ -89,6 +90,4 @@ useSeoMeta({
 });
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

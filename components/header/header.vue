@@ -40,7 +40,7 @@
   </header>
 
   <!-- Мобильное меню -->
-  <HeaderAppMenuMobile
+  <LazyHeaderAppMenuMobile
     v-if="isScreenMedium"
     :isMenuMobileActive="isMenuMobileActive"
     @toggleMobileMenu="toggleMobileMenu"
@@ -51,7 +51,7 @@
       :route="props.route"
       @toggleMobileMenu="toggleMobileMenu"
     />
-  </HeaderAppMenuMobile>
+  </LazyHeaderAppMenuMobile>
 </template>
 
 <script setup>

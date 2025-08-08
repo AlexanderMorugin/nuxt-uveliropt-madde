@@ -1,7 +1,7 @@
 <template>
   <div class="default-layout">
     <slot />
-    <Footer />
+    <LazyFooter />
   </div>
 </template>
 

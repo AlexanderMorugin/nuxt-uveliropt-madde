@@ -82,6 +82,7 @@ const emit = defineEmits(['toggleMobileMenu']);
 @media (max-width: 1023px) {
   .headerNav {
     max-width: 570px;
+    gap: 12px;
   }
   .headerNav__link {
     font-size: 13px;
