@@ -10,7 +10,7 @@
         class="collections__listItem"
       >
         <NuxtLink :to="`collections/${item.route}`">
-          <img :src="item.thumb" :alt="item.name" class="collections__thumb" />
+          <NuxtImg :src="item.thumb" :alt="item.name" class="collections__thumb" />
           <span class="collections__name">{{ item.name }}</span>
         </NuxtLink>
       </li>

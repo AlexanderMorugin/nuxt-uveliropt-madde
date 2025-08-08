@@ -2,7 +2,7 @@
   <div class="mainImage">
     <!-- Изображение для мобилки -->
 
-    <img
+    <NuxtImg
       v-if="isScreenMedium"
       :src="mobileImage"
       alt="Подложка"
@@ -10,7 +10,7 @@
     />
 
     <!-- Изображение для десктопа -->
-    <img
+    <NuxtImg
       v-if="!isScreenMedium"
       :src="desktopImage"
       alt="Подложка"

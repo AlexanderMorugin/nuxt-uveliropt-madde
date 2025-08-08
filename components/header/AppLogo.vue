@@ -1,12 +1,12 @@
 <template>
   <NuxtLink to="/" class="logo__link">
-    <img
+    <NuxtImg
       v-if="isScroll"
       src="/logo/logo-scroll.webp"
       alt="Логотип"
       class="logo-scroll"
     />
-    <img v-else src="/logo/logo.webp" alt="Логотип" class="logo" />
+    <NuxtImg v-else src="/logo/logo.webp" alt="Логотип" class="logo" />
   </NuxtLink>
 </template>
 

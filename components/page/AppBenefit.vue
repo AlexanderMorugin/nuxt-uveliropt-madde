@@ -10,7 +10,7 @@
       <div class="benefit__container">
         <ul class="benefit__list">
           <li v-for="item in benefit" :key="item.id" class="benefit__listItem">
-            <img :src="item.image" :alt="item.title" class="benefit__image" />
+            <NuxtImg :src="item.image" :alt="item.title" class="benefit__image" />
             <div class="benefit__textBox">
               <span class="benefit__title">{{ item.title }}</span>
               <p class="benefit__text">{{ item.text }}</p>

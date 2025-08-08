@@ -4,7 +4,7 @@
       <ul class="embla__container">
         <li v-for="item in data" :key="item.id" class="embla__slide">
           <div class="embla__imageBox">
-            <img :src="item.image" :alt="item.title" class="embla__image" />
+            <NuxtImg :src="item.image" :alt="item.title" class="embla__image" />
           </div>
         </li>
       </ul>

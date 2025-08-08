@@ -7,7 +7,7 @@
     >
       <div class="modal" @click.stop>
         <button class="modal__close" @click="$emit('closeCooperationModal')">
-          <img
+          <NuxtImg
             src="/icons/icon-close-gray.svg"
             alt="Кнопка закрыть"
             class="modal__image"

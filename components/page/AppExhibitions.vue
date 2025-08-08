@@ -9,7 +9,7 @@
     </p>
 
     <div>
-      <img
+      <NuxtImg
         src="/images/img-exhibitions-01.webp"
         alt="Выставка JunWex"
         class="exhibitions__image"

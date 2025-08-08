@@ -21,7 +21,7 @@
           >
             <span class="questions__title">{{ item.question }}</span>
             <div class="questions__imageBox">
-              <img
+              <NuxtImg
                 src="/icons/icon-crestik.svg"
                 alt="Крестик"
                 :class="[

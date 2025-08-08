@@ -1,7 +1,7 @@
 <template>
   <button class="embla__imageBox" @click="openProductModal">
     <span class="itemName">{{ item.text }}</span>
-    <img :src="item.imageSmall" :alt="item.text" class="embla__image" />
+    <NuxtImg :src="item.imageSmall" :alt="item.text" class="embla__image" />
   </button>
 
   <Teleport to="#teleports">
