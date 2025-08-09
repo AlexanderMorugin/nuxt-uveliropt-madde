@@ -1,5 +1,5 @@
 <template>
-  <section class="stages">
+  <section class="stages" >
     <PageAppSecondTitle title="Этапы работы" class="stages__title" />
     <ul class="stages__content">
       <li
