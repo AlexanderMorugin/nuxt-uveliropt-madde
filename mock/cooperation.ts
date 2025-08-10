@@ -1,4 +1,4 @@
-export const benefit = [
+export const cooperation = [
   {
     id: 1,
     image: '/icons/icon-import.svg',

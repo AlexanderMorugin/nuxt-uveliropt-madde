@@ -14,8 +14,7 @@
 
     <ul class="heading__list">
       <li v-for="item in headingList" :key="item.id" class="heading__listItem">
-        <NuxtImg
-          loading="lazy"
+        <img
           src="/icons/icon-triangle.svg"
           alt="Стрелка"
           class="heading__listItemArrow"

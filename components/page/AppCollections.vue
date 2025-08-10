@@ -1,5 +1,5 @@
 <template>
-  <section class="collections" id="collections">
+  <!-- <section class="collections" id="collections"> -->
     <!-- Блок с титлом -->
     <PageAppSecondTitle title="Коллекции" class="collections__title" />
 
@@ -20,7 +20,7 @@
         </NuxtLink>
       </li>
     </ul>
-  </section>
+  <!-- </section> -->
 </template>
 
 <script setup>
@@ -28,7 +28,7 @@ const { collections } = defineProps(['collections']);
 </script>
 
 <style scoped>
-.collections {
+/* .collections {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -38,7 +38,7 @@ const { collections } = defineProps(['collections']);
   padding-top: 70px;
   padding-left: 20px;
   padding-right: 20px;
-}
+} */
 .collections__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -76,11 +76,11 @@ const { collections } = defineProps(['collections']);
 }
 
 @media (max-width: 767px) {
-  .collections {
+  /* .collections {
     padding-top: 60px;
     padding-left: 10px;
     padding-right: 10px;
-  }
+  } */
   .collections__list {
     grid-template-columns: 1fr;
   }

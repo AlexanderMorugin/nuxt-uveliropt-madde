@@ -19,42 +19,58 @@
     />
 
     <!-- Блок Коллекции -->
-    <PageAppCollections :collections="collections" />
+    <section ref="collectionsBlock" class="collections observer" id="collections">
+      <LazyPageAppCollections :collections="collections" hydrate-on-visible />
+    </section>
 
     <!-- Блок Ювелирный бренд MADDE -->
-    <div ref="about" class="demo">
+    <section ref="about" class="about observer" id="about">
       <LazyPageAppAbout hydrate-on-visible />
-    </div>
+    </section>
 
     <!-- Блок Выгоды сотрудничества -->
-    <div ref="benefit" class="demo">
-      <PageAppBenefit />
-    </div>
+    <section ref="cooperation" class="cooperation observer" id="cooperation">
+      <LazyPageAppCooperation hydrate-on-visible />
+    </section>
 
     <!-- Блок Этапы работы -->
-    <div ref="stages" class="demo">
-      <PageAppStages />
-    </div>
+    <section ref="stages" class="stages observer">
+      <LazyPageAppStages hydrate-on-visible />
+    </section>
 
     <!-- Блок Выставки -->
-    <PageAppExhibitions hydrate-on-visible />
+    <section ref="exhibitions" class="exhibitions observer">
+      <LazyPageAppExhibitions hydrate-on-visible />
+    </section>
+
     <!-- Слайдер Выставки -->
-    <div class="content__carousel" hydrate-on-visible>
-      <LazyEmblaAppCenterCarousel :data="exebitionPhoto" />
-    </div>
+    <section
+      ref="exhibitionCarousel"
+      class="content__carousel observer"
+    >
+      <LazyEmblaAppCenterCarousel :data="exebitionPhoto" hydrate-on-visible />
+    </section>
 
     <!-- Блок Часто задаваемые вопросы -->
-    <LazyPageAppQuestions hydrate-on-visible />
+    <section ref="questions" class="questions observer" id="questions">
+      <LazyPageAppQuestions hydrate-on-visible />
+    </section>
+
     <!-- Блок Остались вопросы? -->
-    <LazyPageAppQuestionsForm hydrate-on-visible />
+    <section ref="questionsForm" class="questionsForm observer">
+      <LazyPageAppQuestionsForm hydrate-on-visible />
+    </section>
 
     <!-- Блок с контактами -->
-    <LazyPageAppContacts
-      hydrate-on-visible
-      :phone="phone"
-      :phoneNumber="phoneNumber"
-      :address="address"
-    />
+    <section ref="contacts" class="contacts observer" id="contacts">
+      <LazyPageAppContacts
+        hydrate-on-visible
+        :phone="phone"
+        :phoneNumber="phoneNumber"
+        :address="address"
+      />
+    </section>
+
     <!-- Блок с картой -->
     <LazyPageAppMap hydrate-on-visible />
   </main>
@@ -69,35 +85,67 @@ import { collections } from '@/mock/collections/collections';
 import DesktopImage from '/images/img-01-desktop.webp';
 import MobileImage from '/images/img-01-mobile.webp';
 
+const collectionsBlock = ref(null);
 const about = ref(null);
-const benefit = ref(null);
+const cooperation = ref(null);
 const stages = ref(null);
+const exhibitions = ref(null);
+const exhibitionCarousel = ref(null);
+const questions = ref(null);
+const questionsForm = ref(null);
+const contacts = ref(null);
 
 onMounted(() => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // add 'animate-delay' class to the target
-          entry.target.classList.add('animate-delay');
+          entry.target.classList.add('observer_animate');
         }
+        // else {
+        //   entry.target.classList.remove('observer_animate');
+        // }
       });
     },
     {
-      threshold: 0.1,
+      threshold: 0.2,
     }
   );
+
+  if (collectionsBlock.value) {
+    observer.observe(collectionsBlock.value);
+  }
 
   if (about.value) {
     observer.observe(about.value);
   }
 
-  if (benefit.value) {
-    observer.observe(benefit.value);
+  if (cooperation.value) {
+    observer.observe(cooperation.value);
   }
 
   if (stages.value) {
     observer.observe(stages.value);
+  }
+
+  if (exhibitions.value) {
+    observer.observe(exhibitions.value);
+  }
+
+  if (exhibitionCarousel.value) {
+    observer.observe(exhibitionCarousel.value);
+  }
+
+  if (questions.value) {
+    observer.observe(questions.value);
+  }
+
+  if (questionsForm.value) {
+    observer.observe(questionsForm.value);
+  }
+
+  if (contacts.value) {
+    observer.observe(contacts.value);
   }
 });
 
@@ -129,25 +177,120 @@ useSeoMeta({
 </script>
 
 <style scoped>
-.animate-delay {
-  animation: animate-delay 1s both;
+.collections {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.about {
+  position: relative;
+  height: 870px;
+  padding-top: 70px;
+}
+.cooperation {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 70px;
+}
+.stages {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.exhibitions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 70px;
+}
+.questionsForm {
+  width: 100%;
+  background-image: url('/images/img-questions-form-01.webp');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  padding-top: 40px;
+  margin-top: 100px;
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-@keyframes animate-delay {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 1023px) {
+  .questionsForm {
+    background-position: top 0 right -300px;
   }
 }
 
-.demo {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(0);
+@media (max-width: 767px) {
+  .collections {
+    padding-top: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .about {
+    height: min-content;
+    padding-top: 60px;
+  }
+  .cooperation {
+    padding-top: 60px;
+  }
+  .stages {
+    padding-top: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .exhibitions {
+    padding-top: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .questions {
+    padding-top: 60px;
+  }
+  .questionsForm {
+    background-position: top 0 left 0;
+    margin-top: 80px;
+  }
+  .contacts {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 </style>

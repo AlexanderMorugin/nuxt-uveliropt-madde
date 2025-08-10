@@ -1,5 +1,5 @@
 <template>
-  <section class="questions" id="questions">
+  <!-- <section class="questions" id="questions"> -->
     <!-- Блок с титлом -->
     <PageAppSecondTitle
       title="Часто задаваемые вопросы"
@@ -43,7 +43,7 @@
         </li>
       </ul>
     </div>
-  </section>
+  <!-- </section> -->
 </template>
 
 <script setup>
@@ -61,12 +61,12 @@ const isOpenAnswer = (index) => {
 </script>
 
 <style scoped>
-.questions {
+/* .questions {
   display: flex;
   flex-direction: column;
   gap: 40px;
   padding-top: 70px;
-}
+} */
 .questions__container {
   width: 100%;
   max-width: 1440px;
@@ -143,9 +143,9 @@ const isOpenAnswer = (index) => {
 }
 
 @media (max-width: 767px) {
-  .questions {
+  /* .questions {
     padding-top: 60px;
-  }
+  } */
   .questions__container {
     padding-left: 10px;
     padding-right: 10px;

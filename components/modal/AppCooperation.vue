@@ -8,13 +8,15 @@
 
   <!-- Модалка с формой заявки на сотрудничество -->
   <Teleport to="#teleports">
-    <PageAppCooperationModal
-      :isCooperationModalOpen="isCooperationModalOpen"
-      @closeCooperationModal="closeCooperationModal"
-      title="Оставить заявку"
-    >
-      <FormAppRequest @closeCooperationModal="closeCooperationModal" />
-    </PageAppCooperationModal>
+    <ClientOnly>
+      <PageAppCooperationModal
+        :isCooperationModalOpen="isCooperationModalOpen"
+        @closeCooperationModal="closeCooperationModal"
+        title="Оставить заявку"
+      >
+        <FormAppRequest @closeCooperationModal="closeCooperationModal" />
+      </PageAppCooperationModal>
+    </ClientOnly>
   </Teleport>
 </template>
 

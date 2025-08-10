@@ -1,56 +1,52 @@
 <template>
-  <section class="benefit" id="cooperation" >
-    <!-- Блок с титлом -->
-    <PageAppSecondTitle
-      title="Выгоды сотрудничества"
-      class="benefit__secondTitle"
-    />
+  <!-- Блок с титлом -->
+  <PageAppSecondTitle
+    title="Выгоды сотрудничества"
+    class="cooperation__secondTitle"
+  />
 
-    <div class="benefit__background">
-      <div class="benefit__container">
-        <ul class="benefit__list">
-          <li v-for="item in benefit" :key="item.id" class="benefit__listItem">
-            <NuxtImg
-              loading="lazy"
-              :src="item.image"
-              :alt="item.title"
-              class="benefit__image"
-            />
-            <div class="benefit__textBox">
-              <span class="benefit__title">{{ item.title }}</span>
-              <p class="benefit__text">{{ item.text }}</p>
-            </div>
-          </li>
-        </ul>
+  <div class="cooperation__background">
+    <div class="cooperation__container">
+      <ul class="cooperation__list">
+        <li
+          v-for="item in cooperation"
+          :key="item.id"
+          class="cooperation__listItem"
+        >
+          <NuxtImg
+            loading="lazy"
+            :src="item.image"
+            :alt="item.title"
+            class="cooperation__image"
+          />
+          <div class="cooperation__textBox">
+            <span class="cooperation__title">{{ item.title }}</span>
+            <p class="cooperation__text">{{ item.text }}</p>
+          </div>
+        </li>
+      </ul>
 
-        <!-- Модалка заявки на сотрудничество, с кнопкой -->
-        <div class="benefit__button">
-          <ModalAppCooperation buttonTitle="Заявка на сотрудничество" />
-        </div>
+      <!-- Модалка заявки на сотрудничество, с кнопкой -->
+      <div class="cooperation__button">
+        <ModalAppCooperation buttonTitle="Заявка на сотрудничество" />
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
-import { benefit } from '@/mock/benefit';
+import { cooperation } from '@/mock/cooperation';
 </script>
 
 <style scoped>
-.benefit {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding-top: 70px;
-}
-.benefit__background {
+.cooperation__background {
   width: 100%;
-  background-image: url('/images/img-benefit-01.webp');
+  background-image: url('/images/img-cooperation-01.webp');
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
 }
-.benefit__container {
+.cooperation__container {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -59,27 +55,27 @@ import { benefit } from '@/mock/benefit';
   padding-left: 20px;
   padding-right: 20px;
 }
-.benefit__list {
+.cooperation__list {
   display: flex;
   flex-direction: column;
   gap: 48px;
 }
-.benefit__listItem {
+.cooperation__listItem {
   display: flex;
   gap: 20px;
   width: 100%;
   max-width: 530px;
 }
-.benefit__image {
+.cooperation__image {
   width: 65px;
   height: 65px;
 }
-.benefit__textBox {
+.cooperation__textBox {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.benefit__title {
+.cooperation__title {
   font-family: 'Montserrat-Regular';
   font-size: 20px;
   text-transform: uppercase;
@@ -98,45 +94,42 @@ import { benefit } from '@/mock/benefit';
   background-size: 500% auto;
   animation: textShine 5s ease-in-out infinite alternate;
 }
-.benefit__listItem:nth-child(2) .benefit__title {
+.cooperation__listItem:nth-child(2) .cooperation__title {
   animation: textShine 4s ease-in-out infinite alternate;
 }
-.benefit__listItem:nth-child(3) .benefit__title {
+.cooperation__listItem:nth-child(3) .cooperation__title {
   animation: textShine 6s ease-in-out infinite alternate;
 }
-.benefit__text {
+.cooperation__text {
   font-family: 'Montserrat-Regular';
   line-height: 1.5;
   font-size: 18px;
   color: var(--white-primary);
 }
-.benefit__button {
+.cooperation__button {
   padding-left: 85px;
   margin-top: 40px;
 }
-.benefit__secondTitle {
+.cooperation__secondTitle {
   color: var(--brown-secondary);
 }
 
 @media (max-width: 767px) {
-  .benefit {
-    padding-top: 60px;
-  }
-  .benefit__background {
+  .cooperation__background {
     background-blend-mode: multiply;
     background-position: top 0 right -350px;
     background-color: rgba(0, 0, 0, 0.3);
   }
-  .benefit__container {
+  .cooperation__container {
     padding-top: 40px;
     padding-bottom: 40px;
     padding-left: 10px;
     padding-right: 10px;
   }
-  .benefit__listItem {
+  .cooperation__listItem {
     flex-direction: column;
   }
-  .benefit__button {
+  .cooperation__button {
     padding-left: 16px;
     padding-right: 16px;
   }

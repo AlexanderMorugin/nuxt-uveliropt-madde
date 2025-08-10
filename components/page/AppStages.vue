@@ -1,48 +1,46 @@
 <template>
-  <section class="stages" >
-    <PageAppSecondTitle title="Этапы работы" class="stages__title" />
-    <ul class="stages__content">
-      <li
-        v-for="item in stagesList"
-        :key="item.id"
-        class="stages__item"
-        :class="item.gridName"
-      >
-        <div class="stages__itemImageBox">
+  <PageAppSecondTitle title="Этапы работы" class="stages__title" />
+  <ul class="stages__content">
+    <li
+      v-for="item in stagesList"
+      :key="item.id"
+      class="stages__item"
+      :class="item.gridName"
+    >
+      <div class="stages__itemImageBox">
+        <NuxtImg
+          loading="lazy"
+          :src="item.image"
+          :alt="item.title"
+          class="stages__itemImage"
+        />
+        <div class="stages__itemTitleBox">
+          <span>{{ item.number }}</span>
+          <span>{{ item.title }}</span>
+        </div>
+      </div>
+      <ul class="stages__itemList">
+        <li
+          v-for="element in item.list"
+          :key="element.id"
+          class="stages__itemText"
+        >
           <NuxtImg
             loading="lazy"
-            :src="item.image"
-            :alt="item.title"
-            class="stages__itemImage"
+            src="/icons/icon-triangle-brown.svg"
+            alt="Стрелка"
+            class="stages__itemArrow"
           />
-          <div class="stages__itemTitleBox">
-            <span>{{ item.number }}</span>
-            <span>{{ item.title }}</span>
-          </div>
-        </div>
-        <ul class="stages__itemList">
-          <li
-            v-for="element in item.list"
-            :key="element.id"
-            class="stages__itemText"
-          >
-            <NuxtImg
-              loading="lazy"
-              src="/icons/icon-triangle-brown.svg"
-              alt="Стрелка"
-              class="stages__itemArrow"
-            />
-            <p class="stages__text">{{ element.text }}</p>
-          </li>
-        </ul>
-      </li>
-    </ul>
+          <p class="stages__text">{{ element.text }}</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
 
-    <!-- Модалка заявки на сотрудничество, с кнопкой -->
-    <div class="stages__button">
-      <ModalAppCooperation buttonTitle="Оставить заявку" />
-    </div>
-  </section>
+  <!-- Модалка заявки на сотрудничество, с кнопкой -->
+  <div class="stages__button">
+    <LazyModalAppCooperation buttonTitle="Оставить заявку" />
+  </div>
 </template>
 
 <script setup>
@@ -50,17 +48,6 @@ import { stagesList } from '@/mock/stages';
 </script>
 
 <style scoped>
-.stages {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding-top: 70px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
 .stages__content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -150,11 +137,6 @@ import { stagesList } from '@/mock/stages';
 }
 
 @media (max-width: 767px) {
-  .stages {
-    padding-top: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
   .stages__content {
     grid-template-columns: 1fr;
     grid-template-areas:

@@ -1,31 +1,29 @@
 <template>
-  <section class="about" id="about">
-    <!-- Блок с титлом и текстами -->
-    <div class="about__container">
-      <PageAppSecondTitle title="Ювелирный бренд MADDE" class="about__title" />
-      <div class="about__textBox">
-        <p class="about__text">
-          Компания работает на российском рынке с 2008 года. Мы предлагаем оптом
-          широкий ассортимент ювелирных украшений из серебра.
-        </p>
-        <p class="about__text">
-          Madde тесно сотрудничает с итальянскими фабриками, расположенными в
-          самом сердце итальянской ювелирной отрасли — городе Ареццо.
-        </p>
-        <p class="about__text">
-          В коллаборации с итальянскими брендами прорабатываются не только
-          производственные и эстетические особенности будущих украшений, но и
-          учитывается специфика российского рынка. В симбиозе этих обсуждений
-          рождаются новые идеи, а затем и сами Коллекции MADDE.
-        </p>
-      </div>
+  <!-- Блок с титлом и текстами -->
+  <div class="about__container">
+    <PageAppSecondTitle title="Ювелирный бренд MADDE" class="about__title" />
+    <div class="about__textBox">
+      <p class="about__text">
+        Компания работает на российском рынке с 2008 года. Мы предлагаем оптом
+        широкий ассортимент ювелирных украшений из серебра.
+      </p>
+      <p class="about__text">
+        Madde тесно сотрудничает с итальянскими фабриками, расположенными в
+        самом сердце итальянской ювелирной отрасли — городе Ареццо.
+      </p>
+      <p class="about__text">
+        В коллаборации с итальянскими брендами прорабатываются не только
+        производственные и эстетические особенности будущих украшений, но и
+        учитывается специфика российского рынка. В симбиозе этих обсуждений
+        рождаются новые идеи, а затем и сами Коллекции MADDE.
+      </p>
     </div>
+  </div>
 
-    <!-- Карусель с меняющимися картинками. В десктопе как бекграунд под текстом. В мобильной версии, отдельным блоком -->
-    <div class="about__embla">
-      <EmblaAppFadeCarousel :data="aboutPhoto" />
-    </div>
-  </section>
+  <!-- Карусель с меняющимися картинками. В десктопе как бекграунд под текстом. В мобильной версии, отдельным блоком -->
+  <div class="about__embla">
+    <LazyEmblaAppFadeCarousel :data="aboutPhoto" />
+  </div>
 </template>
 
 <script setup>
@@ -33,11 +31,6 @@ import { aboutPhoto } from '@/mock/about-photo';
 </script>
 
 <style scoped>
-.about {
-  position: relative;
-  height: 870px;
-  padding-top: 70px;
-}
 .about__embla {
   position: absolute;
   top: 70px;
@@ -90,10 +83,6 @@ import { aboutPhoto } from '@/mock/about-photo';
 }
 
 @media (max-width: 767px) {
-  .about {
-    height: min-content;
-    padding-top: 60px;
-  }
   .about__embla {
     position: static;
     padding-top: 60px;

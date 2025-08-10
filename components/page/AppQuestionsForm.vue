@@ -1,5 +1,5 @@
 <template>
-  <section class="questionsForm">
+  <ClientOnly>
     <div class="questionsForm__container">
       <!-- Блок с титлом -->
       <PageAppSecondTitle
@@ -102,7 +102,7 @@
         </div>
       </form>
     </div>
-  </section>
+  </ClientOnly>
 </template>
 
 <script setup>
@@ -165,15 +165,6 @@ const submitRequestForm = () => {
 </script>
 
 <style scoped>
-.questionsForm {
-  width: 100%;
-  background-image: url('/images/img-questions-form-01.webp');
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: cover;
-  padding-top: 40px;
-  margin-top: 100px;
-}
 .questionsForm__title {
   text-align: left;
   color: var(--brown-secondary);
@@ -201,17 +192,7 @@ const submitRequestForm = () => {
   padding-right: 16px;
 }
 
-@media (max-width: 1023px) {
-  .questionsForm {
-    background-position: top 0 right -300px;
-  }
-}
-
 @media (max-width: 767px) {
-  .questionsForm {
-    background-position: top 0 left 0;
-    margin-top: 80px;
-  }
   .questionsForm__container {
     display: flex;
     flex-direction: column;

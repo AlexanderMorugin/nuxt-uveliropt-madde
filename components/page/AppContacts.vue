@@ -1,29 +1,27 @@
 <template>
-  <section class="contacts" id="contacts">
-    <div class="contacts__titleBox">
-      <!-- Блок с титлом -->
-      <PageAppSecondTitle
-        title="Приезжайте к нам в офис"
-        class="contacts__title"
-      />
+  <div class="contacts__titleBox">
+    <!-- Блок с титлом -->
+    <PageAppSecondTitle
+      title="Приезжайте к нам в офис"
+      class="contacts__title"
+    />
 
-      <!-- Блок с телефоном и адресом -->
-      <div class="contacts__addressBox">
-        <div class="contacts__addressBoxItem">
-          <span class="contacts__addressTop">Звоните нам</span>
-          <HeaderAppPhone
-            :phone="phone"
-            :phoneNumber="phoneNumber"
-            location="footer"
-          />
-        </div>
-        <div class="contacts__addressBoxItem">
-          <span class="contacts__addressTop">Без выходных: 9:00-21:00</span>
-          <span class="contacts__addressBottom">{{ props.address }}</span>
-        </div>
+    <!-- Блок с телефоном и адресом -->
+    <div class="contacts__addressBox">
+      <div class="contacts__addressBoxItem">
+        <span class="contacts__addressTop">Звоните нам</span>
+        <HeaderAppPhone
+          :phone="phone"
+          :phoneNumber="phoneNumber"
+          location="footer"
+        />
+      </div>
+      <div class="contacts__addressBoxItem">
+        <span class="contacts__addressTop">Без выходных: 9:00-21:00</span>
+        <span class="contacts__addressBottom">{{ props.address }}</span>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
@@ -31,18 +29,6 @@ const props = defineProps(['phone', 'phoneNumber', 'address']);
 </script>
 
 <style scoped>
-.contacts {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
 .contacts__titleBox {
   display: flex;
   justify-content: space-between;
@@ -74,12 +60,6 @@ const props = defineProps(['phone', 'phoneNumber', 'address']);
 }
 
 @media (max-width: 767px) {
-  .contacts {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
   .contacts__titleBox {
     flex-direction: column;
     align-items: center;
