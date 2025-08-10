@@ -1,37 +1,37 @@
 <template>
-  <section class="brillianceAbout" id="about">
-    <div class="brillianceAbout__background">
-      <!-- Блок с титлом и текстами -->
-      <div class="brillianceAbout__container">
-        <div class="brillianceAbout__textBox">
-          <PageAppSecondTitle
-            title="О коллекции"
-            class="brillianceAbout__title"
-          />
+  <!-- <section class="brillianceAbout" id="about"> -->
+  <div class="brillianceAbout__background">
+    <!-- Блок с титлом и текстами -->
+    <div class="brillianceAbout__container">
+      <div class="brillianceAbout__textBox">
+        <PageAppSecondTitle
+          title="О коллекции"
+          class="brillianceAbout__title"
+        />
 
-          <PageAppCollectionName
-            name="Brilliance"
-            class="brillianceAbout__name"
-          />
+        <PageAppCollectionName
+          name="Brilliance"
+          class="brillianceAbout__name"
+        />
 
-          <p class="brillianceAbout__text">
-            Коллекция Brilliance от MADDE – это бриллиантовая классика,
-            воплощенная в серебре со вставками кубического циркония (CZ).
-            Концепция коллекций - достигнуть максимального сходства с
-            бриллиантовыми моделями из белого золота.
-          </p>
-        </div>
+        <p class="brillianceAbout__text">
+          Коллекция Brilliance от MADDE – это бриллиантовая классика,
+          воплощенная в серебре со вставками кубического циркония (CZ).
+          Концепция коллекций - достигнуть максимального сходства с
+          бриллиантовыми моделями из белого золота.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+  <!-- </section> -->
 </template>
 
 <script setup></script>
 
 <style scoped>
-.brillianceAbout {
+/* .brillianceAbout {
   padding-top: 70px;
-}
+} */
 .brillianceAbout__background {
   width: 100%;
   background-image: url('/images/collections/brilliance/img-brilliance-about-01.webp');
@@ -74,9 +74,9 @@
 }
 
 @media (max-width: 767px) {
-  .brillianceAbout {
+  /* .brillianceAbout {
     padding-top: 60px;
-  }
+  } */
   .brillianceAbout__container {
     padding: 0;
   }

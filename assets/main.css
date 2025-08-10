@@ -78,6 +78,19 @@ button {
   transform: translateY(0);
 }
 
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -175,5 +188,11 @@ button {
   }
   .form-input-error {
     top: 78px;
+  }
+  .contacts {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

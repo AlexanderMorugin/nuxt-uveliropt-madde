@@ -1,33 +1,18 @@
 <template>
   <div class="mainImage">
     <!-- Изображение для мобилки -->
-
-    <img
-
-      :src="mobileImage"
-      alt="Подложка"
-      class="mainImage__imageMobile"
-    />
+    <img :src="mobileImage" alt="Подложка" class="mainImage__imageMobile" />
 
     <!-- Изображение для десктопа -->
-    <img
-
-      :src="desktopImage"
-      alt="Подложка"
-      class="mainImage__imageDesktop"
-    />
+    <img :src="desktopImage" alt="Подложка" class="mainImage__imageDesktop" />
   </div>
 </template>
 
 <script setup>
-import { useResizeMedium } from '@/use/useResizeMedium';
-
 const { desktopImage, mobileImage } = defineProps([
   'desktopImage',
   'mobileImage',
 ]);
-
-const { isScreenMedium } = useResizeMedium();
 </script>
 
 <style scoped>

@@ -1,24 +1,24 @@
 <template>
-  <section class="catalog" id="catalog">
-    <PageAppSecondTitle title="Каталог" class="catalog__title" />
-    <ul class="catalog__list">
-      <li v-for="item in data" :key="item.id" class="catalog__listItem">
-        <!-- {{ item.slideItems }} -->
-        <EmblaAppCatalogCarousel :data="item.slideItems" />
-        <!-- <PageAppCatalogCard :product="item.slideItems"/> -->
-        <ul class="catalog__products">
-          <li
-            v-for="product in item.items"
-            :key="product.id"
-            class="catalog__productsItem"
-          >
-            <!-- {{ product}} -->
-            <PageAppCatalogCard :product="product" />
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </section>
+  <!-- <section class="catalog" id="catalog"> -->
+  <PageAppSecondTitle title="Каталог" class="catalog__title" />
+  <ul class="catalog__list">
+    <li v-for="item in data" :key="item.id" class="catalog__listItem">
+      <!-- {{ item.slideItems }} -->
+      <EmblaAppCatalogCarousel :data="item.slideItems" />
+      <!-- <PageAppCatalogCard :product="item.slideItems"/> -->
+      <ul class="catalog__products">
+        <li
+          v-for="product in item.items"
+          :key="product.id"
+          class="catalog__productsItem"
+        >
+          <!-- {{ product}} -->
+          <PageAppCatalogCard :product="product" />
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <!-- </section> -->
 </template>
 
 <script setup>
@@ -26,7 +26,7 @@ const { data } = defineProps(['data']);
 </script>
 
 <style scoped>
-.catalog {
+/* .catalog {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -35,8 +35,8 @@ const { data } = defineProps(['data']);
   margin: 0 auto;
   padding: 70px 20px 0 20px;
 
-  /* border: 1px solid red; */
-}
+
+} */
 .catalog__title {
   color: var(--brown-secondary);
 }
@@ -74,11 +74,11 @@ const { data } = defineProps(['data']);
 }
 
 @media (max-width: 767px) {
-  .catalog {
+  /* .catalog {
     padding-top: 60px;
     padding-left: 10px;
     padding-right: 10px;
-  }
+  } */
   .catalog__listItem {
     grid-template-columns: 1fr;
   }

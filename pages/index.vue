@@ -19,7 +19,11 @@
     />
 
     <!-- Блок Коллекции -->
-    <section ref="collectionsBlock" class="collections observer" id="collections">
+    <section
+      ref="collectionsBlock"
+      class="collections observer"
+      id="collections"
+    >
       <LazyPageAppCollections :collections="collections" hydrate-on-visible />
     </section>
 
@@ -44,10 +48,7 @@
     </section>
 
     <!-- Слайдер Выставки -->
-    <section
-      ref="exhibitionCarousel"
-      class="content__carousel observer"
-    >
+    <section ref="exhibitionCarousel" class="content__carousel observer">
       <LazyEmblaAppCenterCarousel :data="exebitionPhoto" hydrate-on-visible />
     </section>
 
@@ -237,18 +238,6 @@ useSeoMeta({
   padding-top: 40px;
   margin-top: 100px;
 }
-.contacts {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
 
 @media (max-width: 1023px) {
   .questionsForm {
@@ -285,12 +274,6 @@ useSeoMeta({
   .questionsForm {
     background-position: top 0 left 0;
     margin-top: 80px;
-  }
-  .contacts {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="brillianceAboutSecond">
+  <!-- <section class="brillianceAboutSecond"> -->
     <!-- Блок с титлом и текстами -->
     <div class="brillianceAboutSecond__container">
       <div class="brillianceAboutSecond__textBox">
@@ -19,20 +19,20 @@
         </p>
       </div>
     </div>
-  </section>
+  <!-- </section> -->
 </template>
 
 <script setup></script>
 
 <style scoped>
-.brillianceAboutSecond {
+/* .brillianceAboutSecond {
   width: 100%;
   background-image: url('/images/collections/brilliance/img-brilliance-about-02.webp');
   background-repeat: no-repeat;
   background-position: right;
   background-size: cover;
   margin-top: 70px;
-}
+} */
 .brillianceAboutSecond__container {
   display: flex;
   justify-content: flex-start;
@@ -77,9 +77,9 @@
 }
 
 @media (max-width: 767px) {
-  .brillianceAboutSecond {
+  /* .brillianceAboutSecond {
     margin-top: 60px;
-  }
+  } */
   .brillianceAboutSecond__container {
     padding: 0;
   }
