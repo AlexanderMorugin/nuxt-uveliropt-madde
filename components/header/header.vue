@@ -12,13 +12,15 @@
         "
       >
         <HeaderAppLogo :isScroll="isScroll" />
-        <HeaderAppNav
-          v-if="!isScreenMedium"
-          :linksData="props.linksData"
-          :isScroll="isScroll"
-          :location="props.location"
-          :route="props.route"
-        />
+        <ClientOnly>
+          <HeaderAppNav
+            v-if="!isScreenMedium"
+            :linksData="props.linksData"
+            :isScroll="isScroll"
+            :location="props.location"
+            :route="props.route"
+          />
+        </ClientOnly>
 
         <div class="header__right">
           <HeaderAppPhone
@@ -29,7 +31,7 @@
 
           <!-- Кнопка мобильного меню -->
           <HeaderAppMenuButton
-            v-if="isScreenMedium"
+            v-show="isScreenMedium"
             :isMenuMobileActive="isMenuMobileActive"
             :isScroll="isScroll"
             @toggleMobileMenu="toggleMobileMenu"
@@ -40,18 +42,20 @@
   </header>
 
   <!-- Мобильное меню -->
-  <LazyHeaderAppMenuMobile
+  <HeaderAppMenuMobile
     v-if="isScreenMedium"
     :isMenuMobileActive="isMenuMobileActive"
     @toggleMobileMenu="toggleMobileMenu"
   >
-    <HeaderAppNav
-      :linksData="props.linksData"
-      :location="props.location"
-      :route="props.route"
-      @toggleMobileMenu="toggleMobileMenu"
-    />
-  </LazyHeaderAppMenuMobile>
+    <ClientOnly>
+      <HeaderAppNav
+        :linksData="props.linksData"
+        :location="props.location"
+        :route="props.route"
+        @toggleMobileMenu="toggleMobileMenu"
+      />
+    </ClientOnly>
+  </HeaderAppMenuMobile>
 </template>
 
 <script setup>
