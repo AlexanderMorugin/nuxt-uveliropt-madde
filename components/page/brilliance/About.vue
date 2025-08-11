@@ -69,7 +69,7 @@
   top: 350px;
   right: 260px;
   font-size: 82px;
-  text-shadow: rgba(52, 58, 63, 0.5) 1px 2px 0;
+  text-shadow: rgba(104, 246, 246, 0.5) 0 0 0;
 }
 .brillianceAbout__text {
   /* font-family: 'Montserrat-Regular';
