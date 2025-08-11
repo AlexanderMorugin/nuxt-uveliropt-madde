@@ -1,5 +1,4 @@
 <template>
-  <!-- <section class="brillianceAbout" id="about"> -->
   <div class="brillianceAbout__background">
     <!-- Блок с титлом и текстами -->
     <div class="brillianceAbout__container">
@@ -9,7 +8,7 @@
           class="brillianceAbout__title"
         />
 
-        <PageAppCollectionName
+        <PageBrillianceCollectionName
           name="Brilliance"
           class="brillianceAbout__name"
         />
@@ -23,15 +22,11 @@
       </div>
     </div>
   </div>
-  <!-- </section> -->
 </template>
 
 <script setup></script>
 
 <style scoped>
-/* .brillianceAbout {
-  padding-top: 70px;
-} */
 .brillianceAbout__background {
   width: 100%;
   background-image: url('/images/collections/brilliance/img-brilliance-about-01.webp');
@@ -74,9 +69,6 @@
 }
 
 @media (max-width: 767px) {
-  /* .brillianceAbout {
-    padding-top: 60px;
-  } */
   .brillianceAbout__container {
     padding: 0;
   }

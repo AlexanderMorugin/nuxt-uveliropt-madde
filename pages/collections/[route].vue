@@ -30,7 +30,7 @@
 
     <!-- Блок О коллекции -->
     <section ref="brillianceAboutSecond" class="brillianceAboutSecond observer">
-      <LazyPageAppBrillianceAboutSecond hydrate-on-visible />
+      <LazyPageBrillianceAboutSecond hydrate-on-visible />
     </section>
 
     <!-- Блок Каталог -->
@@ -43,7 +43,7 @@
 
     <!-- Блок О коллекции -->
     <section ref="brillianceAbout" class="brillianceAbout observer" id="about">
-      <LazyPageAppBrillianceAbout hydrate-on-visible />
+      <LazyPageBrillianceAbout hydrate-on-visible />
     </section>
   </main>
 

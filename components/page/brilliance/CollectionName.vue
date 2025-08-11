@@ -11,31 +11,39 @@ const { name } = defineProps(['name']);
   font-family: 'CormorantGaramond-SemiBold';
   font-size: 64px;
   color: transparent;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     0.48turn,
     var(--brown-secondary) 0%,
     var(--yellow-primary) 47%
-  );
+  ); */
+      background-image: linear-gradient(
+      0.48turn,
+      var(--white-primary) 30%,
+      var(--yellow-primary) 47%,
+      var(--white-primary) 80%
+    );
 
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 500% auto;
-  animation: textShine 5s ease-in-out infinite alternate;
+  /* animation: textShine 5s ease-in-out infinite alternate; */
+  animation: textShineWhite 5s ease-in-out infinite alternate;
 }
 
 @media (max-width: 767px) {
   .collectionName {
     background-image: linear-gradient(
       0.48turn,
-      var(--yellow-primary) 0%,
-      var(--white-primary) 47%
+      var(--white-primary) 30%,
+      var(--yellow-primary) 47%,
+      var(--white-primary) 80%
     );
     animation: textShineWhite 5s ease-in-out infinite alternate;
   }
 }
 
-@keyframes textShine {
+/* @keyframes textShine {
   0% {
     text-shadow: none;
     background-position: left top;
@@ -48,7 +56,7 @@ const { name } = defineProps(['name']);
     text-shadow: none;
     background-position: right bottom;
   }
-}
+} */
 
 @keyframes textShineWhite {
   0% {
