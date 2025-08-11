@@ -1,9 +1,9 @@
 import DesktopImage from '/images/collections/brilliance/img-brilliance-01.webp';
 import MobileImage from '/images/collections/brilliance/img-brilliance-mobile-01.webp';
 // Кольца
-import ImageBrillianceItem001L from '/images/collections/brilliance/items/img-brilliance-item-001.webp';
-import ImageBrillianceItem001M from '/images/collections/brilliance/items/img-brilliance-item-001-m.webp';
-import ImageBrillianceItem001S from '/images/collections/brilliance/items/img-brilliance-item-001-s.webp';
+import ImageBrillianceSliderItem001L from '/images/collections/brilliance/items/img-brilliance-slider-item-001.webp';
+import ImageBrillianceSliderItem001M from '/images/collections/brilliance/items/img-brilliance-slider-item-001-m.webp';
+import ImageBrillianceSliderItem001S from '/images/collections/brilliance/items/img-brilliance-slider-item-001-s.webp';
 import ImageBrillianceItem002L from '/images/collections/brilliance/items/img-brilliance-item-002.webp';
 import ImageBrillianceItem002M from '/images/collections/brilliance/items/img-brilliance-item-002-m.webp';
 import ImageBrillianceItem002S from '/images/collections/brilliance/items/img-brilliance-item-002-s.webp';
@@ -24,6 +24,9 @@ import ImageBrillianceItem007M from '/images/collections/brilliance/items/img-br
 import ImageBrillianceItem007S from '/images/collections/brilliance/items/img-brilliance-item-007-s.webp';
 
 // Серьги
+import ImageBrillianceSliderItem002L from '/images/collections/brilliance/items/img-brilliance-slider-item-002.webp';
+import ImageBrillianceSliderItem002M from '/images/collections/brilliance/items/img-brilliance-slider-item-002-m.webp';
+import ImageBrillianceSliderItem002S from '/images/collections/brilliance/items/img-brilliance-slider-item-002-s.webp';
 import ImageBrillianceItem008L from '/images/collections/brilliance/items/img-brilliance-item-008.webp';
 import ImageBrillianceItem008M from '/images/collections/brilliance/items/img-brilliance-item-008-m.webp';
 import ImageBrillianceItem008S from '/images/collections/brilliance/items/img-brilliance-item-008-s.webp';
@@ -44,9 +47,9 @@ import ImageBrillianceItem013M from '/images/collections/brilliance/items/img-br
 import ImageBrillianceItem013S from '/images/collections/brilliance/items/img-brilliance-item-013-s.webp';
 
 // Перстни
-import ImageBrillianceItem015L from '/images/collections/brilliance/items/img-brilliance-item-015.webp';
-import ImageBrillianceItem015M from '/images/collections/brilliance/items/img-brilliance-item-015-m.webp';
-import ImageBrillianceItem015S from '/images/collections/brilliance/items/img-brilliance-item-015-s.webp';
+import ImageBrillianceSliderItem003L from '/images/collections/brilliance/items/img-brilliance-slider-item-003.webp';
+import ImageBrillianceSliderItem003M from '/images/collections/brilliance/items/img-brilliance-slider-item-003-m.webp';
+import ImageBrillianceSliderItem003S from '/images/collections/brilliance/items/img-brilliance-slider-item-003-s.webp';
 import ImageBrillianceItem016L from '/images/collections/brilliance/items/img-brilliance-item-016.webp';
 import ImageBrillianceItem016M from '/images/collections/brilliance/items/img-brilliance-item-016-m.webp';
 import ImageBrillianceItem016S from '/images/collections/brilliance/items/img-brilliance-item-016-s.webp';
@@ -67,6 +70,9 @@ import ImageBrillianceItem021M from '/images/collections/brilliance/items/img-br
 import ImageBrillianceItem021S from '/images/collections/brilliance/items/img-brilliance-item-021-s.webp';
 
 // Крестики
+import ImageBrillianceSliderItem004L from '/images/collections/brilliance/items/img-brilliance-slider-item-004.webp';
+import ImageBrillianceSliderItem004M from '/images/collections/brilliance/items/img-brilliance-slider-item-004-m.webp';
+import ImageBrillianceSliderItem004S from '/images/collections/brilliance/items/img-brilliance-slider-item-004-s.webp';
 import ImageBrillianceItem022L from '/images/collections/brilliance/items/img-brilliance-item-022.webp';
 import ImageBrillianceItem022M from '/images/collections/brilliance/items/img-brilliance-item-022-m.webp';
 import ImageBrillianceItem022S from '/images/collections/brilliance/items/img-brilliance-item-022-s.webp';
@@ -87,6 +93,8 @@ import ImageBrillianceItem027M from '/images/collections/brilliance/items/img-br
 import ImageBrillianceItem027S from '/images/collections/brilliance/items/img-brilliance-item-027-s.webp';
 
 // Подвески
+import ImageBrillianceSliderItem005M from '/images/collections/brilliance/items/img-brilliance-slider-item-005-m.webp';
+import ImageBrillianceSliderItem005S from '/images/collections/brilliance/items/img-brilliance-slider-item-005-s.webp';
 import ImageBrillianceItem030L from '/images/collections/brilliance/items/img-brilliance-item-030.webp';
 import ImageBrillianceItem030M from '/images/collections/brilliance/items/img-brilliance-item-030-m.webp';
 import ImageBrillianceItem030S from '/images/collections/brilliance/items/img-brilliance-item-030-s.webp';
@@ -125,23 +133,23 @@ export const brilliance = {
       slideItems: [
         {
           id: 1,
-          imageLarge: ImageBrillianceItem001L,
-          imageMedium: ImageBrillianceItem001M,
-          imageSmall: ImageBrillianceItem001S,
+          imageLarge: ImageBrillianceSliderItem001L,
+          imageMedium: ImageBrillianceSliderItem001M,
+          imageSmall: ImageBrillianceSliderItem001S,
           text: '001',
         },
         {
           id: 2,
-          imageLarge: ImageBrillianceItem001L,
-          imageMedium: ImageBrillianceItem001M,
-          imageSmall: ImageBrillianceItem001S,
+          imageLarge: ImageBrillianceSliderItem001L,
+          imageMedium: ImageBrillianceSliderItem001M,
+          imageSmall: ImageBrillianceSliderItem001S,
           text: '001',
         },
         {
           id: 3,
-          imageLarge: ImageBrillianceItem001L,
-          imageMedium: ImageBrillianceItem001M,
-          imageSmall: ImageBrillianceItem001S,
+          imageLarge: ImageBrillianceSliderItem001L,
+          imageMedium: ImageBrillianceSliderItem001M,
+          imageSmall: ImageBrillianceSliderItem001S,
           text: '001',
         },
       ],
@@ -190,209 +198,293 @@ export const brilliance = {
         },
       ],
     },
-    // {
-    //   id: 2,
-    //   name: 'earrings',
-    //   title: 'Серьги',
-    //   slideItems: [],
-    //   items: [
-    //     {
-    //       id: 1,
-    //       imageLarge: ImageBrillianceItem008L,
-    //       imageMedium: ImageBrillianceItem008M,
-    //       imageSmall: ImageBrillianceItem008S,
-    //       text: '008',
-    //     },
-    //     {
-    //       id: 2,
-    //       imageLarge: ImageBrillianceItem009L,
-    //       imageMedium: ImageBrillianceItem009M,
-    //       imageSmall: ImageBrillianceItem009S,
-    //       text: '009',
-    //     },
-    //     {
-    //       id: 3,
-    //       imageLarge: ImageBrillianceItem010L,
-    //       imageMedium: ImageBrillianceItem010M,
-    //       imageSmall: ImageBrillianceItem010S,
-    //       text: '010',
-    //     },
-    //     {
-    //       id: 4,
-    //       imageLarge: ImageBrillianceItem011L,
-    //       imageMedium: ImageBrillianceItem011M,
-    //       imageSmall: ImageBrillianceItem011S,
-    //       text: '011',
-    //     },
-    //     {
-    //       id: 5,
-    //       imageLarge: ImageBrillianceItem012L,
-    //       imageMedium: ImageBrillianceItem012M,
-    //       imageSmall: ImageBrillianceItem012S,
-    //       text: '012',
-    //     },
-    //     {
-    //       id: 6,
-    //       imageLarge: ImageBrillianceItem013L,
-    //       imageMedium: ImageBrillianceItem013M,
-    //       imageSmall: ImageBrillianceItem013S,
-    //       text: '013',
-    //     },
-    //   ],
-    // },
-    // {
-    //   id: 3,
-    //   name: 'stoneRings',
-    //   title: 'Перстни',
-    //   items: [
-    //     {
-    //       id: 1,
-    //       imageLarge: ImageBrillianceItem015L,
-    //       imageMedium: ImageBrillianceItem015M,
-    //       imageSmall: ImageBrillianceItem015S,
-    //       text: '015',
-    //     },
-    //     {
-    //       id: 2,
-    //       imageLarge: ImageBrillianceItem016L,
-    //       imageMedium: ImageBrillianceItem016M,
-    //       imageSmall: ImageBrillianceItem016S,
-    //       text: '016',
-    //     },
-    //     {
-    //       id: 3,
-    //       imageLarge: ImageBrillianceItem017L,
-    //       imageMedium: ImageBrillianceItem017M,
-    //       imageSmall: ImageBrillianceItem017S,
-    //       text: '017',
-    //     },
-    //     {
-    //       id: 4,
-    //       imageLarge: ImageBrillianceItem018L,
-    //       imageMedium: ImageBrillianceItem018M,
-    //       imageSmall: ImageBrillianceItem018S,
-    //       text: '018',
-    //     },
-    //     {
-    //       id: 5,
-    //       imageLarge: ImageBrillianceItem019L,
-    //       imageMedium: ImageBrillianceItem019M,
-    //       imageSmall: ImageBrillianceItem019S,
-    //       text: '019',
-    //     },
-    //     {
-    //       id: 6,
-    //       imageLarge: ImageBrillianceItem020L,
-    //       imageMedium: ImageBrillianceItem020M,
-    //       imageSmall: ImageBrillianceItem020S,
-    //       text: '020',
-    //     },
-    //     {
-    //       id: 7,
-    //       imageLarge: ImageBrillianceItem021L,
-    //       imageMedium: ImageBrillianceItem021M,
-    //       imageSmall: ImageBrillianceItem021S,
-    //       text: '021',
-    //     },
-    //   ],
-    // },
-    // {
-    //   id: 4,
-    //   name: 'crosses',
-    //   title: 'Крестики',
-    //   items: [
-    //     {
-    //       id: 1,
-    //       imageLarge: ImageBrillianceItem022L,
-    //       imageMedium: ImageBrillianceItem022M,
-    //       imageSmall: ImageBrillianceItem022S,
-    //       text: '022',
-    //     },
-    //     {
-    //       id: 2,
-    //       imageLarge: ImageBrillianceItem023L,
-    //       imageMedium: ImageBrillianceItem023M,
-    //       imageSmall: ImageBrillianceItem023S,
-    //       text: '023',
-    //     },
-    //     {
-    //       id: 3,
-    //       imageLarge: ImageBrillianceItem024L,
-    //       imageMedium: ImageBrillianceItem024M,
-    //       imageSmall: ImageBrillianceItem024S,
-    //       text: '024',
-    //     },
-    //     {
-    //       id: 4,
-    //       imageLarge: ImageBrillianceItem025L,
-    //       imageMedium: ImageBrillianceItem025M,
-    //       imageSmall: ImageBrillianceItem025S,
-    //       text: '025',
-    //     },
-    //     {
-    //       id: 5,
-    //       imageLarge: ImageBrillianceItem026L,
-    //       imageMedium: ImageBrillianceItem026M,
-    //       imageSmall: ImageBrillianceItem026S,
-    //       text: '026',
-    //     },
-    //     {
-    //       id: 6,
-    //       imageLarge: ImageBrillianceItem027L,
-    //       imageMedium: ImageBrillianceItem027M,
-    //       imageSmall: ImageBrillianceItem027S,
-    //       text: '027',
-    //     },
-    //   ],
-    // },
-    // {
-    //   id: 5,
-    //   name: 'pendants',
-    //   title: 'Подвески',
-    //   items: [
-    //     {
-    //       id: 1,
-    //       imageLarge: ImageBrillianceItem030L,
-    //       imageMedium: ImageBrillianceItem030M,
-    //       imageSmall: ImageBrillianceItem030S,
-    //       text: '030',
-    //     },
-    //     {
-    //       id: 2,
-    //       imageLarge: ImageBrillianceItem031L,
-    //       imageMedium: ImageBrillianceItem031M,
-    //       imageSmall: ImageBrillianceItem031S,
-    //       text: '031',
-    //     },
-    //     {
-    //       id: 3,
-    //       imageLarge: ImageBrillianceItem032L,
-    //       imageMedium: ImageBrillianceItem032M,
-    //       imageSmall: ImageBrillianceItem032S,
-    //       text: '032',
-    //     },
-    //     {
-    //       id: 4,
-    //       imageLarge: ImageBrillianceItem033L,
-    //       imageMedium: ImageBrillianceItem033M,
-    //       imageSmall: ImageBrillianceItem033S,
-    //       text: '033',
-    //     },
-    //     {
-    //       id: 5,
-    //       imageLarge: ImageBrillianceItem034L,
-    //       imageMedium: ImageBrillianceItem034M,
-    //       imageSmall: ImageBrillianceItem034S,
-    //       text: '034',
-    //     },
-    //     {
-    //       id: 6,
-    //       imageLarge: ImageBrillianceItem035L,
-    //       imageMedium: ImageBrillianceItem035M,
-    //       imageSmall: ImageBrillianceItem035S,
-    //       text: '035',
-    //     },
-    //   ],
-    // },
+    {
+      id: 2,
+      name: 'earrings',
+      title: 'Серьги',
+      slideItems: [
+        {
+          id: 1,
+          imageLarge: ImageBrillianceSliderItem002L,
+          imageMedium: ImageBrillianceSliderItem002M,
+          imageSmall: ImageBrillianceSliderItem002S,
+          text: '001',
+        },
+        {
+          id: 2,
+          imageLarge: ImageBrillianceSliderItem002L,
+          imageMedium: ImageBrillianceSliderItem002M,
+          imageSmall: ImageBrillianceSliderItem002S,
+          text: '001',
+        },
+        {
+          id: 3,
+          imageLarge: ImageBrillianceSliderItem002L,
+          imageMedium: ImageBrillianceSliderItem002M,
+          imageSmall: ImageBrillianceSliderItem002S,
+          text: '001',
+        },
+      ],
+      items: [
+        {
+          id: 1,
+          imageLarge: ImageBrillianceItem008L,
+          imageMedium: ImageBrillianceItem008M,
+          imageSmall: ImageBrillianceItem008S,
+          text: '008',
+        },
+        {
+          id: 2,
+          imageLarge: ImageBrillianceItem009L,
+          imageMedium: ImageBrillianceItem009M,
+          imageSmall: ImageBrillianceItem009S,
+          text: '009',
+        },
+        {
+          id: 3,
+          imageLarge: ImageBrillianceItem010L,
+          imageMedium: ImageBrillianceItem010M,
+          imageSmall: ImageBrillianceItem010S,
+          text: '010',
+        },
+        {
+          id: 4,
+          imageLarge: ImageBrillianceItem011L,
+          imageMedium: ImageBrillianceItem011M,
+          imageSmall: ImageBrillianceItem011S,
+          text: '011',
+        },
+        {
+          id: 5,
+          imageLarge: ImageBrillianceItem012L,
+          imageMedium: ImageBrillianceItem012M,
+          imageSmall: ImageBrillianceItem012S,
+          text: '012',
+        },
+        {
+          id: 6,
+          imageLarge: ImageBrillianceItem013L,
+          imageMedium: ImageBrillianceItem013M,
+          imageSmall: ImageBrillianceItem013S,
+          text: '013',
+        },
+      ],
+    },
+    {
+      id: 3,
+      name: 'stoneRings',
+      title: 'Перстни',
+      slideItems: [
+        {
+          id: 1,
+          imageLarge: ImageBrillianceSliderItem003L,
+          imageMedium: ImageBrillianceSliderItem003M,
+          imageSmall: ImageBrillianceSliderItem003S,
+          text: '001',
+        },
+        {
+          id: 2,
+          imageLarge: ImageBrillianceSliderItem003L,
+          imageMedium: ImageBrillianceSliderItem003M,
+          imageSmall: ImageBrillianceSliderItem003S,
+          text: '001',
+        },
+        {
+          id: 3,
+          imageLarge: ImageBrillianceSliderItem003L,
+          imageMedium: ImageBrillianceSliderItem003M,
+          imageSmall: ImageBrillianceSliderItem003S,
+          text: '001',
+        },
+      ],
+      items: [
+        {
+          id: 1,
+          imageLarge: ImageBrillianceItem016L,
+          imageMedium: ImageBrillianceItem016M,
+          imageSmall: ImageBrillianceItem016S,
+          text: '016',
+        },
+        {
+          id: 2,
+          imageLarge: ImageBrillianceItem017L,
+          imageMedium: ImageBrillianceItem017M,
+          imageSmall: ImageBrillianceItem017S,
+          text: '017',
+        },
+        {
+          id: 3,
+          imageLarge: ImageBrillianceItem018L,
+          imageMedium: ImageBrillianceItem018M,
+          imageSmall: ImageBrillianceItem018S,
+          text: '018',
+        },
+        {
+          id: 4,
+          imageLarge: ImageBrillianceItem019L,
+          imageMedium: ImageBrillianceItem019M,
+          imageSmall: ImageBrillianceItem019S,
+          text: '019',
+        },
+        {
+          id: 5,
+          imageLarge: ImageBrillianceItem020L,
+          imageMedium: ImageBrillianceItem020M,
+          imageSmall: ImageBrillianceItem020S,
+          text: '020',
+        },
+        {
+          id: 6,
+          imageLarge: ImageBrillianceItem021L,
+          imageMedium: ImageBrillianceItem021M,
+          imageSmall: ImageBrillianceItem021S,
+          text: '021',
+        },
+      ],
+    },
+    {
+      id: 4,
+      name: 'crosses',
+      title: 'Крестики',
+      slideItems: [
+        {
+          id: 1,
+          imageLarge: ImageBrillianceSliderItem004L,
+          imageMedium: ImageBrillianceSliderItem004M,
+          imageSmall: ImageBrillianceSliderItem004S,
+          text: '001',
+        },
+        {
+          id: 2,
+          imageLarge: ImageBrillianceSliderItem004L,
+          imageMedium: ImageBrillianceSliderItem004M,
+          imageSmall: ImageBrillianceSliderItem004S,
+          text: '001',
+        },
+        {
+          id: 3,
+          imageLarge: ImageBrillianceSliderItem004L,
+          imageMedium: ImageBrillianceSliderItem004M,
+          imageSmall: ImageBrillianceSliderItem004S,
+          text: '001',
+        },
+      ],
+      items: [
+        {
+          id: 1,
+          imageLarge: ImageBrillianceItem022L,
+          imageMedium: ImageBrillianceItem022M,
+          imageSmall: ImageBrillianceItem022S,
+          text: '022',
+        },
+        {
+          id: 2,
+          imageLarge: ImageBrillianceItem023L,
+          imageMedium: ImageBrillianceItem023M,
+          imageSmall: ImageBrillianceItem023S,
+          text: '023',
+        },
+        {
+          id: 3,
+          imageLarge: ImageBrillianceItem024L,
+          imageMedium: ImageBrillianceItem024M,
+          imageSmall: ImageBrillianceItem024S,
+          text: '024',
+        },
+        {
+          id: 4,
+          imageLarge: ImageBrillianceItem025L,
+          imageMedium: ImageBrillianceItem025M,
+          imageSmall: ImageBrillianceItem025S,
+          text: '025',
+        },
+        {
+          id: 5,
+          imageLarge: ImageBrillianceItem026L,
+          imageMedium: ImageBrillianceItem026M,
+          imageSmall: ImageBrillianceItem026S,
+          text: '026',
+        },
+        {
+          id: 6,
+          imageLarge: ImageBrillianceItem027L,
+          imageMedium: ImageBrillianceItem027M,
+          imageSmall: ImageBrillianceItem027S,
+          text: '027',
+        },
+      ],
+    },
+    {
+      id: 5,
+      name: 'pendants',
+      title: 'Подвески',
+      slideItems: [
+        {
+          id: 1,
+          imageLarge: ImageBrillianceSliderItem005M,
+          imageMedium: ImageBrillianceSliderItem005M,
+          imageSmall: ImageBrillianceSliderItem005S,
+          text: '001',
+        },
+        {
+          id: 2,
+          imageLarge: ImageBrillianceSliderItem004L,
+          imageMedium: ImageBrillianceSliderItem004M,
+          imageSmall: ImageBrillianceSliderItem004S,
+          text: '001',
+        },
+        {
+          id: 3,
+          imageLarge: ImageBrillianceSliderItem004L,
+          imageMedium: ImageBrillianceSliderItem004M,
+          imageSmall: ImageBrillianceSliderItem004S,
+          text: '001',
+        },
+      ],
+      items: [
+        {
+          id: 1,
+          imageLarge: ImageBrillianceItem030L,
+          imageMedium: ImageBrillianceItem030M,
+          imageSmall: ImageBrillianceItem030S,
+          text: '030',
+        },
+        {
+          id: 2,
+          imageLarge: ImageBrillianceItem031L,
+          imageMedium: ImageBrillianceItem031M,
+          imageSmall: ImageBrillianceItem031S,
+          text: '031',
+        },
+        {
+          id: 3,
+          imageLarge: ImageBrillianceItem032L,
+          imageMedium: ImageBrillianceItem032M,
+          imageSmall: ImageBrillianceItem032S,
+          text: '032',
+        },
+        {
+          id: 4,
+          imageLarge: ImageBrillianceItem033L,
+          imageMedium: ImageBrillianceItem033M,
+          imageSmall: ImageBrillianceItem033S,
+          text: '033',
+        },
+        {
+          id: 5,
+          imageLarge: ImageBrillianceItem034L,
+          imageMedium: ImageBrillianceItem034M,
+          imageSmall: ImageBrillianceItem034S,
+          text: '034',
+        },
+        {
+          id: 6,
+          imageLarge: ImageBrillianceItem035L,
+          imageMedium: ImageBrillianceItem035M,
+          imageSmall: ImageBrillianceItem035S,
+          text: '035',
+        },
+      ],
+    },
   ],
 };
