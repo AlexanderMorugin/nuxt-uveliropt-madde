@@ -163,7 +163,7 @@ onMounted(() => {
   align-items: center;
   width: 50px;
   height: 50px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   cursor: pointer;
   z-index: 10;
 }

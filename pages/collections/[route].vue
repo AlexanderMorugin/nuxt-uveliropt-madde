@@ -101,6 +101,29 @@ onMounted(() => {
     observer.observe(contacts.value);
   }
 });
+
+useHead({
+  title: currentCollection.title,
+  meta: [
+    {
+      name: 'description',
+      content: currentCollection.description,
+    },
+  ],
+});
+
+useSeoMeta({
+  title: currentCollection.title,
+  ogTitle: currentCollection.title,
+  description: currentCollection.description,
+  ogDescription: currentCollection.description,
+  ogImage: `https://nuxt-uveliropt-madde.vercel.app${currentCollection.OgImage}`,
+  twitterCard: 'summary_large_image',
+  ogUrl: `https://nuxt-uveliropt-madde.vercel.app/collections/${currentCollection.route}`,
+  ogSiteName: 'MADDE - Эксклюзивные украшения из серебра',
+  ogType: 'website',
+  ogLocale: 'ru_RU',
+});
 </script>
 
 <style scoped>
