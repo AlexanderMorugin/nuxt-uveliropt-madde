@@ -2,41 +2,45 @@
   <div class="embla">
     <!-- <div class="categoryName"> -->
     <!-- <span class="categoryName__title">{{ data.title }}</span> -->
-    <div class="embla__buttons">
-      <!-- Кнопка-стрелка навигации "НАЗАД" -->
-      <button
-        @click="scrollPrev"
-        :disabled="!canScrollPrev"
-        :class="['embla__button', { embla__button_disabled: !canScrollPrev }]"
-      >
-        <NuxtImg
-          loading="lazy"
-          src="/icons/icon-carousel-arrow.svg"
-          alt="Стрелка"
-          :class="[
-            'embla__buttonArrow',
-            { embla__buttonArrow_disabled: !canScrollPrev },
-          ]"
-        />
-      </button>
+    <!-- <div class="embla__buttons"> -->
+    <!-- Кнопка-стрелка навигации "НАЗАД" -->
+    <button
+      @click="scrollPrev"
+      :disabled="!canScrollPrev"
+      :class="[
+        'embla__button embla__button_left',
+        { embla__button_disabled: !canScrollPrev },
+      ]"
+    >
+      <img
+        src="/icons/icon-carousel-arrow.svg"
+        alt="Стрелка"
+        :class="[
+          'embla__buttonArrow',
+          { embla__buttonArrow_disabled: !canScrollPrev },
+        ]"
+      />
+    </button>
 
-      <!-- Кнопка-стрелка навигации "ВПЕРЕД" -->
-      <button
-        @click="scrollNext"
-        :disabled="!canScrollNext"
-        :class="['embla__button', { embla__button_disabled: !canScrollNext }]"
-      >
-        <NuxtImg
-          loading="lazy"
-          src="/icons/icon-carousel-arrow.svg"
-          alt="Стрелка"
-          :class="[
-            'embla__buttonArrowRight',
-            { embla__buttonArrow_disabled: !canScrollNext },
-          ]"
-        />
-      </button>
-    </div>
+    <!-- Кнопка-стрелка навигации "ВПЕРЕД" -->
+    <button
+      @click="scrollNext"
+      :disabled="!canScrollNext"
+      :class="[
+        'embla__button embla__button_right',
+        { embla__button_disabled: !canScrollNext },
+      ]"
+    >
+      <img
+        src="/icons/icon-carousel-arrow.svg"
+        alt="Стрелка"
+        :class="[
+          'embla__buttonArrowRight',
+          { embla__buttonArrow_disabled: !canScrollNext },
+        ]"
+      />
+    </button>
+    <!-- </div> -->
     <!-- </div> -->
 
     <div class="embla__viewport" ref="emblaRef">
@@ -130,7 +134,7 @@ onMounted(() => {
   object-fit: cover;
   border-radius: 15px;
 }
-.embla__buttons {
+/* .embla__buttons {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -142,18 +146,36 @@ onMounted(() => {
   width: 100%;
   height: fit-content;
 
-  /* gap: 51px; */
+
   padding-right: 20px;
   padding-left: 20px;
   z-index: 10;
 
-  /* border: 1px solid red; */
-}
+
+} */
 .embla__button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid red;
   cursor: pointer;
+  z-index: 10;
+}
+.embla__button_left {
+  left: 0;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+.embla__button_right {
+  right: 0;
+  padding-right: 20px;
+  padding-left: 10px;
 }
 .embla__button_disabled {
   cursor: default;
