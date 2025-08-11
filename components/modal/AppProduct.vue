@@ -7,8 +7,7 @@
     >
       <div class="modal" @click.stop>
         <button class="modal__close" @click="$emit('closeProductModal')">
-          <NuxtImg
-            loading="lazy"
+          <img
             src="/icons/icon-close-gray.svg"
             alt="Кнопка закрыть"
             class="modal__image"
@@ -17,8 +16,7 @@
 
         <span class="modal__title">{{ item.text }}</span>
 
-        <NuxtImg
-          loading="lazy"
+        <img
           :src="item.imageLarge"
           :alt="item.text"
           class="modal__productImage"

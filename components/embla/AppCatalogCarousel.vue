@@ -1,8 +1,5 @@
 <template>
   <div class="embla">
-    <!-- <div class="categoryName"> -->
-    <!-- <span class="categoryName__title">{{ data.title }}</span> -->
-    <!-- <div class="embla__buttons"> -->
     <!-- Кнопка-стрелка навигации "НАЗАД" -->
     <button
       @click="scrollPrev"
@@ -40,14 +37,11 @@
         ]"
       />
     </button>
-    <!-- </div> -->
-    <!-- </div> -->
 
     <div class="embla__viewport" ref="emblaRef">
       <ul class="embla__container">
         <li v-for="item in data" :key="item.id" class="embla__slide">
           <NuxtImg
-            loading="lazy"
             :src="item.imageMedium"
             :alt="item.text"
             class="slideImage"
@@ -102,11 +96,10 @@ onMounted(() => {
 .embla {
   position: relative;
   width: 100%;
-  max-width: 570px;
-  /* --slide-spacing: 1rem; */
+  max-width: 100%;
+  --slide-spacing: 1rem;
   --slide-spacing: 0;
   --slide-size: 100%;
-
   overflow: hidden;
 }
 .embla__viewport {
@@ -134,25 +127,6 @@ onMounted(() => {
   object-fit: cover;
   border-radius: 15px;
 }
-/* .embla__buttons {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: fit-content;
-
-
-  padding-right: 20px;
-  padding-left: 20px;
-  z-index: 10;
-
-
-} */
 .embla__button {
   position: absolute;
   top: 0;
@@ -163,7 +137,6 @@ onMounted(() => {
   align-items: center;
   width: 50px;
   height: 50px;
-  /* border: 1px solid red; */
   cursor: pointer;
   z-index: 10;
 }

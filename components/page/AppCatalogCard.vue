@@ -2,7 +2,6 @@
   <button class="catalogCard" @click="openProductModal">
     <span class="catalogCard__name">{{ product.text }}</span>
     <NuxtImg
-      loading="lazy"
       :src="product.imageSmall"
       :alt="product.text"
       class="catalogCard__image"
@@ -10,11 +9,13 @@
   </button>
 
   <Teleport to="#teleports">
-    <ModalAppProduct
-      :isProductModalOpen="isProductModalOpen"
-      :item="product"
-      @closeProductModal="closeProductModal"
-    />
+    <ClientOnly>
+      <ModalAppProduct
+        :isProductModalOpen="isProductModalOpen"
+        :item="product"
+        @closeProductModal="closeProductModal"
+      />
+    </ClientOnly>
   </Teleport>
 </template>
 
