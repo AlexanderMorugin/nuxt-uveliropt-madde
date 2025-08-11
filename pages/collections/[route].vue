@@ -1,8 +1,4 @@
 <template>
-  <!-- <Head>
-      <Title>{{ route }}</Title>
-    </Head> -->
-
   <!-- Верхняя картинка и левый боковой бейдж, под шапкой и блоком хединга -->
   <PageAppMainImage
     :desktopImage="currentCollection.details.desktopImage"

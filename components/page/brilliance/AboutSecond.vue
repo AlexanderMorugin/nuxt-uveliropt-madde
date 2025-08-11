@@ -23,17 +23,17 @@
 <script setup></script>
 
 <style scoped>
-.brillianceAboutSecond__container {
+/* .brillianceAboutSecond__container {
   display: flex;
   justify-content: flex-start;
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 0 auto; */
   /* padding: 100px 20px; */
-}
+/* } */
 .brillianceAboutSecond__textBox {
   position: relative;
-  display: flex;
-  align-items: flex-start;
+  /* display: flex; */
+  /* align-items: flex-start; */
 background: linear-gradient(transparent  50%, var(--brown-secondary));
   /* max-width: 620px; */
   /* background: rgba(255, 255, 255, 0.6); */
@@ -67,24 +67,21 @@ background: linear-gradient(transparent  50%, var(--brown-secondary));
   font-family: 'Montserrat-Regular';
   line-height: 1.5;
   font-size: 24px;
-  /* color: var(--black-primary); */
   color: var(--white-primary);
-  /* background: linear-gradient(transparent  50%, var(--brown-secondary)); */
-  /* padding-top: 495px; */
   padding: 495px 20px 40px 20px;
   margin: 0 auto;
 }
 
 @media (max-width: 767px) {
-  .brillianceAboutSecond__container {
+  /* .brillianceAboutSecond__container {
     padding: 0;
-  }
-  .brillianceAboutSecond__textBox {
+  } */
+  /* .brillianceAboutSecond__textBox { */
     /* max-width: 100%; */
     /* background: none; */
     /* border-radius: 0; */
     /* padding: 40px 0 0 0; */
-  }
+  /* } */
   .brillianceAboutSecond__text {
     font-size: 18px;
     /* color: var(--white-primary); */
