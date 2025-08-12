@@ -49,6 +49,14 @@
         hydrate-on-visible
       />
     </section>
+
+    <!-- Блок О коллекции -->
+    <!-- <section ref="brillianceAboutFour" class="brillianceAboutThird observer">
+      <LazyPageBrillianceAboutFour
+        :headingList="currentCollection.details.subtitle"
+        hydrate-on-visible
+      />
+    </section> -->
   </main>
 
   <!-- Блок с контактами -->
@@ -76,7 +84,7 @@ const currentCollection = collections.find((item) => item.route === route);
 const brillianceAbout = ref(null);
 const brillianceAboutSecond = ref(null);
 const brillianceAboutThird = ref(null);
-// const brillianceCatalog = ref(null);
+const brillianceAboutFour = ref(null);
 const contacts = ref(null);
 
 onMounted(() => {
@@ -93,9 +101,6 @@ onMounted(() => {
     }
   );
 
-  // if (brillianceCatalog.value) {
-  //   observer.observe(brillianceCatalog.value);
-  // }
   if (brillianceAbout.value) {
     observer.observe(brillianceAbout.value);
   }
@@ -104,6 +109,9 @@ onMounted(() => {
   }
   if (brillianceAboutThird.value) {
     observer.observe(brillianceAboutThird.value);
+  }
+  if (brillianceAboutFour.value) {
+    observer.observe(brillianceAboutFour.value);
   }
   if (contacts.value) {
     observer.observe(contacts.value);
@@ -135,6 +143,9 @@ useSeoMeta({
 </script>
 
 <style scoped>
+.brillianceAbout {
+  padding-top: 70px;
+}
 .brillianceAboutSecond {
   width: 100%;
   background-image: url('/images/collections/brilliance/img-brilliance-about-02.webp');
@@ -148,8 +159,8 @@ useSeoMeta({
   max-width: 1440px;
   margin: 0 auto;
   padding: 70px 20px 0 20px;
-  /* border: 1px solid red; */
 }
+
 .catalog {
   display: flex;
   flex-direction: column;
@@ -159,37 +170,23 @@ useSeoMeta({
   margin: 0 auto;
   padding: 70px 20px 0 20px;
 }
-.brillianceAbout {
-  padding-top: 70px;
-}
 
 @media (max-width: 767px) {
-  .brillianceAboutSecond {
-    margin-top: 60px;
-  }
-  .catalog {
-    padding-top: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
   .brillianceAbout {
     padding-top: 60px;
+  }
+  .brillianceAboutSecond {
+    margin-top: 60px;
   }
   .brillianceAboutThird {
     padding-top: 60px;
     padding-left: 10px;
     padding-right: 10px;
   }
+  .catalog {
+    padding-top: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
-/* .content__secondTitle {
-  color: var(--brown-secondary);
-} */
-/* .content__carouselList {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  width: 100%; */
-/* margin: 0 auto; */
-/* padding-top: 70px; */
-/* } */
 </style>
