@@ -5,18 +5,66 @@
       <p class="brillianceAboutThird__text">
         Максимальная схожесть с бриллиантовыми моделями достигается благодаря:
       </p>
+
+      <ul class="brillianceAboutThird__list">
+        <li class="brillianceAboutThird__listItem">
+          <img
+            src="/icons/icon-triangle.svg"
+            alt="Стрелка"
+            class="brillianceAboutThird__listItemArrow"
+          />
+          <p class="brillianceAboutThird__listItemText">
+            Использованию
+            <span class="brillianceAboutThird__listItemText_span"
+              >CZ класса ААА.</span
+            >
+          </p>
+        </li>
+
+        <li class="brillianceAboutThird__listItem">
+          <img
+            src="/icons/icon-triangle.svg"
+            alt="Стрелка"
+            class="brillianceAboutThird__listItemArrow"
+          />
+          <p class="brillianceAboutThird__listItemText">
+            Применению
+            <span class="brillianceAboutThird__listItemText_span"
+              >бриллиантовой огранки H&A.</span
+            >
+          </p>
+        </li>
+
+        <li class="brillianceAboutThird__listItem">
+          <img
+            src="/icons/icon-triangle.svg"
+            alt="Стрелка"
+            class="brillianceAboutThird__listItemArrow"
+          />
+          <p class="brillianceAboutThird__listItemText">
+            Качественному
+            <span class="brillianceAboutThird__listItemText_span"
+              >родированию и полировке металла.</span
+            >
+          </p>
+        </li>
+
+        <li class="brillianceAboutThird__listItem">
+          <img
+            src="/icons/icon-triangle.svg"
+            alt="Стрелка"
+            class="brillianceAboutThird__listItemArrow"
+          />
+          <p class="brillianceAboutThird__listItemText">
+            Подбору
+            <span class="brillianceAboutThird__listItemText_span"
+              >модельного ряда</span
+            >
+            из бриллиантовой классики.
+          </p>
+        </li>
+      </ul>
     </div>
-    <!-- <PageBrillianceCollectionName
-      name="Brilliance"
-      class="brillianceAboutSecond__name"
-    />
-    <span class="brillianceAboutSecond__nameMiddle">манящие...</span>
-    <span class="brillianceAboutSecond__nameBottom">ГРАНИ</span>
-    <p class="brillianceAboutSecond__text">
-      Украшения коллекции Brilliance представляют собой классические
-      &laquo;бриллиантовые&raquo; модели, выполненные в серебре и со вставками
-      кубического циркония (CZ).
-    </p> -->
   </div>
 </template>
 
@@ -30,22 +78,15 @@
   background-repeat: no-repeat;
   background-position: right;
   background-size: cover;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
-  /* border: 1px solid red; */
 }
 .brillianceAboutThird__textBox {
   width: 100%;
-  max-width: 570px;
   height: 100%;
-  padding: 80px 60px;
-
-  border: 1px solid red;
-  /* background: linear-gradient(
-    to left,
-    transparent 30%,
-    var(--brown-secondary)
-  ); */
+  padding-top: 160px;
+  padding-left: 40px;
+  background: linear-gradient(to left, transparent 30%, var(--brown-secondary));
 }
 .brillianceAboutThird__title {
   width: 100%;
@@ -56,7 +97,7 @@
   color: transparent;
   background-image: linear-gradient(
     0.48turn,
-    var(--blue-dark-primary),
+    var(--white-primary),
     var(--yellow-primary) 50%
   );
   -webkit-background-clip: text;
@@ -66,67 +107,118 @@
   padding-bottom: 100px;
 }
 .brillianceAboutThird__text {
-  font-family: 'Montserrat-Regular';
-  line-height: 1.5;
-  font-size: 24px;
-  color: var(--black-primary);
-}
-/* .brillianceAboutSecond__nameMiddle {
-  position: absolute;
-  top: 170px;
-  left: 130px;
-  font-family: 'CormorantGaramond-SemiBold';
-  font-size: 54px;
-  color: var(--black-primary);
-} */
-/* .brillianceAboutSecond__nameBottom {
-  position: absolute;
-  top: 220px;
-  left: 60px;
-  font-family: 'CormorantGaramond-SemiBold';
-  font-size: 64px;
-  color: var(--grey-dark-secondary);
-} */
-/* .brillianceAboutSecond__text {
   width: 100%;
-  max-width: 1440px;
+  max-width: 600px;
   font-family: 'Montserrat-Regular';
   line-height: 1.5;
   font-size: 24px;
   color: var(--white-primary);
-  padding: 495px 20px 40px 20px;
-  margin: 0 auto;
-} */
+}
+.brillianceAboutThird__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 26px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+.brillianceAboutThird__listItem {
+  display: flex;
+  gap: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.brillianceAboutThird__listItemArrow {
+  width: 6px;
+  height: 6px;
+  transform: rotate(90deg);
+  margin-top: 10px;
+}
+.brillianceAboutThird__listItemText {
+  font-family: 'Montserrat-Regular';
+  line-height: 1.5;
+  font-size: 18px;
+  color: var(--white-primary);
+}
+.brillianceAboutThird__listItemText_span {
+  font-family: 'Montserrat-SemiBold';
+}
+
+@media (max-width: 1279px) {
+  .brillianceAboutThird__textBox {
+    padding-left: 20px;
+  }
+  .brillianceAboutThird__text {
+    max-width: 500px;
+  }
+}
 
 @media (max-width: 767px) {
-  /* .brillianceAboutSecond__text {
+  .brillianceAboutThird__container {
+    height: 700px;
+  }
+  .brillianceAboutThird__title {
+    max-width: 280px;
+    font-size: 45px;
+    padding-bottom: 20px;
+  }
+  .brillianceAboutThird__textBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px 10px;
+  }
+  .brillianceAboutThird__list {
+    max-width: 400px;
+    margin-top: 0;
+    padding-left: 0;
+  }
+  .brillianceAboutThird__listItem {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 479px) {
+  .brillianceAboutThird__textBox {
+    background: linear-gradient(
+      transparent,
+      transparent,
+      transparent,
+      var(--brown-secondary),
+      var(--blue-dark-primary),
+      var(--brown-secondary)
+    );
+    padding-bottom: 10px;
+    animation: background-fade 8s ease-in-out infinite;
+    background-size: 500% 800%;
+    -webkit-animation: background-fade 8s ease-in-out infinite;
+    -moz-animation: background-fade 8s ease-in-out infinite;
+  }
+  .brillianceAboutThird__title {
+    max-width: 100%;
+    font-size: 36px;
+  }
+  .brillianceAboutThird__text {
     font-size: 18px;
-    padding: 0 10px 20px 10px;
   }
-  .brillianceAboutSecond__name {
-    top: 310px;
-    left: auto;
-    right: 10px;
+  .brillianceAboutThird__list {
+    max-width: 100%;
   }
-  .brillianceAboutSecond__nameMiddle {
-    top: 370px;
-    left: auto;
-    right: 10px;
-    color: var(--white-primary);
-    font-size: 40px;
-    text-shadow: 1px 0 20px var(--brown-secondary),
-      0 1px 20px var(--brown-secondary), -1px 0 20px var(--brown-secondary),
-      0 -1px 20px var(--brown-secondary);
+}
+
+@keyframes background-fade {
+  0% {
+    background-position: 10% 0%;
   }
-  .brillianceAboutSecond__nameBottom {
-    top: 410px;
-    left: auto;
-    right: 10px;
-    font-size: 51px;
-    color: var(--white-secondary);
+  50% {
+    background-position: 91% 100%;
   }
-  .brillianceAboutSecond__text {
-    padding-top: 495px;
-  } */
+  100% {
+    background-position: 10% 0%;
+  }
 }
 </style>

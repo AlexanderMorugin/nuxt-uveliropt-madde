@@ -44,7 +44,10 @@
 
     <!-- Блок О коллекции -->
     <section ref="brillianceAboutThird" class="brillianceAboutThird observer">
-      <LazyPageBrillianceAboutThird hydrate-on-visible />
+      <LazyPageBrillianceAboutThird
+        :headingList="currentCollection.details.subtitle"
+        hydrate-on-visible
+      />
     </section>
   </main>
 
