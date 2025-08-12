@@ -4,7 +4,7 @@
     :desktopImage="currentCollection.details.desktopImage"
     :mobileImage="currentCollection.details.mobileImage"
   />
-  <PageAppLeftTitleBadge />
+  <PageAppLeftTitleBadge location="collections" />
 
   <!-- Шапка -->
   <Header
@@ -30,7 +30,7 @@
     </section>
 
     <!-- Блок Каталог -->
-    <section ref="catalog" class="catalog observer" id="catalog">
+    <section class="catalog" id="catalog">
       <LazyPageAppCatalog
         :data="currentCollection.details.products"
         hydrate-on-visible
@@ -73,7 +73,7 @@ const currentCollection = collections.find((item) => item.route === route);
 const brillianceAbout = ref(null);
 const brillianceAboutSecond = ref(null);
 const brillianceAboutThird = ref(null);
-const catalog = ref(null);
+// const brillianceCatalog = ref(null);
 const contacts = ref(null);
 
 onMounted(() => {
@@ -90,9 +90,9 @@ onMounted(() => {
     }
   );
 
-  if (catalog.value) {
-    observer.observe(catalog.value);
-  }
+  // if (brillianceCatalog.value) {
+  //   observer.observe(brillianceCatalog.value);
+  // }
   if (brillianceAbout.value) {
     observer.observe(brillianceAbout.value);
   }

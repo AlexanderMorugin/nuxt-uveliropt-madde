@@ -1,10 +1,17 @@
 <template>
   <div class="leftTitleBadge">
-    <div class="leftTitleBadge__text">MADDE</div>
+    <div
+      class="leftTitleBadge__text"
+      :class="{ leftTitleBadge__text_light: location === 'collections' }"
+    >
+      MADDE
+    </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const { location } = defineProps(['location']);
+</script>
 
 <style scoped>
 .leftTitleBadge {
@@ -24,7 +31,13 @@
   text-shadow: rgba(0, 0, 0, 0.2) 1px 0 10px;
   transform: rotate(270deg);
   opacity: 0.5;
-  animation: slide-in 5s ease-out;
+  animation: slide-in 2s ease-out;
+}
+/* .leftTitleBadge__text_dark {
+  color: rgba(0, 0, 0, 0.2);
+} */
+.leftTitleBadge__text_light {
+  color: rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 767px) {

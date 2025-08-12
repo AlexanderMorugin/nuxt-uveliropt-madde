@@ -22,7 +22,6 @@
         <PageAppParagraphShadow class="heading__listItemText">{{
           item.text
         }}</PageAppParagraphShadow>
-        <!-- <span class="heading__listItemText">{{ item.text }}</span> -->
       </li>
     </ul>
 
@@ -69,7 +68,7 @@ const { title, headingList, location } = defineProps([
     0 -1px 10px var(--brown-secondary);
   padding-left: 20px;
   padding-right: 20px;
-  animation: slide-in 2s ease-out;
+  animation: slide-in .4s ease-out;
 }
 .heading__titleCollection {
   font-family: 'Montserrat-SemiBold';
@@ -79,7 +78,7 @@ const { title, headingList, location } = defineProps([
   text-shadow: #000000 0 0 20px;
   padding-left: 20px;
   padding-right: 20px;
-  animation: slide-in 2.2s ease-out;
+  animation: slide-in .7s ease-out;
 }
 .heading__titleBottom {
   font-family: 'Montserrat-SemiBold';
@@ -90,7 +89,7 @@ const { title, headingList, location } = defineProps([
   text-shadow: white 0 0 20px;
   padding-left: 20px;
   padding-right: 20px;
-  animation: slide-in 2.4s ease-out;
+  animation: slide-in 1.1s ease-out;
 }
 .heading__title {
   width: 100%;
@@ -101,7 +100,7 @@ const { title, headingList, location } = defineProps([
   color: var(--white-primary);
   padding-left: 20px;
   padding-right: 20px;
-  animation: slide-in 2s ease-out;
+  animation: slide-in 0.6s ease-out;
 }
 .heading__list {
   display: flex;
@@ -116,22 +115,21 @@ const { title, headingList, location } = defineProps([
   display: flex;
   align-items: center;
   gap: 10px;
-  /* height: 36px; */
   padding-left: 20px;
   padding-right: 20px;
-  animation: slide-in 3s ease-out;
+  animation: slide-in 0.3s ease-out;
 }
 .heading__listItem:nth-child(2) {
-  animation: slide-in 3.5s ease-out;
+  animation: slide-in 0.9s ease-out;
 }
 .heading__listItem:nth-child(3) {
-  animation: slide-in 4s ease-out;
+  animation: slide-in 1.2s ease-out;
 }
 .heading__listItem:nth-child(4) {
-  animation: slide-in 4.5s ease-out;
+  animation: slide-in 1.5s ease-out;
 }
 .heading__listItem:nth-child(5) {
-  animation: slide-in 5s ease-out;
+  animation: slide-in 1.8s ease-out;
 }
 .heading__listItemArrow {
   width: 6px;
@@ -141,14 +139,6 @@ const { title, headingList, location } = defineProps([
 .heading__listItemText {
   line-height: 1.2;
 }
-/* .heading__listItemText {
-  font-family: 'Montserrat-Regular';
-  font-size: 18px;
-  color: var(--white-primary);
-  text-shadow: 1px 0 10px var(--brown-secondary),
-    0 1px 10px var(--brown-secondary), -1px 0 10px var(--brown-secondary),
-    0 -1px 10px var(--brown-secondary);
-} */
 .heading__button {
   margin-top: 80px;
   padding-left: 20px;
@@ -199,13 +189,9 @@ const { title, headingList, location } = defineProps([
     padding-left: 40px;
   }
   .heading__listItem {
-    /* height: 27px; */
     padding-left: 10px;
     padding-right: 10px;
   }
-  /* .heading__listItemText {
-    font-size: 16px;
-  } */
   .heading__button {
     margin-top: 30px;
     padding-left: 40px;
@@ -224,9 +210,6 @@ const { title, headingList, location } = defineProps([
   }
   .heading__list {
     margin-top: 10px;
-  }
-  .heading__listItem {
-    /* height: 24px; */
   }
 }
 
