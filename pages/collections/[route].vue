@@ -50,12 +50,15 @@
       />
     </section>
 
-    <!-- Блок О коллекции -->
-    <!-- <section ref="brillianceAboutFour" class="brillianceAboutThird observer">
-      <LazyPageBrillianceAboutFour
-        :headingList="currentCollection.details.subtitle"
-        hydrate-on-visible
+    <!-- Блок О Цирконии -->
+    <LazyPageBrillianceZirconium />
+    <!-- <section class="brillianceZirconium brillianceZirconium_one">
+      <img
+        src="/images/collections/brilliance/img-zirconium-001.webp"
+        alt="Картинка циркония"
+        class="brillianceZirconium__image"
       />
+      <div></div>
     </section> -->
   </main>
 
@@ -84,7 +87,6 @@ const currentCollection = collections.find((item) => item.route === route);
 const brillianceAbout = ref(null);
 const brillianceAboutSecond = ref(null);
 const brillianceAboutThird = ref(null);
-const brillianceAboutFour = ref(null);
 const contacts = ref(null);
 
 onMounted(() => {
@@ -109,9 +111,6 @@ onMounted(() => {
   }
   if (brillianceAboutThird.value) {
     observer.observe(brillianceAboutThird.value);
-  }
-  if (brillianceAboutFour.value) {
-    observer.observe(brillianceAboutFour.value);
   }
   if (contacts.value) {
     observer.observe(contacts.value);
@@ -160,6 +159,22 @@ useSeoMeta({
   margin: 0 auto;
   padding: 70px 20px 0 20px;
 }
+/* .brillianceZirconium {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  border: 1px solid red;
+}
+.brillianceZirconium_one {
+  padding-top: 70px;
+}
+.brillianceZirconium__image {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  animation: rotate-one 1.5s ease-in-out infinite;
+} */
 
 .catalog {
   display: flex;
@@ -189,4 +204,17 @@ useSeoMeta({
     padding-right: 10px;
   }
 }
+
+/* @keyframes rotate-one {
+  0% {
+    opacity: 0;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+    transform-origin: bottom left;
+  }
+} */
 </style>
