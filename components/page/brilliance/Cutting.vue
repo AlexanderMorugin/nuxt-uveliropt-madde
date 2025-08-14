@@ -30,6 +30,47 @@
           class="cutting__textTopImage"
         />
       </div>
+      <ul class="cutting__details">
+        <li class="cutting__detailsBlock">
+          <img
+            src="/images/collections/brilliance/img-cutting-003.webp"
+            alt="Картинка микроскопа"
+            class="cutting__detailsBlockImage"
+          />
+          <p class="cutting__detailsBlockText">
+            Только когда все крошечные грани идеально совпадают со своими
+            аналогами на противоположной стороне, будет отображаться четкий узор
+            в виде Сердец и Стрел.
+          </p>
+        </li>
+        <li class="cutting__detailsBlock">
+          <img
+            src="/images/collections/brilliance/img-cutting-004.webp"
+            alt="Картинка микроскопа"
+            class="cutting__detailsBlockImage"
+          />
+          <p class="cutting__detailsBlockText">
+            «Сердца и Стрелы», можно рассмотреть, глядя на CZ с идеальной
+            огранкой, используя специальное приспособление файерскоп
+            («FireScope»). При просмотре камня сверху, становятся видны восемь
+            изображений «стрел», при просмотре снизу – восемь изображений
+            «сердец».
+          </p>
+        </li>
+        <li class="cutting__detailsBlock">
+          <img
+            src="/images/collections/brilliance/img-cutting-005.webp"
+            alt="Картинка узоров"
+            class="cutting__detailsBlockImage"
+          />
+          <p class="cutting__detailsBlockText">
+            Таким образом, узор “Сердеца и Стрелы” является визуальным
+            свидетельством мастерства, и гарантирует наилучший эффект сверкания
+            и блеска. Именно эта огранка является идеальной и самой дорогой в
+            производстве.
+          </p>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
@@ -40,6 +81,7 @@
 .cutting {
   background: var(--blue-dark-thirdary);
   margin-top: 70px;
+  padding-bottom: 40px;
 }
 .cutting__container {
   width: 100%;
@@ -48,8 +90,6 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 40px;
-
-  border: 1px solid red;
 }
 .cutting__title {
   font-family: 'CormorantGaramond-SemiBold';
@@ -70,6 +110,8 @@
 .cutting__image {
   width: 100%;
   max-width: fit-content;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 .cutting__textTop {
   position: relative;
@@ -94,10 +136,41 @@
   font-size: 18px;
   color: var(--white-primary);
 }
+.cutting__details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 40px;
+  padding-top: 30px;
+}
+.cutting__detailsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--white-primary);
+  /* border: 2px solid var(--brown-secondary); */
+  border-radius: 15px;
+  /* padding: 10px; */
+  overflow: hidden;
+}
+.cutting__detailsBlockImage {
+  width: 100%;
+}
+.cutting__detailsBlockText {
+  font-family: 'Montserrat-Regular';
+  line-height: 1.5;
+  font-size: 18px;
+  color: var(--brown-secondary);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
 
 @media (max-width: 1279px) {
   .cutting__textTop {
     padding-bottom: 200px;
+  }
+  .cutting__details {
+    column-gap: 20px;
   }
 }
 
@@ -130,6 +203,12 @@
   }
   .cutting__text {
     max-width: 100%;
+  }
+  .cutting__details {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
