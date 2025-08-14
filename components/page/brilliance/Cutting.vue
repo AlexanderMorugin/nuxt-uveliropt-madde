@@ -13,13 +13,13 @@
         />
       </div>
       <div class="cutting__textTop">
-        <p class="cutting__text">
+        <p ref="cuttingTextOne" class="cutting__text observerText">
           Огранка Hearts and Arrows (CZ H&A) представляют собой вариацию
           традиционной круглой огранки с 57 гранями. Кристаллы огранены до
           «идеальных» пропорций с хорошей оптической симметрией, полировкой и
           особым рисунком огранки.
         </p>
-        <p class="cutting__text">
+        <p ref="cuttingTextTwo" class="cutting__text observerText">
           Огранка камня оказывает наибольший эффект на его сверкание и блеск.
           «Сердца и Стрелы», Hearts&Arrows, H&A - это особый световой эффект,
           образующий определенный контрастный узор (как в калейдоскопе).
@@ -75,7 +75,32 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+const cuttingTextOne = ref(null);
+const cuttingTextTwo = ref(null);
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('observerText_animate');
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+
+  if (cuttingTextOne.value) {
+    observer.observe(cuttingTextOne.value);
+  }
+  if (cuttingTextTwo.value) {
+    observer.observe(cuttingTextTwo.value);
+  }
+});
+</script>
 
 <style scoped>
 .cutting {
@@ -147,9 +172,7 @@
   flex-direction: column;
   gap: 20px;
   background: var(--white-primary);
-  /* border: 2px solid var(--brown-secondary); */
   border-radius: 15px;
-  /* padding: 10px; */
   overflow: hidden;
 }
 .cutting__detailsBlockImage {
@@ -163,6 +186,27 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
+}
+
+/* Анимация */
+.observerText {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.observerText:nth-child(2) {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.observerText_animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+.observerText_animate:nth-child(2) {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @media (max-width: 1279px) {
