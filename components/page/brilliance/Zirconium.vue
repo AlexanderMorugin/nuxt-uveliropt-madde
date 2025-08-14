@@ -293,6 +293,45 @@
   color: var(--grey-dark-primary);
 }
 
+@media (max-width: 1279px) {
+  .zirconium__titleOne {
+    font-size: 40px;
+    padding-right: 16px;
+  }
+  .zirconium__titleTwo {
+    font-size: 26px;
+    max-width: 310px;
+    height: fit-content;
+  }
+  .zirconium__titleThree {
+    font-size: 40px;
+    bottom: 2px;
+  }
+  .zirconium__titleFour {
+    font-size: 26px;
+    padding-right: 16px;
+  }
+  .zirconium__titleFive {
+    font-size: 26px;
+    max-width: 200px;
+    height: 60px;
+  }
+  .zirconium__titleSix {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .zirconium__one {
+    grid-template-columns: 43% 1fr;
+    column-gap: 20px;
+  }
+  .zirconium__second {
+    grid-template-columns: 1fr 43%;
+    column-gap: 20px;
+  }
+}
+
 @media (max-width: 767px) {
   .zirconium {
     gap: 30px;
@@ -319,29 +358,8 @@
   .zirconium__titleBoxThree {
     justify-content: center;
   }
-  .zirconium__titleOne {
-    font-size: 40px;
-    padding-right: 16px;
-  }
-  .zirconium__titleTwo {
-    font-size: 26px;
-    max-width: 310px;
-    height: fit-content;
-  }
   .zirconium__titleThree {
-    font-size: 40px;
     bottom: -30px;
-  }
-  .zirconium__titleFour {
-    font-size: 26px;
-    padding-right: 16px;
-  }
-  .zirconium__titleFive {
-    font-size: 26px;
-    max-width: 200px;
-  }
-  .zirconium__titleSix {
-    font-size: 26px;
   }
   .zirconium__textList {
     gap: 10px;
