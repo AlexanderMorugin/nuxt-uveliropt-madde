@@ -2,9 +2,10 @@
   <section class="zirconium">
     <div class="zirconium__one">
       <img
+        ref="zirconiumImageOne"
         src="/images/collections/brilliance/img-zirconium-001.webp"
         alt="Картинка циркония"
-        class="zirconium__image"
+        class="zirconium__image observerImage"
       />
       <div class="zirconium__textBox">
         <div class="zirconium__titleBoxOne">
@@ -66,17 +67,19 @@
         </ul>
       </div>
       <img
+        ref="zirconiumImageTwo"
         src="/images/collections/brilliance/img-zirconium-002.webp"
         alt="Картинка циркония"
-        class="zirconium__image zirconium__image_gridImage"
+        class="zirconium__image zirconium__image_gridImage observerImage"
       />
     </div>
 
     <div class="zirconium__one">
       <img
+        ref="zirconiumImageThree"
         src="/images/collections/brilliance/img-zirconium-003.webp"
         alt="Картинка циркония"
-        class="zirconium__image"
+        class="zirconium__image observerImage"
       />
       <div class="zirconium__textBox">
         <div class="zirconium__titleBoxThree">
@@ -136,15 +139,49 @@
         </div>
       </div>
       <img
+        ref="zirconiumImageFour"
         src="/images/collections/brilliance/img-zirconium-004.webp"
         alt="Картинка циркония"
-        class="zirconium__image zirconium__image_gridImage"
+        class="zirconium__image zirconium__image_gridImage observerImage"
       />
     </div>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+const zirconiumImageOne = ref(null);
+const zirconiumImageTwo = ref(null);
+const zirconiumImageThree = ref(null);
+const zirconiumImageFour = ref(null);
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('observerImage_animate');
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+
+  if (zirconiumImageOne.value) {
+    observer.observe(zirconiumImageOne.value);
+  }
+  if (zirconiumImageTwo.value) {
+    observer.observe(zirconiumImageTwo.value);
+  }
+  if (zirconiumImageThree.value) {
+    observer.observe(zirconiumImageThree.value);
+  }
+  if (zirconiumImageFour.value) {
+    observer.observe(zirconiumImageFour.value);
+  }
+});
+</script>
 
 <style scoped>
 .zirconium {
@@ -157,7 +194,6 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 70px;
-  /* border: 1px solid red; */
 }
 .zirconium__one {
   display: grid;
@@ -291,6 +327,31 @@
   line-height: 1.5;
   font-size: 18px;
   color: var(--grey-dark-primary);
+}
+
+/* Анимация */
+.observerImage {
+  opacity: 0;
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.observerImage:nth-child(2) {
+  opacity: 0;
+  transform: rotate(45deg);
+  transform-origin: bottom right;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.observerImage_animate {
+  opacity: 1;
+  transform: rotate(0deg);
+  transform-origin: bottom left;
+}
+.observerImage_animate:nth-child(2) {
+  opacity: 1;
+  transform: rotate(0deg);
+  transform-origin: bottom right;
 }
 
 @media (max-width: 1279px) {
