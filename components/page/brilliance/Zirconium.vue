@@ -1,5 +1,6 @@
 <template>
-  <section class="zirconium">
+  <section class="zirconium" id="zirconium">
+    <PageAppSecondTitle title="О цирконии" class="zirconium__title" />
     <div class="zirconium__one">
       <img
         ref="zirconiumImageOne"
@@ -187,13 +188,16 @@ onMounted(() => {
 .zirconium {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 40px;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 70px;
+}
+.zirconium__title {
+  color: var(--brown-secondary);
 }
 .zirconium__one {
   display: grid;
@@ -211,7 +215,6 @@ onMounted(() => {
   width: 100%;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  /* animation: rotate-one 1.5s ease-in-out infinite; */
 }
 .zirconium__image_gridImage {
   grid-area: gridImage;
@@ -426,17 +429,4 @@ onMounted(() => {
     gap: 10px;
   }
 }
-
-/* @keyframes rotate-one {
-  0% {
-    opacity: 0;
-    transform: rotate(-45deg);
-    transform-origin: bottom left;
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(0deg);
-    transform-origin: bottom left;
-  }
-} */
 </style>

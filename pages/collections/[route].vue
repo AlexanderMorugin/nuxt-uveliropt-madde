@@ -52,28 +52,23 @@
 
     <!-- Блок О Цирконии -->
     <LazyPageBrillianceZirconium />
-    <!-- <section class="brillianceZirconium brillianceZirconium_one">
-      <img
-        src="/images/collections/brilliance/img-zirconium-001.webp"
-        alt="Картинка циркония"
-        class="brillianceZirconium__image"
+
+        <!-- Блок Огранка -->
+    <LazyPageBrillianceCutting />
+
+    <!-- Блок с контактами -->
+    <section ref="contacts" class="contacts observer" id="contacts">
+      <LazyPageAppContacts
+        hydrate-on-visible
+        :phone="phone"
+        :phoneNumber="phoneNumber"
+        :address="address"
       />
-      <div></div>
-    </section> -->
+    </section>
+
+    <!-- Блок с картой -->
+    <LazyPageAppMap hydrate-on-visible />
   </main>
-
-  <!-- Блок с контактами -->
-  <section ref="contacts" class="contacts observer" id="contacts">
-    <LazyPageAppContacts
-      hydrate-on-visible
-      :phone="phone"
-      :phoneNumber="phoneNumber"
-      :address="address"
-    />
-  </section>
-
-  <!-- Блок с картой -->
-  <LazyPageAppMap hydrate-on-visible />
 </template>
 
 <script setup>
@@ -159,23 +154,6 @@ useSeoMeta({
   margin: 0 auto;
   padding: 70px 20px 0 20px;
 }
-/* .brillianceZirconium {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  border: 1px solid red;
-}
-.brillianceZirconium_one {
-  padding-top: 70px;
-}
-.brillianceZirconium__image {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  animation: rotate-one 1.5s ease-in-out infinite;
-} */
-
 .catalog {
   display: flex;
   flex-direction: column;
@@ -204,17 +182,4 @@ useSeoMeta({
     padding-right: 10px;
   }
 }
-
-/* @keyframes rotate-one {
-  0% {
-    opacity: 0;
-    transform: rotate(-45deg);
-    transform-origin: bottom left;
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(0deg);
-    transform-origin: bottom left;
-  }
-} */
 </style>

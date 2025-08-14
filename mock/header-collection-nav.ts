@@ -13,12 +13,18 @@ export const headerCollectionNav = [
   },
   {
     id: 3,
+    title: 'О цирконии',
+    route: '/collections',
+    target: 'zirconium',
+  },
+  {
+    id: 4,
     title: 'Сторис',
     route: '/collections',
     target: 'stories',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Контакты',
     route: '/collections',
     target: 'contacts',
