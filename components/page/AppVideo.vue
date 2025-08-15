@@ -8,6 +8,7 @@
         autoplay
         loop
         playsinline
+        disablepictureinpicture
         controls
         muted
       ></video>
