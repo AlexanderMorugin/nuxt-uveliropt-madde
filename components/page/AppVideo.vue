@@ -10,7 +10,7 @@
         loop
         playsinline
         disablepictureinpicture
-        controls
+        controls="false"
         muted
       ></video>
     </div>
