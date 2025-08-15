@@ -24,6 +24,9 @@
       location="collections"
     />
 
+    <!-- Блок Видео -->
+    <PageAppVideo />
+
     <!-- Блок О коллекции -->
     <section ref="brillianceAboutSecond" class="brillianceAboutSecond observer">
       <LazyPageBrillianceAboutSecond hydrate-on-visible />
@@ -53,7 +56,7 @@
     <!-- Блок О Цирконии -->
     <LazyPageBrillianceZirconium />
 
-        <!-- Блок Огранка -->
+    <!-- Блок Огранка -->
     <LazyPageBrillianceCutting />
 
     <!-- Блок с контактами -->
@@ -169,7 +172,7 @@ useSeoMeta({
     padding-top: 60px;
   }
   .brillianceAboutSecond {
-    margin-top: 60px;
+    margin-top: 80px;
   }
   .brillianceAboutThird {
     padding-top: 60px;
