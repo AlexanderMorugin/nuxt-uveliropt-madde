@@ -18,8 +18,6 @@
       :headingList="headingMainList"
     />
 
-
-
     <!-- Блок Коллекции -->
     <section
       ref="collectionsBlock"
@@ -150,6 +148,10 @@ onMounted(() => {
   if (contacts.value) {
     observer.observe(contacts.value);
   }
+
+  onBeforeUnmount(() => {
+    observer.disconnect();
+  });
 });
 
 useHead({

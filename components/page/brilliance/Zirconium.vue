@@ -181,6 +181,10 @@ onMounted(() => {
   if (zirconiumImageFour.value) {
     observer.observe(zirconiumImageFour.value);
   }
+
+  onBeforeUnmount(() => {
+    observer.disconnect();
+  });
 });
 </script>
 

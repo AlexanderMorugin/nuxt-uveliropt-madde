@@ -1,10 +1,10 @@
 <template>
   <section class="video">
     <PageAppSecondTitle title="Дискотека 80-х" class="video__title" />
-    <div class="video__container">
+    <div ref="videoOne" class="video__container observerVideo">
       <video
         src="/video/modern-talking.mp4"
-        width="100%"
+                width="100%"
         height="100%"
         autoplay
         loop
@@ -12,10 +12,38 @@
         disablepictureinpicture
         controls="false"
         muted
+        class="video__item"
       ></video>
     </div>
   </section>
 </template>
+
+<script setup>
+const videoOne = ref(null);
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('observerVideo_animate');
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+
+  if (videoOne.value) {
+    observer.observe(videoOne.value);
+  }
+
+  onBeforeUnmount(() => {
+    observer.disconnect();
+  });
+});
+</script>
 
 <style scoped>
 .video {
@@ -41,6 +69,18 @@
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
   overflow: hidden;
+}
+
+
+/* Анимация */
+.observerVideo {
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.observerVideo_animate {
+  opacity: 1;
+  transform: scale(1);
 }
 
 @media (max-width: 767px) {

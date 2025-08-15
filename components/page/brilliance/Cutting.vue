@@ -99,6 +99,10 @@ onMounted(() => {
   if (cuttingTextTwo.value) {
     observer.observe(cuttingTextTwo.value);
   }
+
+  onBeforeUnmount(() => {
+    observer.disconnect();
+  });
 });
 </script>
 
