@@ -7,6 +7,7 @@
         height="100%"
         autoplay
         loop
+        playsinline
         controls
         muted
       ></video>
