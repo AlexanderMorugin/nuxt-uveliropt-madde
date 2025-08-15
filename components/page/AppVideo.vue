@@ -1,10 +1,14 @@
 <template>
   <section class="video">
     <PageAppSecondTitle title="Дискотека 80-х" class="video__title" />
-    <div ref="videoOne" class="video__container observerVideo">
+    <div
+      ref="videoOne"
+      class="video__container observerVideo"
+      @click="setControlsVisible"
+    >
       <video
         src="/video/modern-talking.mp4"
-                width="100%"
+        width="100%"
         height="100%"
         autoplay
         loop
@@ -12,7 +16,7 @@
         disablepictureinpicture
         controls="false"
         muted
-        class="video__item"
+        :class="['video__item', { video__item_controls: isControlsVisible }]"
       ></video>
     </div>
   </section>
@@ -20,6 +24,10 @@
 
 <script setup>
 const videoOne = ref(null);
+const isControlsVisible = ref(false);
+
+const setControlsVisible = () =>
+  (isControlsVisible.value = !isControlsVisible.value);
 
 onMounted(() => {
   const observer = new IntersectionObserver(
@@ -46,6 +54,9 @@ onMounted(() => {
 </script>
 
 <style scoped>
+/* video::-webkit-media-controls {
+  opacity: 0;
+} */
 .video {
   display: flex;
   flex-direction: column;
@@ -70,7 +81,12 @@ onMounted(() => {
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
   overflow: hidden;
 }
-
+.video__item::-webkit-media-controls {
+  opacity: 0;
+}
+.video__item_controls::-webkit-media-controls {
+  opacity: 1;
+}
 
 /* Анимация */
 .observerVideo {
