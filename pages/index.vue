@@ -18,6 +18,8 @@
       :headingList="headingMainList"
     />
 
+    <PageAppVideo />
+
     <!-- Блок Коллекции -->
     <section
       ref="collectionsBlock"
