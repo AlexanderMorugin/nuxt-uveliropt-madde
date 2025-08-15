@@ -24,13 +24,13 @@
       location="collections"
     />
 
-    <!-- Блок Видео -->
-    <PageAppVideo />
-
     <!-- Блок О коллекции -->
     <section ref="brillianceAboutSecond" class="brillianceAboutSecond observer">
       <LazyPageBrillianceAboutSecond hydrate-on-visible />
     </section>
+
+    <!-- Блок Видео -->
+    <LazyPageAppVideo />
 
     <!-- Блок Каталог -->
     <section class="catalog" id="catalog">
