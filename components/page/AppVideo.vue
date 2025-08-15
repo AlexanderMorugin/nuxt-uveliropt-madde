@@ -6,6 +6,7 @@
         width="100%"
         height="100%"
         autoplay
+        loop
         controls
         muted
       ></video>
@@ -31,13 +32,19 @@
   justify-content: center;
   width: 100%;
   max-width: 720px;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {
   .video {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 0;
+    padding-right: 0;
     padding-top: 60px;
+  }
+  .video__container {
+    max-width: 100%;
+    border-radius: 0;
   }
 }
 </style>

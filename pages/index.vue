@@ -18,7 +18,7 @@
       :headingList="headingMainList"
     />
 
-    <PageAppVideo />
+    <LazyPageAppVideo />
 
     <!-- Блок Коллекции -->
     <section
