@@ -2,9 +2,9 @@
   <section class="video">
     <div class="video__container">
       <video
-        src="/video/queen.mp4"
+        src="/video/modern-talking.mp4"
         width="100%"
-        height="auto"
+        height="100%"
         autoplay
         controls
         muted
