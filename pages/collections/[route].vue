@@ -29,8 +29,6 @@
       <LazyPageBrillianceAboutSecond hydrate-on-visible />
     </section>
 
-
-
     <!-- Блок Каталог -->
     <section class="catalog" id="catalog">
       <LazyPageAppCatalog
@@ -39,14 +37,12 @@
       />
     </section>
 
-
-
     <!-- Блок О коллекции -->
     <section ref="brillianceAbout" class="brillianceAbout observer" id="about">
       <LazyPageBrillianceAbout hydrate-on-visible />
     </section>
 
-        <!-- Блок Видео -->
+    <!-- Блок Видео -->
     <LazyPageAppVideo />
 
     <!-- Блок О коллекции -->

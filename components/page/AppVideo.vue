@@ -1,7 +1,7 @@
 <template>
   <section class="video">
     <PageAppSecondTitle title="Поступление BrS301" class="video__title" />
-    <div ref="videoOne" class="video__container observerVideo">
+    <div class="video__container">
       <video
         src="/video/madde-brilliance-002-1080p.mp4"
         preload="auto"
@@ -16,30 +16,30 @@
 </template>
 
 <script setup>
-const videoOne = ref(null);
+// const videoOne = ref(null);
 
-onMounted(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('observerVideo_animate');
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  );
+// onMounted(() => {
+//   const observer = new IntersectionObserver(
+//     (entries) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           entry.target.classList.add('observerVideo_animate');
+//         }
+//       });
+//     },
+//     {
+//       threshold: 0.5,
+//     }
+//   );
 
-  if (videoOne.value) {
-    observer.observe(videoOne.value);
-  }
+//   if (videoOne.value) {
+//     observer.observe(videoOne.value);
+//   }
 
-  onBeforeUnmount(() => {
-    observer.disconnect();
-  });
-});
+//   onBeforeUnmount(() => {
+//     observer.disconnect();
+//   });
+// });
 </script>
 
 <style scoped>
@@ -70,13 +70,13 @@ onMounted(() => {
   overflow: hidden;
 }
 .video__item {
- width: 100%;
+  width: 100%;
   height: auto;
   object-fit: cover;
 }
 
 /* Анимация */
-.observerVideo {
+/* .observerVideo {
   opacity: 0;
   transform: scale(0);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -84,7 +84,7 @@ onMounted(() => {
 .observerVideo_animate {
   opacity: 1;
   transform: scale(1);
-}
+} */
 
 @media (max-width: 767px) {
   .video {
@@ -94,7 +94,7 @@ onMounted(() => {
   }
   .video__container {
     max-width: 100%;
-    height: 450px;
+    min-height: 320px;
     border-radius: 0;
   }
 }
