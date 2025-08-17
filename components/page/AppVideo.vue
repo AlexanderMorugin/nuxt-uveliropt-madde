@@ -1,17 +1,15 @@
 <template>
   <section class="video">
-    <PageAppSecondTitle title="Дискотека 80-х" class="video__title" />
+    <PageAppSecondTitle title="Поступление BrS301" class="video__title" />
     <div ref="videoOne" class="video__container observerVideo">
       <video
-        src="/video/modern-talking.mp4"
-        width="100%"
-        height="100%"
+        src="/video/madde-brilliance-002-1080p.mp4"
+        preload="auto"
         autoplay
         loop
         playsinline
-        disablepictureinpicture
-        controls="false"
         muted
+        class="video__item"
       ></video>
     </div>
   </section>
@@ -45,9 +43,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* video::-webkit-media-controls {
-  opacity: 0;
-} */
 .video {
   display: flex;
   flex-direction: column;
@@ -67,10 +62,17 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 720px;
+  /* max-width: 1280px; */
+  /* height: 600px; */
+  /* object-fit: cover; */
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
   overflow: hidden;
+}
+.video__item {
+ width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 /* Анимация */
@@ -92,6 +94,7 @@ onMounted(() => {
   }
   .video__container {
     max-width: 100%;
+    height: 450px;
     border-radius: 0;
   }
 }
