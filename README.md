@@ -1,75 +1,47 @@
-# Nuxt Minimal Starter
+<h1 align="center">Проект сайта ювелирного бренда MADDE</h1>
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Ссылка: https://nuxt-uveliropt-madde.vercel.app/
 
-## Setup
+![XWEAR Demo](/madde-demo.png)
 
-Make sure to install dependencies:
+## О проекте
 
-```bash
-# npm
-npm install
+Проект сайта выполнен на фреймворке Nuxt 4 / Vue 3, с использованием минимально-необходимого набора дополнительных библиотек:
 
-# pnpm
-pnpm install
+- vuelidate (Валидация полей форм)
+- embla-carousel (Слайдер)
 
-# yarn
-yarn install
+Сайт представляет собой визитную карточку компании MADDE, без указания каких либо цен и функций интернет-магазина. Применяется intersection-observer для анимированного появления элементов при скролле страницы. Шапка сайта, также меняется при скролле страницы вниз. Выполнены все SEO мета теги. В CSS оформлении кода применяются множественные flex, grid, анимации.
 
-# bun
-bun install
+## Задеплоено на бесплатной облачной платформе Vercel.
+
+## Выполнено согласно ранее созданного на Tilda сайта:
+
+https://uveliropt-madde.ru/
+
+## Приложение полностью адаптировано и имеет три основных брейкпоинта 1280px, 1024px, 768px, 480px. Минимальная ширина экрана предусматривается как 320px.
+
+## Как запустить проект:
+
+Клонирование репозитория
+
+```
+git clone https://github.com/AlexanderMorugin/nuxt-uveliropt-madde.git
 ```
 
-## Development Server
+Установка зависимостей
 
-Start the development server on `http://localhost:3000`:
+```
+npm i
+```
 
-```bash
-# npm
+Запуск проекта
+
+```
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+---
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Александр Моругин\
+август 2025г
