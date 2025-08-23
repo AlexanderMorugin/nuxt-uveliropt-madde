@@ -1,18 +1,35 @@
 <template>
   <div class="mainImage">
+    <div class="mainImage__imageDesktop" />
     <!-- Изображение для мобилки -->
-    <img :src="mobileImage" alt="Подложка" class="mainImage__imageMobile" />
+    <!-- <img
+      width="100%"
+      height="700"
+      loading="lazy"
+      src="/images/img-01-mobile.webp"
+      alt="Подложка"
+      class="mainImage__imageMobile"
+    /> -->
 
     <!-- Изображение для десктопа -->
-    <img :src="desktopImage" alt="Подложка" class="mainImage__imageDesktop" />
+    <!-- <img
+      width="100%"
+      height="800"
+      loading="lazy"
+      src="/images/img-01-desktop.webp"
+      alt="Подложка"
+      class="mainImage__imageDesktop"
+    /> -->
   </div>
 </template>
 
 <script setup>
-const { desktopImage, mobileImage } = defineProps([
-  'desktopImage',
-  'mobileImage',
-]);
+// import DesktopImage from '/images/img-01-desktop.webp';
+// import MobileImage from '/images/img-01-mobile.webp';
+// const { desktopImage, mobileImage } = defineProps([
+//   'desktopImage',
+//   'mobileImage',
+// ]);
 </script>
 
 <style scoped>
@@ -25,10 +42,11 @@ const { desktopImage, mobileImage } = defineProps([
 }
 .mainImage__imageDesktop {
   display: block;
-  width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: right;
+  background-image: url('/images/img-01-desktop.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top right;
 }
 
 .mainImage__imageMobile {
@@ -44,10 +62,11 @@ const { desktopImage, mobileImage } = defineProps([
     height: 700px;
   }
   .mainImage__imageDesktop {
-    display: none;
+    /* display: none; */
+    background-position: top right -200px;
   }
-  .mainImage__imageMobile {
+  /* .mainImage__imageMobile {
     display: block;
-  }
+  } */
 }
 </style>

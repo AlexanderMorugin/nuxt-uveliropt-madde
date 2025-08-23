@@ -1,158 +1,165 @@
 <template>
   <!-- Верхняя картинка и левый боковой бейдж, под шапкой и блоком хединга -->
-  <PageAppMainImage :desktopImage="DesktopImage" :mobileImage="MobileImage" />
-  <PageAppLeftTitleBadge />
+  <!-- <PageAppMainImage :desktopImage="DesktopImage" :mobileImage="MobileImage" /> -->
+   <!-- <PageAppMainImage :desktopImage="DesktopImage" /> -->
+  <PageAppMainImage />
+  <!-- <PageAppLeftTitleBadge /> -->
 
   <!-- Шапка -->
-  <Header
+  <!-- <Header
     :linksData="headerMainNav"
     :phone="phone"
     :phoneNumber="phoneNumber"
-  />
+  /> -->
 
   <!-- Контент -->
   <main class="content">
     <!-- Блок Хединга с главным титлом -->
-    <PageAppHeading
+    <!-- <PageAppHeading
       title="Эксклюзивные украшения из Италии"
       :headingList="headingMainList"
-    />
+    /> -->
 
     <!-- Блок Коллекции -->
-    <section
+    <!-- <section
       ref="collectionsBlock"
       class="collections observer"
       id="collections"
     >
       <LazyPageAppCollections :collections="collections" hydrate-on-visible />
-    </section>
+    </section> -->
 
     <!-- Блок Ювелирный бренд MADDE -->
-    <section ref="about" class="about observer" id="about">
+    <!-- <section ref="about" class="about observer" id="about">
       <LazyPageAppAbout hydrate-on-visible />
-    </section>
+    </section> -->
 
     <!-- Блок Выгоды сотрудничества -->
-    <section ref="cooperation" class="cooperation observer" id="cooperation">
+    <!-- <section ref="cooperation" class="cooperation observer" id="cooperation">
       <LazyPageAppCooperation hydrate-on-visible />
-    </section>
+    </section> -->
 
     <!-- Блок Этапы работы -->
-    <section ref="stages" class="stages observer">
+    <!-- <section ref="stages" class="stages observer">
       <LazyPageAppStages hydrate-on-visible />
-    </section>
+    </section> -->
 
     <!-- Блок Выставки -->
-    <section ref="exhibitions" class="exhibitions observer">
+    <!-- <section ref="exhibitions" class="exhibitions observer">
       <LazyPageAppExhibitions hydrate-on-visible />
-    </section>
+    </section> -->
 
     <!-- Слайдер Выставки -->
-    <section ref="exhibitionCarousel" class="content__carousel observer">
+    <!-- <section ref="exhibitionCarousel" class="content__carousel observer">
       <LazyEmblaAppCenterCarousel :data="exebitionPhoto" hydrate-on-visible />
-    </section>
+    </section> -->
 
     <!-- Блок Часто задаваемые вопросы -->
-    <section ref="questions" class="questions observer" id="questions">
+    <!-- <section ref="questions" class="questions observer" id="questions">
       <LazyPageAppQuestions hydrate-on-visible />
-    </section>
+    </section> -->
 
     <!-- Блок Остались вопросы? -->
-    <section ref="questionsForm" class="questionsForm observer">
+    <!-- <section ref="questionsForm" class="questionsForm observer">
       <LazyPageAppQuestionsForm hydrate-on-visible />
-    </section>
+    </section> -->
 
     <!-- Блок с контактами -->
-    <section ref="contacts" class="contacts observer" id="contacts">
+    <!-- <section ref="contacts" class="contacts observer" id="contacts">
       <LazyPageAppContacts
         hydrate-on-visible
         :phone="phone"
         :phoneNumber="phoneNumber"
         :address="address"
       />
-    </section>
+    </section> -->
 
     <!-- Блок с картой -->
-    <LazyPageAppMap hydrate-on-visible />
+    <!-- <LazyPageAppMap hydrate-on-visible /> -->
   </main>
 </template>
 
 <script setup>
-import { headerMainNav } from '@/mock/header-main-nav';
-import { headingMainList } from '@/mock/heading-main-list';
-import { phone, phoneNumber, address } from '@/mock/constants';
-import { exebitionPhoto } from '@/mock/exebition-photo';
-import { collections } from '@/mock/collections/collections';
-import DesktopImage from '/images/img-01-desktop.webp';
-import MobileImage from '/images/img-01-mobile.webp';
+// import { headerMainNav } from '@/mock/header-main-nav';
+// import { headingMainList } from '@/mock/heading-main-list';
+// import { phone, phoneNumber, address } from '@/mock/constants';
+// import { exebitionPhoto } from '@/mock/exebition-photo';
+// import { collections } from '@/mock/collections/collections';
+// import DesktopImage from '/images/img-01-desktop.webp';
+// import MobileImage from '/images/img-01-mobile.webp';
 
-const collectionsBlock = ref(null);
-const about = ref(null);
-const cooperation = ref(null);
-const stages = ref(null);
-const exhibitions = ref(null);
-const exhibitionCarousel = ref(null);
-const questions = ref(null);
-const questionsForm = ref(null);
-const contacts = ref(null);
+const { data: headerMainNav } = await useFetch('/api/header/header-main-nav');
+const { data: headingMainList } = await useFetch(
+  '/api/heading/heading-main-list'
+);
 
-onMounted(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('observer_animate');
-        }
-        // else {
-        //   entry.target.classList.remove('observer_animate');
-        // }
-      });
-    },
-    {
-      threshold: 0.2,
-    }
-  );
+// const collectionsBlock = ref(null);
+// const about = ref(null);
+// const cooperation = ref(null);
+// const stages = ref(null);
+// const exhibitions = ref(null);
+// const exhibitionCarousel = ref(null);
+// const questions = ref(null);
+// const questionsForm = ref(null);
+// const contacts = ref(null);
 
-  if (collectionsBlock.value) {
-    observer.observe(collectionsBlock.value);
-  }
+// onMounted(() => {
+//   const observer = new IntersectionObserver(
+//     (entries) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           entry.target.classList.add('observer_animate');
+//         }
+//         // else {
+//         //   entry.target.classList.remove('observer_animate');
+//         // }
+//       });
+//     },
+//     {
+//       threshold: 0.2,
+//     }
+//   );
 
-  if (about.value) {
-    observer.observe(about.value);
-  }
+//   if (collectionsBlock.value) {
+//     observer.observe(collectionsBlock.value);
+//   }
 
-  if (cooperation.value) {
-    observer.observe(cooperation.value);
-  }
+//   if (about.value) {
+//     observer.observe(about.value);
+//   }
 
-  if (stages.value) {
-    observer.observe(stages.value);
-  }
+//   if (cooperation.value) {
+//     observer.observe(cooperation.value);
+//   }
 
-  if (exhibitions.value) {
-    observer.observe(exhibitions.value);
-  }
+//   if (stages.value) {
+//     observer.observe(stages.value);
+//   }
 
-  if (exhibitionCarousel.value) {
-    observer.observe(exhibitionCarousel.value);
-  }
+//   if (exhibitions.value) {
+//     observer.observe(exhibitions.value);
+//   }
 
-  if (questions.value) {
-    observer.observe(questions.value);
-  }
+//   if (exhibitionCarousel.value) {
+//     observer.observe(exhibitionCarousel.value);
+//   }
 
-  if (questionsForm.value) {
-    observer.observe(questionsForm.value);
-  }
+//   if (questions.value) {
+//     observer.observe(questions.value);
+//   }
 
-  if (contacts.value) {
-    observer.observe(contacts.value);
-  }
+//   if (questionsForm.value) {
+//     observer.observe(questionsForm.value);
+//   }
 
-  onBeforeUnmount(() => {
-    observer.disconnect();
-  });
-});
+//   if (contacts.value) {
+//     observer.observe(contacts.value);
+//   }
+
+//   onBeforeUnmount(() => {
+//     observer.disconnect();
+//   });
+// });
 
 useHead({
   title: 'MADDE - Эксклюзивные украшения из серебра',

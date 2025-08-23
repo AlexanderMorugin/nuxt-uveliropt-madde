@@ -1,7 +1,7 @@
 <template>
   <div class="default-layout">
     <slot />
-    <LazyFooter hydrate-on-visible />
+    <!-- <LazyFooter hydrate-on-visible /> -->
   </div>
 </template>
 
