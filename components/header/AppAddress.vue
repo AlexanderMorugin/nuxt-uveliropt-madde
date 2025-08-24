@@ -7,7 +7,12 @@
 </template>
 
 <script setup>
-import { email, phone, phoneNumber, address } from '@/mock/constants';
+const { phone, phoneNumber, email, address } = defineProps([
+  'phone',
+  'phoneNumber',
+  'email',
+  'address',
+]);
 </script>
 
 <style scoped>

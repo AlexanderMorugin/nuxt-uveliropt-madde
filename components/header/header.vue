@@ -1,17 +1,20 @@
 <template>
   <header class="header" :class="isScroll ? 'header_scroll' : ''">
     <div
-      class="header__container"
+      class="header__container flex-between page-screen"
       :class="
         isScroll ? 'header__container_scroll' : 'header__container_scrollOut'
       "
     >
       <div
         :class="
-          isScroll ? 'header__subcontainerScroll' : 'header__subcontainer'
+          isScroll
+            ? 'header__subcontainerScroll flex-between'
+            : 'header__subcontainer flex-between'
         "
       >
         <HeaderAppLogo :isScroll="isScroll" />
+
         <ClientOnly>
           <HeaderAppNav
             v-if="!isScreenMedium"
@@ -23,57 +26,71 @@
         </ClientOnly>
 
         <div class="header__right">
-          <HeaderAppPhone
-            :phone="props.phone"
-            :phoneNumber="props.phoneNumber"
-            :isScroll="isScroll"
-          />
+          <ClientOnly>
+            <HeaderAppPhone
+              :phone="contactsPhone.text"
+              :phoneNumber="contactsPhoneNumber.text"
+              :isScroll="isScroll"
+            />
 
-          <!-- Кнопка мобильного меню -->
-          <HeaderAppMenuButton
-            v-show="isScreenMedium"
-            :isMenuMobileActive="isMenuMobileActive"
-            :isScroll="isScroll"
-            @toggleMobileMenu="toggleMobileMenu"
-          />
+            <!-- Кнопка мобильного меню -->
+            <HeaderAppMenuButton
+              v-show="isScreenMedium"
+              :isMenuMobileActive="isMenuMobileActive"
+              :isScroll="isScroll"
+              @toggleMobileMenu="toggleMobileMenu"
+            />
+          </ClientOnly>
         </div>
       </div>
     </div>
   </header>
 
   <!-- Мобильное меню -->
-  <HeaderAppMenuMobile
-    v-if="isScreenMedium"
-    :isMenuMobileActive="isMenuMobileActive"
-    @toggleMobileMenu="toggleMobileMenu"
-  >
-    <ClientOnly>
+  <ClientOnly>
+    <HeaderAppMenuMobile
+      v-if="isScreenMedium"
+      :phone="contactsPhone.text"
+      :phoneNumber="contactsPhoneNumber.text"
+      :email="contactsEmail.text"
+      :address="contactsAddress.text"
+      :isMenuMobileActive="isMenuMobileActive"
+      @toggleMobileMenu="toggleMobileMenu"
+    >
       <HeaderAppNav
         :linksData="props.linksData"
         :location="props.location"
         :route="props.route"
         @toggleMobileMenu="toggleMobileMenu"
       />
-    </ClientOnly>
-  </HeaderAppMenuMobile>
+    </HeaderAppMenuMobile>
+  </ClientOnly>
 </template>
 
 <script setup>
 import { useResizeMedium } from '@/use/useResizeMedium';
 import { useScroll } from '@/use/useScroll';
 
-const props = defineProps([
-  'linksData',
-  'phone',
-  'phoneNumber',
-  'location',
-  'route',
-]);
+const { data: contacts } = await useFetch('/api/contacts/contacts');
+
+const props = defineProps(['linksData', 'location', 'route']);
 
 const { isScreenMedium } = useResizeMedium();
 const { isScroll } = useScroll();
 
 const isMenuMobileActive = ref(false);
+const contactsPhone = computed(() =>
+  contacts.value.find((item) => item.key === 'phone')
+);
+const contactsPhoneNumber = computed(() =>
+  contacts.value.find((item) => item.key === 'phoneNumber')
+);
+const contactsEmail = computed(() =>
+  contacts.value.find((item) => item.key === 'email')
+);
+const contactsAddress = computed(() =>
+  contacts.value.find((item) => item.key === 'address')
+);
 
 const toggleMobileMenu = () => {
   isMenuMobileActive.value = !isMenuMobileActive.value;
@@ -95,17 +112,9 @@ const toggleMobileMenu = () => {
   z-index: 30;
 }
 .header__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 50px;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 .header__container_scroll {
   max-width: 100%;
@@ -122,9 +131,6 @@ const toggleMobileMenu = () => {
   animation: slide-to-bottom 1s ease;
 }
 .header__subcontainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 50px;
   width: 100%;
   max-width: 1440px;
@@ -132,9 +138,6 @@ const toggleMobileMenu = () => {
   padding: 0;
 }
 .header__subcontainerScroll {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 50px;
   width: 100%;
   max-width: 1440px;
@@ -174,8 +177,6 @@ const toggleMobileMenu = () => {
   .header__container {
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
   }
   .header__right {
     gap: 20px;

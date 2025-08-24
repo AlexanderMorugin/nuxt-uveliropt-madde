@@ -1,5 +1,5 @@
 <template>
-  <ul class="headerNav">
+  <ul class="headerNav flex-between">
     <li v-for="item in linksData" :key="item.id">
       <NuxtLink
         @click="$emit('toggleMobileMenu')"
@@ -32,9 +32,6 @@ const emit = defineEmits(['toggleMobileMenu']);
 
 <style scoped>
 .headerNav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
   max-width: 750px;
   gap: 16px;

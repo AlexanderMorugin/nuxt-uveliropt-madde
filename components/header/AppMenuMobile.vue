@@ -13,12 +13,23 @@
     </div>
 
     <!-- Адрес внизу меню -->
-    <HeaderAppAddress />
+    <HeaderAppAddress
+      :phone="phone"
+      :phoneNumber="phoneNumber"
+      :email="email"
+      :address="address"
+    />
   </div>
 </template>
 
 <script setup>
-const { isMenuMobileActive } = defineProps(['isMenuMobileActive']);
+const { isMenuMobileActive, phone, phoneNumber, email, address } = defineProps([
+  'isMenuMobileActive',
+  'phone',
+  'phoneNumber',
+  'email',
+  'address',
+]);
 const emit = defineEmits(['toggleMobileMenu']);
 </script>
 

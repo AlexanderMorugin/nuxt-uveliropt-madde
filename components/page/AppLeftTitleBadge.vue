@@ -33,9 +33,6 @@ const { location } = defineProps(['location']);
   opacity: 0.5;
   animation: slide-in 2s ease-out;
 }
-/* .leftTitleBadge__text_dark {
-  color: rgba(0, 0, 0, 0.2);
-} */
 .leftTitleBadge__text_light {
   color: rgba(255, 255, 255, 0.2);
 }

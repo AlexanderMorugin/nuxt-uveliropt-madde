@@ -1,8 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
-  css: ['~/assets/main.css'],
+  css: ['~/assets/variables.css', '~/assets/fonts.css', '~/assets/global.css'],
 
   router: {
     options: {
@@ -17,6 +18,4 @@ export default defineNuxtConfig({
       },
     },
   },
-
-  modules: ['@nuxt/image'],
 });

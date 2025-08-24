@@ -1,15 +1,17 @@
 <template>
   <NuxtLink to="/" class="logo__link">
-    <NuxtImg
+    <!-- Логотип при скролле странице вниз -->
+    <img
       loading="lazy"
       v-if="isScroll"
       src="/logo/logo-scroll.webp"
       alt="Логотип"
       class="logo-scroll"
     />
-    <NuxtImg
+    <!-- Логотип при скролле странице вниз -->
+    <img
       loading="lazy"
-      v-else
+      v-if="!isScroll"
       src="/logo/logo.webp"
       alt="Логотип"
       class="logo"
