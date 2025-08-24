@@ -12,7 +12,7 @@
     <!-- Главный титл для главной страницы -->
     <h1 v-else class="heading__title">{{ title }}</h1>
 
-    <ul class="heading__list">
+    <!-- <ul class="heading__list">
       <li v-for="item in headingList" :key="item.id" class="heading__listItem">
         <img
           src="/icons/icon-triangle.svg"
@@ -23,7 +23,7 @@
           item.text
         }}</PageAppParagraphShadow>
       </li>
-    </ul>
+    </ul> -->
 
     <!-- Модалка заявки на сотрудничество, с кнопкой -->
     <div class="heading__button">
@@ -48,13 +48,15 @@ const { title, headingList, location } = defineProps([
   position: relative;
   width: 100%;
   max-width: 1440px;
-  height: 666px;
+  /* height: 666px; */
+  /* height: 670px; */
+  height: 100%;
   margin: 0 auto;
   padding-top: 90px;
   padding-bottom: 20px;
   z-index: 20;
 
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 .heading__titleBox {
   display: flex;

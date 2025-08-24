@@ -1,27 +1,29 @@
 <template>
-  <!-- Верхняя картинка и левый боковой бейдж, под шапкой и блоком хединга -->
-  <!-- <div class="mainPageImage" /> -->
-  <div class="mainPageImage">
-    <img
-      fetchpriority="high"
-      src="/images/img-main-01.webp"
-      alt="Подложка"
-      class="mainPageImage__item"
-    />
+  <div>
+    <!-- Верхняя картинка и левый боковой бейдж, под шапкой и блоком хединга -->
+    <!-- <div class="mainPageImage" /> -->
+    <div class="mainPageImage">
+      <img
+        fetchpriority="high"
+        src="/images/img-main-01.webp"
+        alt="Подложка"
+        class="mainPageImage__item"
+      />
+    </div>
+    <PageAppLeftTitleBadge />
+
+    <!-- Шапка -->
+    <Header :linksData="headerMainNav" />
+
+    <!-- Контент -->
+    <main class="content">
+      <!-- Блок Хединга с главным титлом -->
+      <PageAppHeading
+        title="Эксклюзивные украшения из Италии"
+        :headingList="headingMainList"
+      />
+    </main>
   </div>
-  <PageAppLeftTitleBadge />
-
-  <!-- Шапка -->
-  <Header :linksData="headerMainNav" />
-
-  <!-- Контент -->
-  <main class="content">
-    <!-- Блок Хединга с главным титлом -->
-    <!-- <PageAppHeading
-      title="Эксклюзивные украшения из Италии"
-      :headingList="headingMainList"
-    /> -->
-  </main>
 </template>
 
 <script setup>
@@ -64,7 +66,7 @@ useSeoMeta({
   left: 0;
   width: 100%;
   height: 800px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   /* background-image: url('/images/img-main-01.webp');
   background-repeat: no-repeat;
   background-size: cover;

@@ -27,6 +27,15 @@ button {
   cursor: pointer;
 }
 
+/* .page {
+  position: relative;
+} */
+.content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 .page-screen {
   width: 100%;
   max-width: 1440px;

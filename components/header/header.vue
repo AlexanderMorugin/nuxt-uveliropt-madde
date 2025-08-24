@@ -99,9 +99,12 @@ const toggleMobileMenu = () => {
 
 <style scoped>
 .header {
+  position: relative;
   z-index: 10;
   height: 130px;
   background: linear-gradient(rgba(0, 0, 0, 0.8), transparent);
+
+  /* border: 1px solid blue; */
 }
 .header_scroll {
   position: sticky;
@@ -134,6 +137,7 @@ const toggleMobileMenu = () => {
   gap: 50px;
   width: 100%;
   max-width: 1440px;
+  height: 90px;
   margin: 0 auto;
   padding: 0;
 }
@@ -141,6 +145,7 @@ const toggleMobileMenu = () => {
   gap: 50px;
   width: 100%;
   max-width: 1440px;
+  height: 90px;
   margin: 0 auto;
 }
 .header__right {
