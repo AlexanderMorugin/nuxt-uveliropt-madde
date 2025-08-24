@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // ssr: true,
+  ssr: true,
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
   css: ['~/assets/variables.css', '~/assets/fonts.css', '~/assets/global.css'],
