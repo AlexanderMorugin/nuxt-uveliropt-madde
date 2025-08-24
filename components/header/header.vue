@@ -169,10 +169,10 @@ const toggleMobileMenu = () => {
 
 @media (max-width: 767px) {
   .header {
-    height: 75px;
+    height: 95px;
   }
   .header_scroll {
-    height: 75px;
+    height: 95px;
   }
   .header__container {
     padding-top: 10px;

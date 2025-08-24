@@ -53,6 +53,8 @@ const { title, headingList, location } = defineProps([
   padding-top: 90px;
   padding-bottom: 20px;
   z-index: 20;
+
+  border: 1px solid red;
 }
 .heading__titleBox {
   display: flex;
@@ -68,7 +70,7 @@ const { title, headingList, location } = defineProps([
     0 -1px 10px var(--brown-secondary);
   padding-left: 20px;
   padding-right: 20px;
-  animation: slide-in .4s ease-out;
+  /* animation: slide-in .4s ease-out; */
 }
 .heading__titleCollection {
   font-family: 'Montserrat-SemiBold';
@@ -78,7 +80,7 @@ const { title, headingList, location } = defineProps([
   text-shadow: #000000 0 0 20px;
   padding-left: 20px;
   padding-right: 20px;
-  animation: slide-in .7s ease-out;
+  /* animation: slide-in .7s ease-out; */
 }
 .heading__titleBottom {
   font-family: 'Montserrat-SemiBold';
@@ -89,7 +91,7 @@ const { title, headingList, location } = defineProps([
   text-shadow: white 0 0 20px;
   padding-left: 20px;
   padding-right: 20px;
-  animation: slide-in 1.1s ease-out;
+  /* animation: slide-in 1.1s ease-out; */
 }
 .heading__title {
   width: 100%;
@@ -100,7 +102,7 @@ const { title, headingList, location } = defineProps([
   color: var(--white-primary);
   padding-left: 20px;
   padding-right: 20px;
-  animation: slide-in 0.6s ease-out;
+  /* animation: slide-in 0.6s ease-out; */
 }
 .heading__list {
   display: flex;
@@ -117,19 +119,19 @@ const { title, headingList, location } = defineProps([
   gap: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  animation: slide-in 0.3s ease-out;
+  /* animation: slide-in 0.3s ease-out; */
 }
 .heading__listItem:nth-child(2) {
-  animation: slide-in 0.9s ease-out;
+  /* animation: slide-in 0.9s ease-out; */
 }
 .heading__listItem:nth-child(3) {
-  animation: slide-in 1.2s ease-out;
+  /* animation: slide-in 1.2s ease-out; */
 }
 .heading__listItem:nth-child(4) {
-  animation: slide-in 1.5s ease-out;
+  /* animation: slide-in 1.5s ease-out; */
 }
 .heading__listItem:nth-child(5) {
-  animation: slide-in 1.8s ease-out;
+  /* animation: slide-in 1.8s ease-out; */
 }
 .heading__listItemArrow {
   width: 6px;
