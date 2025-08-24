@@ -41,7 +41,7 @@
     <div class="embla__viewport" ref="emblaRef">
       <ul class="embla__container">
         <li v-for="item in data" :key="item.id" class="embla__slide">
-          <NuxtImg
+          <img
             :src="item.imageMedium"
             :alt="item.text"
             class="slideImage"

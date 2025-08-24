@@ -8,7 +8,7 @@
       :class="item.gridName"
     >
       <div class="stages__itemImageBox">
-        <NuxtImg
+        <img
           loading="lazy"
           :src="item.image"
           :alt="item.title"
@@ -25,7 +25,7 @@
           :key="element.id"
           class="stages__itemText"
         >
-          <NuxtImg
+          <img
             loading="lazy"
             src="/icons/icon-triangle-brown.svg"
             alt="Стрелка"

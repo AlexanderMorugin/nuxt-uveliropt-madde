@@ -8,7 +8,7 @@
   </p>
 
   <div>
-    <NuxtImg
+    <img
       loading="lazy"
       src="/images/img-exhibitions-01.webp"
       alt="Выставка JunWex"

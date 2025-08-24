@@ -9,7 +9,7 @@
           :disabled="!canScrollPrev"
           :class="['embla__button', { embla__button_disabled: !canScrollPrev }]"
         >
-          <NuxtImg
+          <img
             loading="lazy"
             src="/icons/icon-carousel-arrow.svg"
             alt="Стрелка"
@@ -26,7 +26,7 @@
           :disabled="!canScrollNext"
           :class="['embla__button', { embla__button_disabled: !canScrollNext }]"
         >
-          <NuxtImg
+          <img
             loading="lazy"
             src="/icons/icon-carousel-arrow.svg"
             alt="Стрелка"

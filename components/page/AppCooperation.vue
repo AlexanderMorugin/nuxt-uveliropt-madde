@@ -13,7 +13,7 @@
           :key="item.id"
           class="cooperation__listItem"
         >
-          <NuxtImg
+          <img
             loading="lazy"
             :src="item.image"
             :alt="item.title"
