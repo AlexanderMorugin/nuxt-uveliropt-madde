@@ -1,53 +1,88 @@
 <template>
-  <PageAppSecondTitle title="Этапы работы" class="stages__title" />
-  <ul class="stages__content">
-    <li
-      v-for="item in stagesList"
-      :key="item.id"
-      class="stages__item"
-      :class="item.gridName"
-    >
-      <div class="stages__itemImageBox">
-        <img
-          loading="lazy"
-          :src="item.image"
-          :alt="item.title"
-          class="stages__itemImage"
-        />
-        <div class="stages__itemTitleBox">
-          <span>{{ item.number }}</span>
-          <span>{{ item.title }}</span>
-        </div>
-      </div>
-      <ul class="stages__itemList">
-        <li
-          v-for="element in item.list"
-          :key="element.id"
-          class="stages__itemText"
-        >
+  <section ref="stagesBlock" class="stages page-screen observer">
+    <PageAppSecondTitle title="Этапы работы" class="stages__title" />
+    <ul class="stages__content">
+      <li
+        v-for="item in stagesList"
+        :key="item.id"
+        class="stages__item"
+        :class="item.gridName"
+      >
+        <div class="stages__itemImageBox">
           <img
             loading="lazy"
-            src="/icons/icon-triangle-brown.svg"
-            alt="Стрелка"
-            class="stages__itemArrow"
+            :src="item.image"
+            :alt="item.title"
+            class="stages__itemImage"
           />
-          <p class="stages__text">{{ element.text }}</p>
-        </li>
-      </ul>
-    </li>
-  </ul>
+          <div class="stages__itemTitleBox">
+            <span>{{ item.number }}</span>
+            <span>{{ item.title }}</span>
+          </div>
+        </div>
+        <ul class="stages__itemList">
+          <li
+            v-for="element in item.list"
+            :key="element.id"
+            class="stages__itemText"
+          >
+            <img
+              loading="lazy"
+              src="/icons/icon-triangle-brown.svg"
+              alt="Стрелка"
+              class="stages__itemArrow"
+            />
+            <p class="stages__text text-monserat">{{ element.text }}</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
 
-  <!-- Модалка заявки на сотрудничество, с кнопкой -->
-  <div class="stages__button">
-    <LazyModalAppCooperation buttonTitle="Оставить заявку" />
-  </div>
+    <!-- Модалка заявки на сотрудничество, с кнопкой -->
+    <ClientOnly>
+      <div class="stages__button">
+        <LazyModalAppCooperation buttonTitle="Оставить заявку" />
+      </div>
+    </ClientOnly>
+  </section>
 </template>
 
 <script setup>
-import { stagesList } from '@/mock/stages';
+const { data: stagesList } = await useFetch('/api/stages/stages');
+
+const stagesBlock = ref(null);
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('observer_animate');
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+    }
+  );
+
+  if (stagesBlock.value) {
+    observer.observe(stagesBlock.value);
+  }
+
+  onBeforeUnmount(() => {
+    observer.disconnect();
+  });
+});
 </script>
 
 <style scoped>
+.stages {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 70px;
+}
 .stages__content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -88,7 +123,7 @@ import { stagesList } from '@/mock/stages';
 .stages__itemTitleBox {
   display: flex;
   gap: 6px;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', sans-serif;
   font-size: 20px;
   color: var(--blue-dark-secondary);
   text-transform: uppercase;
@@ -117,9 +152,6 @@ import { stagesList } from '@/mock/stages';
   padding-right: 16px;
 }
 .stages__text {
-  font-family: 'Montserrat-Regular';
-  line-height: 1.5;
-  font-size: 18px;
   color: var(--brown-secondary);
 }
 .stages__title {
@@ -137,6 +169,9 @@ import { stagesList } from '@/mock/stages';
 }
 
 @media (max-width: 767px) {
+  .stages {
+    padding-top: 60px;
+  }
   .stages__content {
     grid-template-columns: 1fr;
     grid-template-areas:

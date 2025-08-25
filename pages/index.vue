@@ -24,13 +24,19 @@
       />
 
       <!-- Блок Коллекции -->
-      <LazyPageAppCollections :collections="collections" hydrate-on-visible />
+      <LazyPageAppCollections :collections="collections" />
 
       <!-- Блок Ювелирный бренд MADDE -->
-      <LazyPageAppAbout hydrate-on-visible />
+      <LazyPageAppAbout />
 
       <!-- Блок Выгоды сотрудничества -->
-      <LazyPageAppCooperation hydrate-on-visible />
+      <LazyPageAppCooperation />
+
+      <!-- Блок Этапы работы -->
+      <LazyPageAppStages />
+
+      <!-- Блок Выставки -->
+      <LazyPageAppExhibitions hydrate-on-visible />
     </main>
   </div>
 </template>

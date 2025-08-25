@@ -7,7 +7,7 @@
     />
 
     <div class="cooperation__background">
-      <div class="cooperation__container">
+      <div class="cooperation__container page-screen">
         <ul class="cooperation__list">
           <li
             v-for="item in cooperation"
@@ -22,7 +22,7 @@
             />
             <div class="cooperation__textBox">
               <span class="cooperation__title">{{ item.title }}</span>
-              <p class="cooperation__text">{{ item.text }}</p>
+              <p class="cooperation__text text-monserat">{{ item.text }}</p>
             </div>
           </li>
         </ul>
@@ -82,13 +82,8 @@ onMounted(() => {
   background-size: cover;
 }
 .cooperation__container {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
   padding-top: 80px;
   padding-bottom: 80px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 .cooperation__list {
   display: flex;
@@ -111,7 +106,7 @@ onMounted(() => {
   gap: 20px;
 }
 .cooperation__title {
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', sans-serif;
   font-size: 20px;
   text-transform: uppercase;
   background: linear-gradient(
@@ -135,9 +130,6 @@ onMounted(() => {
   animation: textShine 6s ease-in-out infinite alternate;
 }
 .cooperation__text {
-  font-family: 'Montserrat-Regular';
-  line-height: 1.5;
-  font-size: 18px;
   color: var(--white-primary);
 }
 .cooperation__button {
@@ -160,8 +152,6 @@ onMounted(() => {
   .cooperation__container {
     padding-top: 40px;
     padding-bottom: 40px;
-    padding-left: 10px;
-    padding-right: 10px;
   }
   .cooperation__listItem {
     flex-direction: column;
