@@ -3,7 +3,12 @@
     <div class="embla__viewport" ref="emblaRef">
       <ul class="embla__container">
         <li v-for="item in data" :key="item.id" class="embla__slide">
-          <img :src="item.image" :alt="item.title" class="embla__slide__img" />
+          <img
+            loading="lazy"
+            :src="item.image"
+            :alt="item.title"
+            class="embla__slide__img"
+          />
         </li>
       </ul>
     </div>

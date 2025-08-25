@@ -27,9 +27,6 @@ button {
   cursor: pointer;
 }
 
-/* .page {
-  position: relative;
-} */
 .content {
   display: flex;
   flex-direction: column;
@@ -47,6 +44,19 @@ button {
 .flex-between {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 

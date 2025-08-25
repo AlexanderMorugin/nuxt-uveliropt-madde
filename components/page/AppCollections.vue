@@ -21,6 +21,16 @@
             class="collections__thumb"
           />
           <span class="collections__name">{{ item.name }}</span>
+          <div class="collections__look">
+            <span class="collections__lookText">Смотреть</span>
+            <img
+              fetchpriority="low"
+              loading="lazy"
+              src="/icons/icon-arrow-white.svg"
+              alt="Стрелка"
+              class="collections__lookArrow"
+            />
+          </div>
         </NuxtLink>
       </li>
     </ul>
@@ -76,6 +86,7 @@ onMounted(() => {
   width: 100%;
   height: 260px;
   object-fit: cover;
+  border-radius: 7px;
 }
 .collections__name {
   position: absolute;
@@ -84,9 +95,35 @@ onMounted(() => {
   font-family: 'Montserrat-Regular', sans-serif;
   font-size: 22px;
   color: var(--white-primary);
+  transition: 0.3s all;
 }
 .collections__title {
   color: var(--brown-secondary);
+}
+.collections__look {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+}
+.collections__lookText {
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-size: 16px;
+  color: var(--white-primary);
+  transition: 0.8s all;
+}
+.collections__lookArrow {
+  height: 12px;
+  transform: rotate(180deg);
+}
+.collections__listItem:hover .collections__name {
+  color: var(--red-primary);
+}
+.collections__listItem:hover .collections__lookText {
+  color: var(--red-primary);
 }
 
 @media (max-width: 1023px) {

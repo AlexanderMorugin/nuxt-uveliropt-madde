@@ -1,7 +1,7 @@
 <template>
   <button
     :class="[
-      'cooperationButton',
+      'cooperationButton flex-center',
       { cooperationButton_small: location === 'heading' },
     ]"
     @click="$emit('openCooperationModal')"
@@ -17,16 +17,13 @@ const { title, location } = defineProps(['title', 'location']);
 
 <style scoped>
 .cooperationButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   max-width: 420px;
   min-height: 64px;
   padding: 10px;
   background: var(--blue-secondary);
   border: 1px solid var(--white-secondary);
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', sans-serif;
   font-size: 21px;
   color: var(--white-primary);
   text-transform: uppercase;

@@ -2,7 +2,7 @@
   <Transition name="modal">
     <div
       v-if="isCooperationModalOpen"
-      class="modal-overlay"
+      class="modal-overlay flex-center"
       @click="$emit('closeCooperationModal')"
     >
       <div class="modal" @click.stop>
@@ -37,9 +37,6 @@ const { isCooperationModalOpen } = defineProps([
   bottom: 0;
   right: 0;
   left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(2px);
   z-index: 50;
@@ -64,7 +61,7 @@ const { isCooperationModalOpen } = defineProps([
   animation: spin 1s ease-in-out;
 }
 .modal__title {
-  font-family: 'CormorantGaramond-Medium';
+  font-family: 'CormorantGaramond-Medium', sans-serif;
   font-size: 44px;
   color: var(--brown-secondary);
   text-align: center;

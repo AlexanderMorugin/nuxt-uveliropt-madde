@@ -24,9 +24,7 @@
             alt="Стрелка"
             class="heading__listItemArrow"
           />
-          <PageAppParagraphShadow class="heading__listItemText">{{
-            item.text
-          }}</PageAppParagraphShadow>
+          <span class="heading__listItemText">{{ item.text }}</span>
         </li>
       </ul>
     </ClientOnly>
@@ -34,7 +32,7 @@
     <!-- Модалка заявки на сотрудничество, с кнопкой -->
     <ClientOnly>
       <div class="heading__button">
-        <ModalAppCooperation
+        <LazyModalAppCooperation
           buttonTitle="Заявка на сотрудничество"
           location="heading"
         />
@@ -145,7 +143,10 @@ const { title, headingList, location } = defineProps([
   transform: rotate(90deg);
 }
 .heading__listItemText {
+  font-family: 'Montserrat-Regular', sans-serif;
+  font-size: 18px;
   line-height: 1.2;
+  color: var(--white-primary);
 }
 .heading__button {
   margin-top: 80px;

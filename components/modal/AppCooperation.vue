@@ -8,13 +8,16 @@
 
   <!-- Модалка с формой заявки на сотрудничество -->
   <Teleport to="#teleports">
-      <PageAppCooperationModal
-        :isCooperationModalOpen="isCooperationModalOpen"
+    <PageAppCooperationModal
+      :isCooperationModalOpen="isCooperationModalOpen"
+      @closeCooperationModal="closeCooperationModal"
+      title="Оставить заявку"
+    >
+      <LazyFormAppRequest
         @closeCooperationModal="closeCooperationModal"
-        title="Оставить заявку"
-      >
-        <FormAppRequest @closeCooperationModal="closeCooperationModal" />
-      </PageAppCooperationModal>
+        hydrate-on-visible
+      />
+    </PageAppCooperationModal>
   </Teleport>
 </template>
 

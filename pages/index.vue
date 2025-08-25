@@ -25,6 +25,12 @@
 
       <!-- Блок Коллекции -->
       <LazyPageAppCollections :collections="collections" hydrate-on-visible />
+
+      <!-- Блок Ювелирный бренд MADDE -->
+      <LazyPageAppAbout hydrate-on-visible />
+
+      <!-- Блок Выгоды сотрудничества -->
+      <LazyPageAppCooperation hydrate-on-visible />
     </main>
   </div>
 </template>
@@ -77,7 +83,6 @@ useSeoMeta({
   object-fit: cover;
   object-position: top right;
 }
-
 
 @media (max-width: 767px) {
   .mainPageImage {
