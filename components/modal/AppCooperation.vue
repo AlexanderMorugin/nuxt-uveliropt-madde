@@ -8,7 +8,6 @@
 
   <!-- Модалка с формой заявки на сотрудничество -->
   <Teleport to="#teleports">
-    <ClientOnly>
       <PageAppCooperationModal
         :isCooperationModalOpen="isCooperationModalOpen"
         @closeCooperationModal="closeCooperationModal"
@@ -16,7 +15,6 @@
       >
         <FormAppRequest @closeCooperationModal="closeCooperationModal" />
       </PageAppCooperationModal>
-    </ClientOnly>
   </Teleport>
 </template>
 

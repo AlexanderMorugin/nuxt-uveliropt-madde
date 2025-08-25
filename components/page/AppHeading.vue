@@ -12,18 +12,24 @@
     <!-- Главный титл для главной страницы -->
     <h1 v-else class="heading__title">{{ title }}</h1>
 
-    <ul class="heading__list">
-      <li v-for="item in headingList" :key="item.id" class="heading__listItem">
-        <img
-          src="/icons/icon-triangle.svg"
-          alt="Стрелка"
-          class="heading__listItemArrow"
-        />
-        <PageAppParagraphShadow class="heading__listItemText">{{
-          item.text
-        }}</PageAppParagraphShadow>
-      </li>
-    </ul>
+    <ClientOnly>
+      <ul class="heading__list">
+        <li
+          v-for="item in headingList"
+          :key="item.id"
+          class="heading__listItem"
+        >
+          <img
+            src="/icons/icon-triangle.svg"
+            alt="Стрелка"
+            class="heading__listItemArrow"
+          />
+          <PageAppParagraphShadow class="heading__listItemText">{{
+            item.text
+          }}</PageAppParagraphShadow>
+        </li>
+      </ul>
+    </ClientOnly>
 
     <!-- Модалка заявки на сотрудничество, с кнопкой -->
     <ClientOnly>
@@ -62,7 +68,7 @@ const { title, headingList, location } = defineProps([
   width: fit-content;
 }
 .heading__titleTop {
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', sans-serif;
   font-size: 28px;
   color: var(--white-primary);
   text-shadow: 1px 0 10px var(--brown-secondary),
@@ -73,7 +79,7 @@ const { title, headingList, location } = defineProps([
   animation: slide-in 0.4s ease-out;
 }
 .heading__titleCollection {
-  font-family: 'Montserrat-SemiBold';
+  font-family: 'Montserrat-SemiBold', sans-serif;
   line-height: 1;
   font-size: 80px;
   color: var(--white-primary);
@@ -83,7 +89,7 @@ const { title, headingList, location } = defineProps([
   animation: slide-in 0.7s ease-out;
 }
 .heading__titleBottom {
-  font-family: 'Montserrat-SemiBold';
+  font-family: 'Montserrat-SemiBold', sans-serif;
   line-height: 1;
   font-size: 26px;
   color: rgba(0, 0, 0, 0.6);
@@ -96,7 +102,7 @@ const { title, headingList, location } = defineProps([
 .heading__title {
   width: 100%;
   max-width: 580px;
-  font-family: 'CormorantGaramond-Medium';
+  font-family: 'CormorantGaramond-Medium', sans-serif;
   line-height: 1.2;
   font-size: 60px;
   color: var(--white-primary);

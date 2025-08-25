@@ -1,5 +1,7 @@
 @font-face {
   src: local('Montserrat-Regular'),
+    url('/fonts/Montserrat-Regular.woff2') format('woff2'),
+    url('/fonts/Montserrat-Regular.woff') format('woff'),
     url('/fonts/Montserrat-Regular.ttf') format('truetype');
   font-family: 'Montserrat-Regular';
   font-weight: normal;
@@ -9,6 +11,8 @@
 
 @font-face {
   src: local('Montserrat-SemiBold'),
+    url('/fonts/Montserrat-SemiBold.woff2') format('woff2'),
+    url('/fonts/Montserrat-SemiBold.woff') format('woff'),
     url('/fonts/Montserrat-SemiBold.ttf') format('truetype');
   font-family: 'Montserrat-SemiBold';
   font-weight: normal;
@@ -18,6 +22,8 @@
 
 @font-face {
   src: local('Montserrat-Bold'),
+    url('/fonts/Montserrat-Bold.woff2') format('woff2'),
+    url('/fonts/Montserrat-Bold.woff') format('woff'),
     url('/fonts/Montserrat-Bold.ttf') format('truetype');
   font-family: 'Montserrat-Bold';
   font-weight: normal;
@@ -26,19 +32,21 @@
 }
 
 @font-face {
+  src: local('CormorantGaramond-Medium'),
+    url('/fonts/CormorantGaramond-Medium.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-Medium.woff') format('woff');
   font-family: 'CormorantGaramond-Medium';
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: local('CormorantGaramond-Medium'),
-    url('/fonts/CormorantGaramond-Medium.woff') format('woff');
 }
 
 @font-face {
+  src: local('CormorantGaramond-SemiBold'),
+    url('/fonts/CormorantGaramond-SemiBold.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-SemiBold.woff') format('woff');
   font-family: 'CormorantGaramond-SemiBold';
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: local('CormorantGaramond-SemiBold'),
-    url('/fonts/CormorantGaramond-SemiBold.woff') format('woff');
 }
