@@ -24,7 +24,7 @@ const { location } = defineProps(['location']);
   overflow: hidden;
 }
 .leftTitleBadge__text {
-  font-family: 'Montserrat-SemiBold';
+  font-family: 'Montserrat-SemiBold', sans-serif;
   line-height: 80px;
   font-size: 210px;
   color: rgba(0, 0, 0, 0.2);

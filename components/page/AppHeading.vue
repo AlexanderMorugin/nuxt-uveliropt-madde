@@ -55,8 +55,8 @@ const { title, headingList, location } = defineProps([
 .heading {
   position: relative;
   width: 100%;
-  max-width: 1440px;
-  height: 100%;
+  max-width: var(--screen-xl);
+  height: 670px;
   margin: 0 auto;
   padding-top: 90px;
   padding-bottom: 20px;
@@ -154,7 +154,6 @@ const { title, headingList, location } = defineProps([
 
 @media (max-width: 1023px) {
   .heading {
-    height: 681px;
     padding-top: 180px;
   }
   .heading__list {
@@ -173,7 +172,8 @@ const { title, headingList, location } = defineProps([
 
 @media (max-width: 767px) {
   .heading {
-    height: 624px;
+    height: 590px;
+    padding-top: 150px;
   }
   .heading__titleTop {
     font-size: 28px;
@@ -190,11 +190,11 @@ const { title, headingList, location } = defineProps([
   .heading__title {
     font-size: 40px;
     max-width: 380px;
-    padding-left: 40px;
+    padding-left: 20px;
     padding-right: 10px;
   }
   .heading__list {
-    padding-left: 40px;
+    padding-left: 30px;
   }
   .heading__listItem {
     padding-left: 10px;

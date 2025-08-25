@@ -39,7 +39,7 @@ const emit = defineEmits(['toggleMobileMenu']);
 .headerNav__link {
   position: relative;
   display: inline-block;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', sans-serif;
   font-size: 16px;
   color: var(--white-primary);
   text-transform: uppercase;
@@ -91,7 +91,7 @@ const emit = defineEmits(['toggleMobileMenu']);
     flex-direction: column;
   }
   .headerNav__link {
-    font-family: 'CormorantGaramond-Medium';
+    font-family: 'CormorantGaramond-Medium', sans-serif;
     font-size: 24px;
   }
 }

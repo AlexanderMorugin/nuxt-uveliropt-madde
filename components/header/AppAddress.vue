@@ -24,7 +24,7 @@ const { phone, phoneNumber, email, address } = defineProps([
   width: 100%;
 }
 .address__text {
-  font-family: 'CormorantGaramond-Medium';
+  font-family: 'CormorantGaramond-Medium', sans-serif;
   font-size: 18px;
   color: var(--white-primary);
 }

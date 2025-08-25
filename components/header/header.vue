@@ -103,8 +103,6 @@ const toggleMobileMenu = () => {
   z-index: 10;
   height: 130px;
   background: linear-gradient(rgba(0, 0, 0, 0.8), transparent);
-
-  /* border: 1px solid blue; */
 }
 .header_scroll {
   position: sticky;
@@ -155,12 +153,12 @@ const toggleMobileMenu = () => {
 }
 
 @media (max-width: 1023px) {
-  .header {
+  /* .header {
     height: 115px;
   }
   .header_scroll {
     height: 115px;
-  }
+  } */
   .header__container {
     gap: 15px;
   }
@@ -174,10 +172,10 @@ const toggleMobileMenu = () => {
 
 @media (max-width: 767px) {
   .header {
-    height: 95px;
+    height: 110px;
   }
   .header_scroll {
-    height: 95px;
+    height: 110px;
   }
   .header__container {
     padding-top: 10px;

@@ -1,5 +1,9 @@
 <template>
-  <!-- <section class="collections" id="collections"> -->
+  <section
+    ref="collectionsBlock"
+    class="collections page-screen observer"
+    id="collections"
+  >
     <!-- Блок с титлом -->
     <PageAppSecondTitle title="Коллекции" class="collections__title" />
 
@@ -20,25 +24,45 @@
         </NuxtLink>
       </li>
     </ul>
-  <!-- </section> -->
+  </section>
 </template>
 
 <script setup>
 const { collections } = defineProps(['collections']);
+
+const collectionsBlock = ref(null);
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('observer_animate');
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+    }
+  );
+
+  if (collectionsBlock.value) {
+    observer.observe(collectionsBlock.value);
+  }
+
+  onBeforeUnmount(() => {
+    observer.disconnect();
+  });
+});
 </script>
 
 <style scoped>
-/* .collections {
+.collections {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
   padding-top: 70px;
-  padding-left: 20px;
-  padding-right: 20px;
-} */
+}
 .collections__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -47,8 +71,6 @@ const { collections } = defineProps(['collections']);
 }
 .collections__listItem {
   position: relative;
-  /* width: 100%;
-  height: 260px; */
 }
 .collections__thumb {
   width: 100%;
@@ -59,7 +81,7 @@ const { collections } = defineProps(['collections']);
   position: absolute;
   top: 20px;
   left: 20px;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', sans-serif;
   font-size: 22px;
   color: var(--white-primary);
 }
@@ -76,11 +98,9 @@ const { collections } = defineProps(['collections']);
 }
 
 @media (max-width: 767px) {
-  /* .collections {
+  .collections {
     padding-top: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
-  } */
+  }
   .collections__list {
     grid-template-columns: 1fr;
   }

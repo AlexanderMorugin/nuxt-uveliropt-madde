@@ -1,7 +1,6 @@
 <template>
   <div>
     <!-- Верхняя картинка и левый боковой бейдж, под шапкой и блоком хединга -->
-    <!-- <div class="mainPageImage" /> -->
     <div class="mainPageImage">
       <img
         fetchpriority="high"
@@ -10,6 +9,7 @@
         class="mainPageImage__item"
       />
     </div>
+
     <PageAppLeftTitleBadge />
 
     <!-- Шапка -->
@@ -22,6 +22,9 @@
         title="Эксклюзивные украшения из Италии"
         :headingList="headingMainList"
       />
+
+      <!-- Блок Коллекции -->
+      <LazyPageAppCollections :collections="collections" hydrate-on-visible />
     </main>
   </div>
 </template>
@@ -31,6 +34,7 @@ const { data: headerMainNav } = await useFetch('/api/header/header-main-nav');
 const { data: headingMainList } = await useFetch(
   '/api/heading/heading-main-list'
 );
+const { data: collections } = await useFetch('/api/collections/collections');
 
 useHead({
   title: 'MADDE - Эксклюзивные украшения из серебра',
@@ -66,11 +70,6 @@ useSeoMeta({
   left: 0;
   width: 100%;
   height: 800px;
-  /* border: 1px solid red; */
-  /* background-image: url('/images/img-main-01.webp');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top right; */
 }
 .mainPageImage__item {
   width: 100%;
@@ -79,10 +78,10 @@ useSeoMeta({
   object-position: top right;
 }
 
+
 @media (max-width: 767px) {
   .mainPageImage {
     height: 700px;
-    /* background-position: top right -200px; */
   }
   .mainPageImage__item {
     object-position: top 0 right -200px;

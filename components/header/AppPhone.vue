@@ -24,7 +24,7 @@ const props = defineProps(['phone', 'phoneNumber', 'location', 'isScroll']);
 
 <style scoped>
 .headerPhone {
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', sans-serif;
   font-size: 16px;
   color: var(--white-primary);
   white-space: nowrap;
