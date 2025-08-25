@@ -10,7 +10,9 @@
       />
     </div>
 
-    <PageAppLeftTitleBadge />
+    <ClientOnly>
+      <LazyPageAppLeftTitleBadge />
+    </ClientOnly>
 
     <!-- Шапка -->
     <Header :linksData="headerMainNav" />
