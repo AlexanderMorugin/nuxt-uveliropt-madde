@@ -50,15 +50,11 @@ const { title, headingList, location } = defineProps([
   position: relative;
   width: 100%;
   max-width: 1440px;
-  /* height: 666px; */
-  /* height: 670px; */
   height: 100%;
   margin: 0 auto;
   padding-top: 90px;
   padding-bottom: 20px;
   z-index: 20;
-
-  /* border: 1px solid red; */
 }
 .heading__titleBox {
   display: flex;
@@ -74,7 +70,7 @@ const { title, headingList, location } = defineProps([
     0 -1px 10px var(--brown-secondary);
   padding-left: 20px;
   padding-right: 20px;
-  animation: slide-in .4s ease-out;
+  animation: slide-in 0.4s ease-out;
 }
 .heading__titleCollection {
   font-family: 'Montserrat-SemiBold';
@@ -84,7 +80,7 @@ const { title, headingList, location } = defineProps([
   text-shadow: #000000 0 0 20px;
   padding-left: 20px;
   padding-right: 20px;
-  animation: slide-in .7s ease-out;
+  animation: slide-in 0.7s ease-out;
 }
 .heading__titleBottom {
   font-family: 'Montserrat-SemiBold';
