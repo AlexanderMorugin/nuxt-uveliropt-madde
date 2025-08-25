@@ -12,7 +12,7 @@
     <!-- Главный титл для главной страницы -->
     <h1 v-else class="heading__title">{{ title }}</h1>
 
-    <!-- <ul class="heading__list">
+    <ul class="heading__list">
       <li v-for="item in headingList" :key="item.id" class="heading__listItem">
         <img
           src="/icons/icon-triangle.svg"
@@ -23,15 +23,17 @@
           item.text
         }}</PageAppParagraphShadow>
       </li>
-    </ul> -->
+    </ul>
 
     <!-- Модалка заявки на сотрудничество, с кнопкой -->
-    <div class="heading__button">
-      <ModalAppCooperation
-        buttonTitle="Заявка на сотрудничество"
-        location="heading"
-      />
-    </div>
+    <ClientOnly>
+      <div class="heading__button">
+        <ModalAppCooperation
+          buttonTitle="Заявка на сотрудничество"
+          location="heading"
+        />
+      </div>
+    </ClientOnly>
   </section>
 </template>
 
@@ -72,7 +74,7 @@ const { title, headingList, location } = defineProps([
     0 -1px 10px var(--brown-secondary);
   padding-left: 20px;
   padding-right: 20px;
-  /* animation: slide-in .4s ease-out; */
+  animation: slide-in .4s ease-out;
 }
 .heading__titleCollection {
   font-family: 'Montserrat-SemiBold';
@@ -82,7 +84,7 @@ const { title, headingList, location } = defineProps([
   text-shadow: #000000 0 0 20px;
   padding-left: 20px;
   padding-right: 20px;
-  /* animation: slide-in .7s ease-out; */
+  animation: slide-in .7s ease-out;
 }
 .heading__titleBottom {
   font-family: 'Montserrat-SemiBold';
@@ -93,7 +95,7 @@ const { title, headingList, location } = defineProps([
   text-shadow: white 0 0 20px;
   padding-left: 20px;
   padding-right: 20px;
-  /* animation: slide-in 1.1s ease-out; */
+  animation: slide-in 1.1s ease-out;
 }
 .heading__title {
   width: 100%;
@@ -104,7 +106,7 @@ const { title, headingList, location } = defineProps([
   color: var(--white-primary);
   padding-left: 20px;
   padding-right: 20px;
-  /* animation: slide-in 0.6s ease-out; */
+  animation: slide-in 0.6s ease-out;
 }
 .heading__list {
   display: flex;
@@ -121,19 +123,19 @@ const { title, headingList, location } = defineProps([
   gap: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  /* animation: slide-in 0.3s ease-out; */
+  animation: slide-in 0.3s ease-out;
 }
 .heading__listItem:nth-child(2) {
-  /* animation: slide-in 0.9s ease-out; */
+  animation: slide-in 0.9s ease-out;
 }
 .heading__listItem:nth-child(3) {
-  /* animation: slide-in 1.2s ease-out; */
+  animation: slide-in 1.2s ease-out;
 }
 .heading__listItem:nth-child(4) {
-  /* animation: slide-in 1.5s ease-out; */
+  animation: slide-in 1.5s ease-out;
 }
 .heading__listItem:nth-child(5) {
-  /* animation: slide-in 1.8s ease-out; */
+  animation: slide-in 1.8s ease-out;
 }
 .heading__listItemArrow {
   width: 6px;

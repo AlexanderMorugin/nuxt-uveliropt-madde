@@ -29,6 +29,7 @@
   font-family: 'CormorantGaramond-Medium';
   font-style: normal;
   font-weight: normal;
+  font-display: swap;
   src: local('CormorantGaramond-Medium'),
     url('/fonts/CormorantGaramond-Medium.woff') format('woff');
 }
@@ -37,6 +38,7 @@
   font-family: 'CormorantGaramond-SemiBold';
   font-style: normal;
   font-weight: normal;
+  font-display: swap;
   src: local('CormorantGaramond-SemiBold'),
     url('/fonts/CormorantGaramond-SemiBold.woff') format('woff');
 }
