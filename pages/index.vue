@@ -74,12 +74,12 @@
       </section>
 
       <!-- Блок с контактами -->
-      <!-- <section ref="contactsRef" class="contacts page-screen observer" id="contacts">
+      <section ref="contactsRef" class="contacts page-screen observer" id="contacts">
         <LazyPageAppContacts />
-      </section> -->
+      </section>
 
       <!-- Блок с картой -->
-      <!-- <LazyPageAppMap hydrate-on-visible /> -->
+      <LazyPageAppMap />
     </main>
   </div>
 </template>
