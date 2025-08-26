@@ -29,7 +29,6 @@ const [emblaRef, emblaApi] = emblaCarouselVue({ loop: true }, [
   --slide-spacing: 1rem;
   --slide-size: 70%;
   --slide-size-m: 100%;
-  /* overflow: hidden; */
 }
 .embla__viewport {
   overflow: hidden;

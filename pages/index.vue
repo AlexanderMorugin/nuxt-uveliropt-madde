@@ -57,6 +57,16 @@
       <section ref="exhibitionsRef" class="exhibitions page-screen observer">
         <LazyPageAppExhibitions />
       </section>
+
+      <!-- Слайдер Выставки -->
+      <section ref="exhibitionCarouselRef" class="contentCarousel observer">
+        <LazyEmblaAppCenterCarousel :data="exebitionPhoto" />
+      </section>
+
+      <!-- Блок Часто задаваемые вопросы -->
+      <section ref="questionsRef" class="questions observer" id="questions">
+        <LazyPageAppQuestions />
+      </section>
     </main>
   </div>
 </template>
@@ -67,6 +77,9 @@ const { data: headingMainList } = await useFetch(
   '/api/heading/heading-main-list'
 );
 const { data: collections } = await useFetch('/api/collections/collections');
+const { data: exebitionPhoto } = await useFetch(
+  '/api/exebition/exebition-photo'
+);
 
 const collectionsRef = ref(null);
 const aboutRef = ref(null);

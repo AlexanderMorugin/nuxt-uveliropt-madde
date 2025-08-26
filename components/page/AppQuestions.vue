@@ -1,48 +1,42 @@
 <template>
-  <!-- <section class="questions" id="questions"> -->
-    <!-- Блок с титлом -->
-    <PageAppSecondTitle
-      title="Часто задаваемые вопросы"
-      class="questions__secondTitle"
-    />
+  <!-- Блок с титлом -->
+  <PageAppSecondTitle
+    title="Часто задаваемые вопросы"
+    class="questions__secondTitle"
+  />
 
-    <div class="questions__container">
-      <ul class="questions__list">
-        <li
-          v-for="item in questions"
-          :key="item.id"
-          class="questions__listItem"
+  <div class="page-screen">
+    <ul class="questions__list">
+      <li v-for="item in questions" :key="item.id" class="questions__listItem">
+        <div
+          tabindex="0"
+          @keypress.enter="toggleAnswerAccordion(item.id)"
+          @click="toggleAnswerAccordion(item.id)"
+          class="questions__button"
         >
-          <div
-            tabindex="0"
-            @keypress.enter="toggleAnswerAccordion(item.id)"
-            @click="toggleAnswerAccordion(item.id)"
-            class="questions__button"
-          >
-            <span class="questions__title">{{ item.question }}</span>
-            <div class="questions__imageBox">
-              <img
-                src="/icons/icon-crestik.svg"
-                alt="Крестик"
-                :class="[
-                  'questions__image',
-                  { questions__image_active: isOpenAnswer(item.id) },
-                ]"
-              />
-            </div>
+          <span class="questions__title">{{ item.question }}</span>
+          <div class="questions__imageBox flex-center">
+            <img
+              src="/icons/icon-crestik.svg"
+              alt="Крестик"
+              :class="[
+                'questions__image',
+                { questions__image_active: isOpenAnswer(item.id) },
+              ]"
+            />
           </div>
-          <p
-            :class="[
-              'questions__text',
-              { questions__text_active: isOpenAnswer(item.id) },
-            ]"
-          >
-            {{ item.answer }}
-          </p>
-        </li>
-      </ul>
-    </div>
-  <!-- </section> -->
+        </div>
+        <p
+          :class="[
+            'questions__text text-monserat',
+            { questions__text_active: isOpenAnswer(item.id) },
+          ]"
+        >
+          {{ item.answer }}
+        </p>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script setup>
@@ -60,19 +54,6 @@ const isOpenAnswer = (index) => {
 </script>
 
 <style scoped>
-/* .questions {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding-top: 70px;
-} */
-.questions__container {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
 .questions__list {
   display: flex;
   flex-direction: column;
@@ -92,7 +73,7 @@ const isOpenAnswer = (index) => {
   width: 100%;
 }
 .questions__title {
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', sans-serif;
   font-size: 20px;
   color: var(--blue-dark-secondary);
   text-align: left;
@@ -101,9 +82,6 @@ const isOpenAnswer = (index) => {
   transition: 0.2s ease all;
 }
 .questions__imageBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -123,9 +101,6 @@ const isOpenAnswer = (index) => {
   transform: rotate(135deg);
 }
 .questions__text {
-  font-family: 'Montserrat-Regular';
-  line-height: 1.5;
-  font-size: 18px;
   color: var(--brown-secondary);
   height: 0;
   opacity: 0;
@@ -142,13 +117,6 @@ const isOpenAnswer = (index) => {
 }
 
 @media (max-width: 767px) {
-  /* .questions {
-    padding-top: 60px;
-  } */
-  .questions__container {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
   .questions__text_active {
     padding-bottom: 20px;
   }
