@@ -67,6 +67,19 @@
       <section ref="questionsRef" class="questions observer" id="questions">
         <LazyPageAppQuestions />
       </section>
+
+      <!-- Блок Остались вопросы? -->
+      <section ref="questionsFormRef" class="questionsForm observer">
+        <LazyPageAppQuestionsForm />
+      </section>
+
+      <!-- Блок с контактами -->
+      <section ref="contactsRef" class="contacts page-screen observer" id="contacts">
+        <LazyPageAppContacts />
+      </section>
+
+      <!-- Блок с картой -->
+      <LazyPageAppMap hydrate-on-visible />
     </main>
   </div>
 </template>

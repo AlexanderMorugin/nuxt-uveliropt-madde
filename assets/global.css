@@ -86,9 +86,21 @@ button {
   transform: translateY(0);
 }
 
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
 @media (max-width: 767px) {
   .page-screen {
     padding-left: 10px;
     padding-right: 10px;
+  }
+  .contacts {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }

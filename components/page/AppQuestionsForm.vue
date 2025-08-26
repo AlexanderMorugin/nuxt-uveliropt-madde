@@ -1,6 +1,6 @@
 <template>
   <ClientOnly>
-    <div class="questionsForm__container">
+    <div class="questionsForm__container page-screen">
       <!-- Блок с титлом -->
       <PageAppSecondTitle
         title="Остались вопросы?"
@@ -165,6 +165,8 @@ const submitRequestForm = () => {
 </script>
 
 <style scoped>
+@import url('~/assets/form.css');
+
 .questionsForm__title {
   text-align: left;
   color: var(--brown-secondary);
@@ -172,12 +174,7 @@ const submitRequestForm = () => {
   padding-right: 0;
 }
 .questionsForm__container {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
   padding-bottom: 180px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 .questionsForm__form {
   display: flex;

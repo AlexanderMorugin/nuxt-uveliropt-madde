@@ -11,21 +11,31 @@
       <div class="contacts__addressBoxItem">
         <span class="contacts__addressTop">Звоните нам</span>
         <HeaderAppPhone
-          :phone="phone"
-          :phoneNumber="phoneNumber"
+          :phone="contactsPhone.text"
+          :phoneNumber="contactsPhoneNumber.text"
           location="footer"
         />
       </div>
       <div class="contacts__addressBoxItem">
         <span class="contacts__addressTop">Без выходных: 9:00-21:00</span>
-        <span class="contacts__addressBottom">{{ props.address }}</span>
+        <span class="contacts__addressBottom">{{ contactsAddress.text }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-const props = defineProps(['phone', 'phoneNumber', 'address']);
+const { data: contacts } = await useFetch('/api/contacts/contacts');
+
+const contactsPhone = computed(() =>
+  contacts.value.find((item) => item.key === 'phone')
+);
+const contactsPhoneNumber = computed(() =>
+  contacts.value.find((item) => item.key === 'phoneNumber')
+);
+const contactsAddress = computed(() =>
+  contacts.value.find((item) => item.key === 'address')
+);
 </script>
 
 <style scoped>
@@ -49,12 +59,12 @@ const props = defineProps(['phone', 'phoneNumber', 'address']);
   flex-direction: column;
 }
 .contacts__addressTop {
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', sans-serif;
   font-size: 14px;
   color: var(--brown-secondary);
 }
 .contacts__addressBottom {
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', sans-serif;
   font-size: 20px;
   color: var(--brown-secondary);
 }
