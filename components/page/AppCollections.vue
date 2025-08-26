@@ -1,78 +1,41 @@
 <template>
-  <section
-    ref="collectionsBlock"
-    class="collections page-screen observer"
-    id="collections"
-  >
-    <!-- Блок с титлом -->
-    <PageAppSecondTitle title="Коллекции" class="collections__title" />
+  <!-- Блок с титлом -->
+  <PageAppSecondTitle title="Коллекции" class="collections__title" />
 
-    <ul class="collections__list">
-      <li
-        v-for="item in collections"
-        :key="item.id"
-        class="collections__listItem"
-      >
-        <NuxtLink :to="`collections/${item.route}`">
+  <ul class="collections__list">
+    <li
+      v-for="item in collections"
+      :key="item.id"
+      class="collections__listItem"
+    >
+      <NuxtLink :to="`collections/${item.route}`">
+        <img
+          loading="lazy"
+          :src="item.thumb"
+          :alt="item.name"
+          class="collections__thumb"
+        />
+        <span class="collections__name">{{ item.name }}</span>
+        <div class="collections__look">
+          <span class="collections__lookText">Смотреть</span>
           <img
+            fetchpriority="low"
             loading="lazy"
-            :src="item.thumb"
-            :alt="item.name"
-            class="collections__thumb"
+            src="/icons/icon-arrow-white.svg"
+            alt="Стрелка"
+            class="collections__lookArrow"
           />
-          <span class="collections__name">{{ item.name }}</span>
-          <div class="collections__look">
-            <span class="collections__lookText">Смотреть</span>
-            <img
-              fetchpriority="low"
-              loading="lazy"
-              src="/icons/icon-arrow-white.svg"
-              alt="Стрелка"
-              class="collections__lookArrow"
-            />
-          </div>
-        </NuxtLink>
-      </li>
-    </ul>
-  </section>
+        </div>
+      </NuxtLink>
+    </li>
+  </ul>
 </template>
 
 <script setup>
 const { collections } = defineProps(['collections']);
-
-const collectionsBlock = ref(null);
-
-onMounted(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('observer_animate');
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-    }
-  );
-
-  if (collectionsBlock.value) {
-    observer.observe(collectionsBlock.value);
-  }
-
-  onBeforeUnmount(() => {
-    observer.disconnect();
-  });
-});
 </script>
 
 <style scoped>
-.collections {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding-top: 70px;
-}
 .collections__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -135,9 +98,6 @@ onMounted(() => {
 }
 
 @media (max-width: 767px) {
-  .collections {
-    padding-top: 60px;
-  }
   .collections__list {
     grid-template-columns: 1fr;
   }

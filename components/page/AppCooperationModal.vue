@@ -47,7 +47,7 @@ const { isCooperationModalOpen } = defineProps([
   max-width: 560px;
   background: var(--background-primary);
   padding: 40px 45px;
-  animation: slide-in 0.2s ease-in-out;
+  animation: slide-in 0.5s ease-in-out;
 }
 .modal__close {
   position: absolute;

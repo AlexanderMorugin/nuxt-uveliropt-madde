@@ -1,79 +1,47 @@
 <template>
-  <section ref="cooperationBlock" class="cooperation observer" id="cooperation">
-    <!-- Блок с титлом -->
-    <PageAppSecondTitle
-      title="Выгоды сотрудничества"
-      class="cooperation__secondTitle"
-    />
+  <!-- Блок с титлом -->
+  <PageAppSecondTitle
+    title="Выгоды сотрудничества"
+    class="cooperation__secondTitle"
+  />
 
-    <div class="cooperation__background">
-      <div class="cooperation__container page-screen">
-        <ul class="cooperation__list">
-          <li
-            v-for="item in cooperation"
-            :key="item.id"
-            class="cooperation__listItem"
-          >
-            <img
-              loading="lazy"
-              :src="item.image"
-              :alt="item.title"
-              class="cooperation__image"
-            />
-            <div class="cooperation__textBox">
-              <span class="cooperation__title">{{ item.title }}</span>
-              <p class="cooperation__text text-monserat">{{ item.text }}</p>
-            </div>
-          </li>
-        </ul>
-
-        <!-- Модалка заявки на сотрудничество, с кнопкой -->
-        <ClientOnly>
-          <div class="cooperation__button">
-            <LazyModalAppCooperation buttonTitle="Заявка на сотрудничество" />
+  <div class="cooperation__background">
+    <div class="cooperation__container page-screen">
+      <ul class="cooperation__list">
+        <li
+          v-for="item in cooperation"
+          :key="item.id"
+          class="cooperation__listItem"
+        >
+          <img
+            loading="lazy"
+            :src="item.image"
+            :alt="item.title"
+            class="cooperation__image"
+          />
+          <div class="cooperation__textBox">
+            <span class="cooperation__title">{{ item.title }}</span>
+            <p class="cooperation__text text-monserat">{{ item.text }}</p>
           </div>
-        </ClientOnly>
+        </li>
+      </ul>
+
+      <!-- Модалка заявки на сотрудничество, с кнопкой -->
+      <div class="cooperation__button">
+        <LazyModalAppCooperation
+          buttonTitle="Заявка на сотрудничество"
+          hydrate-on-visible
+        />
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
 const { data: cooperation } = await useFetch('/api/cooperation/cooperation');
-
-const cooperationBlock = ref(null);
-
-onMounted(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('observer_animate');
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-    }
-  );
-
-  if (cooperationBlock.value) {
-    observer.observe(cooperationBlock.value);
-  }
-
-  onBeforeUnmount(() => {
-    observer.disconnect();
-  });
-});
 </script>
 
 <style scoped>
-.cooperation {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding-top: 70px;
-}
 .cooperation__background {
   width: 100%;
   background-image: url('/images/img-cooperation-01.webp');
@@ -141,9 +109,6 @@ onMounted(() => {
 }
 
 @media (max-width: 767px) {
-  .cooperation {
-    padding-top: 60px;
-  }
   .cooperation__background {
     background-blend-mode: multiply;
     background-position: top 0 right -350px;

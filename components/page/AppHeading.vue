@@ -35,6 +35,7 @@
         <LazyModalAppCooperation
           buttonTitle="Заявка на сотрудничество"
           location="heading"
+          hydrate-on-visible
         />
       </div>
     </ClientOnly>

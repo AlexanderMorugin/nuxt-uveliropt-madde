@@ -26,19 +26,37 @@
       />
 
       <!-- Блок Коллекции -->
-      <LazyPageAppCollections :collections="collections" />
+      <section
+        ref="collectionsRef"
+        class="collections page-screen observer"
+        id="collections"
+      >
+        <LazyPageAppCollections :collections="collections" />
+      </section>
 
       <!-- Блок Ювелирный бренд MADDE -->
-      <LazyPageAppAbout />
+      <section ref="aboutRef" class="about observer" id="about">
+        <LazyPageAppAbout />
+      </section>
 
       <!-- Блок Выгоды сотрудничества -->
-      <LazyPageAppCooperation />
+      <section
+        ref="cooperationRef"
+        class="cooperation observer"
+        id="cooperation"
+      >
+        <LazyPageAppCooperation />
+      </section>
 
       <!-- Блок Этапы работы -->
-      <LazyPageAppStages />
+      <section ref="stagesRef" class="stages page-screen observer">
+        <LazyPageAppStages />
+      </section>
 
       <!-- Блок Выставки -->
-      <LazyPageAppExhibitions hydrate-on-visible />
+      <section ref="exhibitionsRef" class="exhibitions page-screen observer">
+        <LazyPageAppExhibitions />
+      </section>
     </main>
   </div>
 </template>
@@ -49,6 +67,71 @@ const { data: headingMainList } = await useFetch(
   '/api/heading/heading-main-list'
 );
 const { data: collections } = await useFetch('/api/collections/collections');
+
+const collectionsRef = ref(null);
+const aboutRef = ref(null);
+const cooperationRef = ref(null);
+const stagesRef = ref(null);
+const exhibitionsRef = ref(null);
+const exhibitionCarouselRef = ref(null);
+const questionsRef = ref(null);
+const questionsFormRef = ref(null);
+const contactsRef = ref(null);
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('observer_animate');
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+    }
+  );
+
+  if (collectionsRef.value) {
+    observer.observe(collectionsRef.value);
+  }
+
+  if (aboutRef.value) {
+    observer.observe(aboutRef.value);
+  }
+
+  if (cooperationRef.value) {
+    observer.observe(cooperationRef.value);
+  }
+
+  if (stagesRef.value) {
+    observer.observe(stagesRef.value);
+  }
+
+  if (exhibitionsRef.value) {
+    observer.observe(exhibitionsRef.value);
+  }
+
+  if (exhibitionCarouselRef.value) {
+    observer.observe(exhibitionCarouselRef.value);
+  }
+
+  if (questionsRef.value) {
+    observer.observe(questionsRef.value);
+  }
+
+  if (questionsFormRef.value) {
+    observer.observe(questionsFormRef.value);
+  }
+
+  if (contactsRef.value) {
+    observer.observe(contactsRef.value);
+  }
+
+  onBeforeUnmount(() => {
+    observer.disconnect();
+  });
+});
 
 useHead({
   title: 'MADDE - Эксклюзивные украшения из серебра',
@@ -91,6 +174,57 @@ useSeoMeta({
   object-fit: cover;
   object-position: top right;
 }
+.collections {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 70px;
+}
+.about {
+  position: relative;
+  height: 870px;
+  padding-top: 70px;
+}
+.cooperation {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 70px;
+}
+.stages {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 70px;
+}
+.exhibitions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-top: 70px;
+}
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 70px;
+}
+.questionsForm {
+  width: 100%;
+  background-image: url('/images/img-questions-form-01.webp');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  padding-top: 40px;
+  margin-top: 100px;
+}
+
+@media (max-width: 1023px) {
+  .questionsForm {
+    background-position: top 0 right -300px;
+  }
+}
 
 @media (max-width: 767px) {
   .mainPageImage {
@@ -98,6 +232,29 @@ useSeoMeta({
   }
   .mainPageImage__item {
     object-position: top 0 right -200px;
+  }
+  .collections {
+    padding-top: 60px;
+  }
+  .about {
+    height: min-content;
+    padding-top: 60px;
+  }
+  .cooperation {
+    padding-top: 60px;
+  }
+  .stages {
+    padding-top: 60px;
+  }
+  .exhibitions {
+    padding-top: 60px;
+  }
+  .questions {
+    padding-top: 60px;
+  }
+  .questionsForm {
+    background-position: top 0 left 0;
+    margin-top: 80px;
   }
 }
 </style>

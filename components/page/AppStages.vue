@@ -1,88 +1,54 @@
 <template>
-  <section ref="stagesBlock" class="stages page-screen observer">
-    <PageAppSecondTitle title="Этапы работы" class="stages__title" />
-    <ul class="stages__content">
-      <li
-        v-for="item in stagesList"
-        :key="item.id"
-        class="stages__item"
-        :class="item.gridName"
-      >
-        <div class="stages__itemImageBox">
+  <PageAppSecondTitle title="Этапы работы" class="stages__title" />
+  <ul class="stages__content">
+    <li
+      v-for="item in stagesList"
+      :key="item.id"
+      class="stages__item"
+      :class="item.gridName"
+    >
+      <div class="stages__itemImageBox">
+        <img
+          loading="lazy"
+          :src="item.image"
+          :alt="item.title"
+          class="stages__itemImage"
+        />
+        <div class="stages__itemTitleBox">
+          <span>{{ item.number }}</span>
+          <span>{{ item.title }}</span>
+        </div>
+      </div>
+      <ul class="stages__itemList">
+        <li
+          v-for="element in item.list"
+          :key="element.id"
+          class="stages__itemText"
+        >
           <img
             loading="lazy"
-            :src="item.image"
-            :alt="item.title"
-            class="stages__itemImage"
+            src="/icons/icon-triangle-brown.svg"
+            alt="Стрелка"
+            class="stages__itemArrow"
           />
-          <div class="stages__itemTitleBox">
-            <span>{{ item.number }}</span>
-            <span>{{ item.title }}</span>
-          </div>
-        </div>
-        <ul class="stages__itemList">
-          <li
-            v-for="element in item.list"
-            :key="element.id"
-            class="stages__itemText"
-          >
-            <img
-              loading="lazy"
-              src="/icons/icon-triangle-brown.svg"
-              alt="Стрелка"
-              class="stages__itemArrow"
-            />
-            <p class="stages__text text-monserat">{{ element.text }}</p>
-          </li>
-        </ul>
-      </li>
-    </ul>
+          <p class="stages__text text-monserat">{{ element.text }}</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
 
-    <!-- Модалка заявки на сотрудничество, с кнопкой -->
-    <ClientOnly>
-      <div class="stages__button">
-        <LazyModalAppCooperation buttonTitle="Оставить заявку" />
-      </div>
-    </ClientOnly>
-  </section>
+  <!-- Модалка заявки на сотрудничество, с кнопкой -->
+
+  <div class="stages__button">
+    <LazyModalAppCooperation buttonTitle="Оставить заявку" hydrate-on-visible />
+  </div>
 </template>
 
 <script setup>
 const { data: stagesList } = await useFetch('/api/stages/stages');
-
-const stagesBlock = ref(null);
-
-onMounted(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('observer_animate');
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-    }
-  );
-
-  if (stagesBlock.value) {
-    observer.observe(stagesBlock.value);
-  }
-
-  onBeforeUnmount(() => {
-    observer.disconnect();
-  });
-});
 </script>
 
 <style scoped>
-.stages {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding-top: 70px;
-}
 .stages__content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -169,9 +135,6 @@ onMounted(() => {
 }
 
 @media (max-width: 767px) {
-  .stages {
-    padding-top: 60px;
-  }
   .stages__content {
     grid-template-columns: 1fr;
     grid-template-areas:
