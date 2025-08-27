@@ -19,7 +19,6 @@
         <div class="collections__look">
           <span class="collections__lookText">Смотреть</span>
           <img
-            fetchpriority="low"
             loading="lazy"
             src="/icons/icon-arrow-white.svg"
             alt="Стрелка"

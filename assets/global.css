@@ -75,6 +75,12 @@ button {
   font-size: 18px;
 }
 
+.text-monserat-accent {
+  font-family: 'Montserrat-Regular', sans-serif;
+  line-height: 1.5;
+  font-size: 24px;
+}
+
 .observer {
   opacity: 0;
   transform: translateY(20px);
@@ -98,6 +104,9 @@ button {
   .page-screen {
     padding-left: 10px;
     padding-right: 10px;
+  }
+  .text-monserat-accent {
+    font-size: 18px;
   }
   .contacts {
     padding-top: 60px;

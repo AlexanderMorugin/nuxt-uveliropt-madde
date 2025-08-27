@@ -40,7 +40,7 @@
   <!-- Модалка заявки на сотрудничество, с кнопкой -->
 
   <div class="stages__button">
-    <LazyModalAppCooperation buttonTitle="Оставить заявку" hydrate-on-visible />
+    <LazyModalAppCooperation buttonTitle="Оставить заявку" />
   </div>
 </template>
 

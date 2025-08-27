@@ -1,5 +1,5 @@
 <template>
-  <section class="video">
+  <section class="video page-screen">
     <PageAppSecondTitle title="Поступление BrS301" class="video__title" />
     <div class="video__container">
       <video
@@ -15,44 +15,12 @@
   </section>
 </template>
 
-<script setup>
-// const videoOne = ref(null);
-
-// onMounted(() => {
-//   const observer = new IntersectionObserver(
-//     (entries) => {
-//       entries.forEach((entry) => {
-//         if (entry.isIntersecting) {
-//           entry.target.classList.add('observerVideo_animate');
-//         }
-//       });
-//     },
-//     {
-//       threshold: 0.5,
-//     }
-//   );
-
-//   if (videoOne.value) {
-//     observer.observe(videoOne.value);
-//   }
-
-//   onBeforeUnmount(() => {
-//     observer.disconnect();
-//   });
-// });
-</script>
-
 <style scoped>
 .video {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
   padding-top: 70px;
 }
 .video__title {
@@ -62,9 +30,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  /* max-width: 1280px; */
-  /* height: 600px; */
-  /* object-fit: cover; */
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
   overflow: hidden;
@@ -74,17 +39,6 @@
   height: auto;
   object-fit: cover;
 }
-
-/* Анимация */
-/* .observerVideo {
-  opacity: 0;
-  transform: scale(0);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.observerVideo_animate {
-  opacity: 1;
-  transform: scale(1);
-} */
 
 @media (max-width: 767px) {
   .video {

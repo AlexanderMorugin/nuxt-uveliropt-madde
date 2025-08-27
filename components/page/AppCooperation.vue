@@ -28,10 +28,7 @@
 
       <!-- Модалка заявки на сотрудничество, с кнопкой -->
       <div class="cooperation__button">
-        <LazyModalAppCooperation
-          buttonTitle="Заявка на сотрудничество"
-          hydrate-on-visible
-        />
+        <LazyModalAppCooperation buttonTitle="Заявка на сотрудничество" />
       </div>
     </div>
   </div>

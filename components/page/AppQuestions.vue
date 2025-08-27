@@ -17,6 +17,7 @@
           <span class="questions__title">{{ item.question }}</span>
           <div class="questions__imageBox flex-center">
             <img
+              loading="lazy"
               src="/icons/icon-crestik.svg"
               alt="Крестик"
               :class="[

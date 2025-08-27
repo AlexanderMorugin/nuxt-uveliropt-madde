@@ -2,7 +2,7 @@
   <div class="brillianceAboutThird__container">
     <div class="brillianceAboutThird__textBox">
       <h2 class="brillianceAboutThird__title">Почему? Как это возможно?</h2>
-      <p class="brillianceAboutThird__text">
+      <p class="brillianceAboutThird__text text-monserat-accent">
         Максимальная схожесть с бриллиантовыми моделями достигается благодаря:
       </p>
 
@@ -13,7 +13,7 @@
             alt="Стрелка"
             class="brillianceAboutThird__listItemArrow"
           />
-          <p class="brillianceAboutThird__listItemText">
+          <p class="brillianceAboutThird__listItemText text-monserat">
             Использованию
             <span class="brillianceAboutThird__listItemText_span"
               >CZ класса ААА.</span
@@ -23,11 +23,12 @@
 
         <li class="brillianceAboutThird__listItem">
           <img
+            loading="lazy"
             src="/icons/icon-triangle.svg"
             alt="Стрелка"
             class="brillianceAboutThird__listItemArrow"
           />
-          <p class="brillianceAboutThird__listItemText">
+          <p class="brillianceAboutThird__listItemText text-monserat">
             Применению
             <span class="brillianceAboutThird__listItemText_span"
               >бриллиантовой огранки H&A.</span
@@ -37,11 +38,12 @@
 
         <li class="brillianceAboutThird__listItem">
           <img
+            loading="lazy"
             src="/icons/icon-triangle.svg"
             alt="Стрелка"
             class="brillianceAboutThird__listItemArrow"
           />
-          <p class="brillianceAboutThird__listItemText">
+          <p class="brillianceAboutThird__listItemText text-monserat">
             Качественному
             <span class="brillianceAboutThird__listItemText_span"
               >родированию и полировке металла.</span
@@ -51,11 +53,12 @@
 
         <li class="brillianceAboutThird__listItem">
           <img
+            loading="lazy"
             src="/icons/icon-triangle.svg"
             alt="Стрелка"
             class="brillianceAboutThird__listItemArrow"
           />
-          <p class="brillianceAboutThird__listItemText">
+          <p class="brillianceAboutThird__listItemText text-monserat">
             Подбору
             <span class="brillianceAboutThird__listItemText_span"
               >модельного ряда</span
@@ -67,8 +70,6 @@
     </div>
   </div>
 </template>
-
-<script setup></script>
 
 <style scoped>
 .brillianceAboutThird__container {
@@ -91,7 +92,7 @@
 .brillianceAboutThird__title {
   width: 100%;
   max-width: 340px;
-  font-family: 'Montserrat-SemiBold';
+  font-family: 'Montserrat-SemiBold', sans-serif;
   line-height: 1;
   font-size: 56px;
   color: transparent;
@@ -109,9 +110,6 @@
 .brillianceAboutThird__text {
   width: 100%;
   max-width: 600px;
-  font-family: 'Montserrat-Regular';
-  line-height: 1.5;
-  font-size: 24px;
   color: var(--white-primary);
 }
 .brillianceAboutThird__list {
@@ -138,13 +136,10 @@
   margin-top: 10px;
 }
 .brillianceAboutThird__listItemText {
-  font-family: 'Montserrat-Regular';
-  line-height: 1.5;
-  font-size: 18px;
   color: var(--white-primary);
 }
 .brillianceAboutThird__listItemText_span {
-  font-family: 'Montserrat-SemiBold';
+  font-family: 'Montserrat-SemiBold', sans-serif;
 }
 
 @media (max-width: 1279px) {
@@ -190,7 +185,6 @@
     background: linear-gradient(
       transparent,
       transparent,
-      /* transparent, */
       var(--brown-secondary),
       var(--blue-dark-primary),
       var(--brown-secondary),
@@ -205,9 +199,6 @@
   .brillianceAboutThird__title {
     max-width: 100%;
     font-size: 36px;
-  }
-  .brillianceAboutThird__text {
-    font-size: 18px;
   }
   .brillianceAboutThird__list {
     max-width: 100%;

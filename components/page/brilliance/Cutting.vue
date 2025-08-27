@@ -1,30 +1,38 @@
 <template>
   <section class="cutting">
-    <div class="cutting__container">
+    <div class="cutting__container page-screen">
       <h2 class="cutting__title">
         Огранка <span class="cutting__titleSpan">H</span>earts &
         <span class="cutting__titleSpan">A</span>rrows
       </h2>
       <div class="cutting__imageBox">
         <img
+          loading="lazy"
           src="/images/collections/brilliance/img-cutting-002.webp"
           alt="Картинка огранки камней"
           class="cutting__image"
         />
       </div>
       <div class="cutting__textTop">
-        <p ref="cuttingTextOne" class="cutting__text observerText">
+        <p
+          ref="cuttingTextOne"
+          class="cutting__text text-monserat observerText"
+        >
           Огранка Hearts and Arrows (CZ H&A) представляют собой вариацию
           традиционной круглой огранки с 57 гранями. Кристаллы огранены до
           «идеальных» пропорций с хорошей оптической симметрией, полировкой и
           особым рисунком огранки.
         </p>
-        <p ref="cuttingTextTwo" class="cutting__text observerText">
+        <p
+          ref="cuttingTextTwo"
+          class="cutting__text text-monserat observerText"
+        >
           Огранка камня оказывает наибольший эффект на его сверкание и блеск.
           «Сердца и Стрелы», Hearts&Arrows, H&A - это особый световой эффект,
           образующий определенный контрастный узор (как в калейдоскопе).
         </p>
         <img
+          loading="lazy"
           src="/images/collections/brilliance/img-cutting-001.webp"
           alt="Картинка огранки камней"
           class="cutting__textTopImage"
@@ -33,11 +41,12 @@
       <ul class="cutting__details">
         <li class="cutting__detailsBlock">
           <img
+            loading="lazy"
             src="/images/collections/brilliance/img-cutting-003.webp"
             alt="Картинка микроскопа"
             class="cutting__detailsBlockImage"
           />
-          <p class="cutting__detailsBlockText">
+          <p class="cutting__detailsBlockText text-monserat">
             Только когда все крошечные грани идеально совпадают со своими
             аналогами на противоположной стороне, будет отображаться четкий узор
             в виде Сердец и Стрел.
@@ -45,11 +54,12 @@
         </li>
         <li class="cutting__detailsBlock">
           <img
+            loading="lazy"
             src="/images/collections/brilliance/img-cutting-004.webp"
             alt="Картинка микроскопа"
             class="cutting__detailsBlockImage"
           />
-          <p class="cutting__detailsBlockText">
+          <p class="cutting__detailsBlockText text-monserat">
             «Сердца и Стрелы», можно рассмотреть, глядя на CZ с идеальной
             огранкой, используя специальное приспособление файерскоп
             («FireScope»). При просмотре камня сверху, становятся видны восемь
@@ -59,11 +69,12 @@
         </li>
         <li class="cutting__detailsBlock">
           <img
+            loading="lazy"
             src="/images/collections/brilliance/img-cutting-005.webp"
             alt="Картинка узоров"
             class="cutting__detailsBlockImage"
           />
-          <p class="cutting__detailsBlockText">
+          <p class="cutting__detailsBlockText text-monserat">
             Таким образом, узор “Сердеца и Стрелы” является визуальным
             свидетельством мастерства, и гарантирует наилучший эффект сверкания
             и блеска. Именно эта огранка является идеальной и самой дорогой в
@@ -113,23 +124,15 @@ onMounted(() => {
   padding-bottom: 40px;
 }
 .cutting__container {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
   padding-top: 40px;
 }
 .cutting__title {
-  font-family: 'CormorantGaramond-SemiBold';
+  font-family: 'CormorantGaramond-SemiBold', sans-serif;
   font-size: 51px;
   text-align: center;
   color: var(--white-primary);
 }
 .cutting__titleSpan {
-  font-family: 'CormorantGaramond-SemiBold';
-  font-size: 51px;
-  text-align: center;
   color: var(--red-primary);
 }
 .cutting__imageBox {
@@ -160,9 +163,6 @@ onMounted(() => {
 .cutting__text {
   width: 100%;
   max-width: 500px;
-  font-family: 'Montserrat-Regular';
-  line-height: 1.5;
-  font-size: 18px;
   color: var(--white-primary);
 }
 .cutting__details {
@@ -183,9 +183,6 @@ onMounted(() => {
   width: 100%;
 }
 .cutting__detailsBlockText {
-  font-family: 'Montserrat-Regular';
-  line-height: 1.5;
-  font-size: 18px;
   color: var(--brown-secondary);
   padding-left: 20px;
   padding-right: 20px;
@@ -231,10 +228,6 @@ onMounted(() => {
 @media (max-width: 767px) {
   .cutting {
     margin-top: 60px;
-  }
-  .cutting__container {
-    padding-left: 10px;
-    padding-right: 10px;
   }
   .cutting__title {
     line-height: 1.2;

@@ -20,10 +20,7 @@
   </div>
 
   <!-- Модалка заявки пригласительного, с кнопкой -->
-  <LazyModalAppCooperation
-    buttonTitle="Получить пригласительный"
-    hydrate-on-visible
-  />
+  <LazyModalAppCooperation buttonTitle="Получить пригласительный" />
 </template>
 
 <script setup></script>

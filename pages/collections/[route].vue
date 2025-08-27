@@ -1,16 +1,14 @@
 <template>
   <!-- Верхняя картинка и левый боковой бейдж, под шапкой и блоком хединга -->
-  <PageAppMainImage
-    :desktopImage="currentCollection.details.desktopImage"
-    :mobileImage="currentCollection.details.mobileImage"
-  />
-  <PageAppLeftTitleBadge location="collections" />
+  <PageAppMainImage :image="currentCollection.image" />
+
+  <ClientOnly>
+    <LazyPageAppLeftTitleBadge location="collections" />
+  </ClientOnly>
 
   <!-- Шапка -->
   <Header
     :linksData="headerCollectionNav"
-    :phone="phone"
-    :phoneNumber="phoneNumber"
     location="collections"
     :route="currentCollection.route"
   />
@@ -19,38 +17,38 @@
   <main class="content">
     <!-- Блок Хединга с главным титлом -->
     <PageAppHeading
-      :title="currentCollection.details.title"
-      :headingList="currentCollection.details.subtitle"
+      :title="currentCollection.title"
+      :headingList="currentCollection.subtitle"
       location="collections"
     />
 
     <!-- Блок О коллекции -->
     <section ref="brillianceAboutSecond" class="brillianceAboutSecond observer">
-      <LazyPageBrillianceAboutSecond hydrate-on-visible />
+      <LazyPageBrillianceAboutSecond />
     </section>
 
     <!-- Блок Каталог -->
-    <section class="catalog" id="catalog">
+    <!-- <section class="catalog" id="catalog">
       <LazyPageAppCatalog
         :data="currentCollection.details.products"
         hydrate-on-visible
       />
-    </section>
+    </section> -->
 
     <!-- Блок О коллекции -->
     <section ref="brillianceAbout" class="brillianceAbout observer" id="about">
-      <LazyPageBrillianceAbout hydrate-on-visible />
+      <LazyPageBrillianceAbout />
     </section>
 
     <!-- Блок Видео -->
     <LazyPageAppVideo />
 
     <!-- Блок О коллекции -->
-    <section ref="brillianceAboutThird" class="brillianceAboutThird observer">
-      <LazyPageBrillianceAboutThird
-        :headingList="currentCollection.details.subtitle"
-        hydrate-on-visible
-      />
+    <section
+      ref="brillianceAboutThird"
+      class="brillianceAboutThird page-screen observer"
+    >
+      <LazyPageBrillianceAboutThird :headingList="currentCollection.subtitle" />
     </section>
 
     <!-- Блок О Цирконии -->
@@ -60,27 +58,28 @@
     <LazyPageBrillianceCutting />
 
     <!-- Блок с контактами -->
-    <section ref="contacts" class="contacts observer" id="contacts">
+    <!-- <section ref="contacts" class="contacts observer" id="contacts">
       <LazyPageAppContacts
         hydrate-on-visible
         :phone="phone"
         :phoneNumber="phoneNumber"
         :address="address"
       />
-    </section>
+    </section> -->
 
     <!-- Блок с картой -->
-    <LazyPageAppMap hydrate-on-visible />
+    <LazyPageAppMap />
   </main>
 </template>
 
 <script setup>
 const { route } = useRoute().params;
-import { collections } from '@/mock/collections/collections';
-import { headerCollectionNav } from '@/mock/header-collection-nav';
-import { phone, phoneNumber, address } from '@/mock/constants';
+// import { phone, phoneNumber, address } from '@/mock/constants';
 
-const currentCollection = collections.find((item) => item.route === route);
+const { data: headerCollectionNav } = await useFetch(
+  `/api/header/header-collection-nav/${route}`
+);
+const { data: currentCollection } = await useFetch(`/api/collections/${route}`);
 
 const brillianceAbout = ref(null);
 const brillianceAboutSecond = ref(null);
@@ -120,23 +119,23 @@ onMounted(() => {
 });
 
 useHead({
-  title: currentCollection.title,
+  title: currentCollection.value.titleSeo,
   meta: [
     {
       name: 'description',
-      content: currentCollection.description,
+      content: currentCollection.value.descriptionSeo,
     },
   ],
 });
 
 useSeoMeta({
-  title: currentCollection.title,
-  ogTitle: currentCollection.title,
-  description: currentCollection.description,
-  ogDescription: currentCollection.description,
-  ogImage: `https://nuxt-uveliropt-madde.vercel.app${currentCollection.OgImage}`,
+  title: currentCollection.value.titleSeo,
+  ogTitle: currentCollection.value.titleSeo,
+  description: currentCollection.value.descriptionSeo,
+  ogDescription: currentCollection.value.descriptionSeo,
+  ogImage: `https://nuxt-uveliropt-madde.vercel.app${currentCollection.value.OgImage}`,
   twitterCard: 'summary_large_image',
-  ogUrl: `https://nuxt-uveliropt-madde.vercel.app/collections/${currentCollection.route}`,
+  ogUrl: `https://nuxt-uveliropt-madde.vercel.app/collections/${currentCollection.value.route}`,
   ogSiteName: 'MADDE - Эксклюзивные украшения из серебра',
   ogType: 'website',
   ogLocale: 'ru_RU',
@@ -156,10 +155,7 @@ useSeoMeta({
   margin-top: 70px;
 }
 .brillianceAboutThird {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 70px 20px 0 20px;
+  padding-top: 70px;
 }
 .catalog {
   display: flex;
@@ -180,8 +176,6 @@ useSeoMeta({
   }
   .brillianceAboutThird {
     padding-top: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
   }
   .catalog {
     padding-top: 60px;
