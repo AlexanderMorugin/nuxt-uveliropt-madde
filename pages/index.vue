@@ -74,7 +74,11 @@
       </section>
 
       <!-- Блок с контактами -->
-      <section ref="contactsRef" class="contacts page-screen observer" id="contacts">
+      <section
+        ref="contactsRef"
+        class="contacts page-screen observer"
+        id="contacts"
+      >
         <LazyPageAppContacts />
       </section>
 
@@ -172,17 +176,25 @@ useHead({
 
 useSeoMeta({
   title: 'MADDE - Эксклюзивные украшения из серебра',
-  ogTitle: 'MADDE - Эксклюзивные украшения из серебра',
   description:
     'Компания импортёр серебряных ювелирных украшений из Италии и Гонконга',
+  keywords: 'импортёр, серебряные, ювелирные, украшения, италия, гонконг',
+  author: 'Александр Моругин',
+  robots: 'index, follow',
+  ogTitle: 'MADDE - Эксклюзивные украшения из серебра',
   ogDescription:
     'Компания импортёр серебряных ювелирных украшений из Италии и Гонконга',
-  ogImage: 'https://nuxt-uveliropt-madde.vercel.app/images/img-01-desktop.webp',
-  twitterCard: 'summary_large_image',
+  ogImage: 'https://nuxt-uveliropt-madde.vercel.app/images/img-main-01.webp',
   ogUrl: 'https://nuxt-uveliropt-madde.vercel.app/',
   ogSiteName: 'MADDE - Эксклюзивные украшения из серебра',
   ogType: 'website',
   ogLocale: 'ru_RU',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'MADDE - Эксклюзивные украшения из серебра',
+  twitterDescription:
+    'Компания импортёр серебряных ювелирных украшений из Италии и Гонконга',
+  twitterImage:
+    'https://nuxt-uveliropt-madde.vercel.app/images/img-main-01.webp',
 });
 </script>
 

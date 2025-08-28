@@ -2,6 +2,7 @@
   <button class="catalogCard" @click="openProductModal">
     <span class="catalogCard__name">{{ product.text }}</span>
     <img
+      loading="lazy"
       :src="product.imageSmall"
       :alt="product.text"
       class="catalogCard__image"
@@ -9,13 +10,11 @@
   </button>
 
   <Teleport to="#teleports">
-    <ClientOnly>
-      <ModalAppProduct
-        :isProductModalOpen="isProductModalOpen"
-        :item="product"
-        @closeProductModal="closeProductModal"
-      />
-    </ClientOnly>
+    <ModalAppProduct
+      :isProductModalOpen="isProductModalOpen"
+      :item="product"
+      @closeProductModal="closeProductModal"
+    />
   </Teleport>
 </template>
 
@@ -32,8 +31,6 @@ const closeProductModal = () => (isProductModalOpen.value = false);
 .catalogCard {
   position: relative;
   width: 100%;
-  /* max-width: 252px; */
-  /* height: 272px; */
   border-radius: 15px;
   overflow: hidden;
 }
@@ -41,7 +38,7 @@ const closeProductModal = () => (isProductModalOpen.value = false);
   position: absolute;
   bottom: 20px;
   right: 20px;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', sans-serif;
   font-size: 20px;
   color: var(--brown-secondary);
 }
@@ -53,19 +50,10 @@ const closeProductModal = () => (isProductModalOpen.value = false);
 }
 
 @media (max-width: 1024px) {
-  /* .embla__imageBox {
-    height: 240px;
-  } */
   .catalogCard__name {
     bottom: 10px;
     right: 10px;
     font-size: 16px;
   }
 }
-
-/* @media (max-width: 479px) {
-  .embla__imageBox {
-    height: 199px;
-  }
-} */
 </style>

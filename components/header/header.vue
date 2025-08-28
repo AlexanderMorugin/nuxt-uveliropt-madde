@@ -68,8 +68,8 @@
 </template>
 
 <script setup>
-import { useResizeMedium } from '@/use/useResizeMedium';
-import { useScroll } from '@/use/useScroll';
+import { useResizeMedium } from '~/composables/useResizeMedium';
+import { useScroll } from '~/composables/useScroll';
 
 const { data: contacts } = await useFetch('/api/contacts/contacts');
 

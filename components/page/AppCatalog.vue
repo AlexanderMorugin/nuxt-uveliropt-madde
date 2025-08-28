@@ -5,11 +5,7 @@
       <EmblaAppCatalogCarousel :data="item.slideItems" />
 
       <ul class="catalog__products">
-        <li
-          v-for="product in item.items"
-          :key="product.id"
-          class="catalog__productsItem"
-        >
+        <li v-for="product in item.items" :key="product.id" class="flex-center">
           <PageAppCatalogCard :product="product" />
         </li>
       </ul>
@@ -42,11 +38,6 @@ const { data } = defineProps(['data']);
   align-items: center;
   gap: 20px;
   padding-left: 20px;
-}
-.catalog__productsItem {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 @media (max-width: 767px) {

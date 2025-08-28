@@ -28,12 +28,9 @@
     </section>
 
     <!-- Блок Каталог -->
-    <!-- <section class="catalog" id="catalog">
-      <LazyPageAppCatalog
-        :data="currentCollection.details.products"
-        hydrate-on-visible
-      />
-    </section> -->
+    <section class="catalog page-screen" id="catalog">
+      <LazyPageAppCatalog :data="currentCollection.products" />
+    </section>
 
     <!-- Блок О коллекции -->
     <section ref="brillianceAbout" class="brillianceAbout observer" id="about">
@@ -130,15 +127,21 @@ useHead({
 
 useSeoMeta({
   title: currentCollection.value.titleSeo,
-  ogTitle: currentCollection.value.titleSeo,
   description: currentCollection.value.descriptionSeo,
+  keywords: 'импортёр, серебряные, ювелирные, украшения, италия, гонконг',
+  author: 'Александр Моругин',
+  robots: 'index, follow',
+  ogTitle: currentCollection.value.titleSeo,
   ogDescription: currentCollection.value.descriptionSeo,
   ogImage: `https://nuxt-uveliropt-madde.vercel.app${currentCollection.value.OgImage}`,
-  twitterCard: 'summary_large_image',
   ogUrl: `https://nuxt-uveliropt-madde.vercel.app/collections/${currentCollection.value.route}`,
   ogSiteName: 'MADDE - Эксклюзивные украшения из серебра',
   ogType: 'website',
   ogLocale: 'ru_RU',
+  twitterCard: 'summary_large_image',
+  twitterTitle: currentCollection.value.titleSeo,
+  twitterDescription: currentCollection.value.descriptionSeo,
+  twitterImage: `https://nuxt-uveliropt-madde.vercel.app${currentCollection.value.OgImage}`,
 });
 </script>
 
@@ -161,10 +164,7 @@ useSeoMeta({
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 70px 20px 0 20px;
+  padding-top: 70px;
 }
 
 @media (max-width: 767px) {
@@ -179,8 +179,6 @@ useSeoMeta({
   }
   .catalog {
     padding-top: 60px;
-    padding-left: 10px;
-    padding-right: 10px;
   }
 }
 </style>
